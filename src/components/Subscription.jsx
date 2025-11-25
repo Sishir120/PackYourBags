@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Mail, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
-import { subscribe } from '../utils/api'
+import { subscribe } from '../utils/destinationApi'
 import { validateEmailRealTime } from '../utils/validation'
 import { validateAndSanitizeEmail } from '../utils/security'
 import { formRateLimiter } from '../utils/security'
@@ -16,7 +16,7 @@ const Subscription = () => {
   const handleEmailChange = (value) => {
     setEmail(value)
     setErrorMessage('')
-    
+
     if (value) {
       const validation = validateEmailRealTime(value)
       if (!validation.valid && validation.error) {
@@ -33,7 +33,7 @@ const Subscription = () => {
     e.preventDefault()
     setErrorMessage('')
     setEmailError('')
-    
+
     // Validate email
     const emailValidation = validateAndSanitizeEmail(email)
     if (!emailValidation.valid) {
@@ -41,7 +41,7 @@ const Subscription = () => {
       setStatus('error')
       return
     }
-    
+
     // Rate limiting check
     const rateLimit = formRateLimiter.check('subscription')
     if (!rateLimit.allowed) {
@@ -50,18 +50,18 @@ const Subscription = () => {
       setStatus('error')
       return
     }
-    
+
     setStatus('loading')
-    
+
     try {
       // Call actual API
       const data = await subscribe(emailValidation.sanitized, {})
-      
+
       if (data.success) {
         setStatus('success')
         setEmail('')
         setEmailError('')
-        
+
         // Reset after 5 seconds
         setTimeout(() => {
           setStatus('idle')
@@ -83,15 +83,15 @@ const Subscription = () => {
   }
 
   return (
-    <section 
-      id="subscribe" 
+    <section
+      id="subscribe"
       className="relative py-28 overflow-hidden bg-white"
       aria-labelledby="subscription-heading"
     >
       {/* Subtle Grid Background */}
       <div className="absolute inset-0 opacity-[0.03]" aria-hidden="true">
-        <div 
-          className="absolute inset-0" 
+        <div
+          className="absolute inset-0"
           style={{
             backgroundImage: `linear-gradient(#4285F4 1px, transparent 1px), linear-gradient(90deg, #4285F4 1px, transparent 1px)`,
             backgroundSize: '64px 64px'
@@ -112,7 +112,7 @@ const Subscription = () => {
           </div>
 
           {/* Typography */}
-          <h2 
+          <h2
             id="subscription-heading"
             className="text-4xl sm:text-5xl font-semibold text-gray-900 mb-4 tracking-tight"
           >
@@ -124,30 +124,28 @@ const Subscription = () => {
 
           {/* Form */}
           <div className="max-w-xl mx-auto">
-            <form 
-              onSubmit={handleSubmit} 
+            <form
+              onSubmit={handleSubmit}
               className="relative"
               noValidate
               aria-label="Email subscription form"
             >
               {/* Input Container */}
-              <div 
-                className={`relative bg-white rounded-2xl border-2 transition-all duration-200 ${
-                  focusedField 
-                    ? 'border-blue-600 shadow-lg shadow-blue-100' 
+              <div
+                className={`relative bg-white rounded-2xl border-2 transition-all duration-200 ${focusedField
+                    ? 'border-blue-600 shadow-lg shadow-blue-100'
                     : status === 'error' || emailError
-                    ? 'border-red-500'
-                    : 'border-gray-200 hover:border-gray-300'
-                }`}
+                      ? 'border-red-500'
+                      : 'border-gray-200 hover:border-gray-300'
+                  }`}
                 role="group"
                 aria-label="Email input"
               >
                 <div className="flex items-center p-5">
                   {/* Icon */}
-                  <div 
-                    className={`flex-shrink-0 transition-colors ${
-                      focusedField ? 'text-blue-600' : 'text-gray-400'
-                    }`}
+                  <div
+                    className={`flex-shrink-0 transition-colors ${focusedField ? 'text-blue-600' : 'text-gray-400'
+                      }`}
                     aria-hidden="true"
                   >
                     <Mail className="w-6 h-6" />
@@ -178,15 +176,14 @@ const Subscription = () => {
                   <button
                     type="submit"
                     disabled={status === 'loading' || status === 'success' || !email}
-                    className={`ml-4 px-7 py-3 rounded-xl font-medium text-sm transition-all duration-200 flex items-center gap-2 disabled:cursor-not-allowed ${
-                      status === 'success'
+                    className={`ml-4 px-7 py-3 rounded-xl font-medium text-sm transition-all duration-200 flex items-center gap-2 disabled:cursor-not-allowed ${status === 'success'
                         ? 'bg-green-600 text-white'
                         : status === 'loading'
-                        ? 'bg-blue-400 text-white cursor-wait'
-                        : email
-                        ? 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md active:scale-95'
-                        : 'bg-gray-300 text-gray-500 cursor-not-allowed'
-                    }`}
+                          ? 'bg-blue-400 text-white cursor-wait'
+                          : email
+                            ? 'bg-blue-600 text-white hover:bg-blue-700 hover:shadow-md active:scale-95'
+                            : 'bg-gray-300 text-gray-500 cursor-not-allowed'
+                      }`}
                     aria-label={status === 'loading' ? 'Subscribing' : status === 'success' ? 'Subscribed' : 'Subscribe to newsletter'}
                   >
                     {status === 'loading' && (
@@ -212,7 +209,7 @@ const Subscription = () => {
 
                 {/* Error Messages */}
                 {(emailError || errorMessage) && (
-                  <div 
+                  <div
                     id="email-error"
                     className="absolute -bottom-8 left-0 flex items-center gap-2 text-red-600 text-sm mt-2"
                     role="alert"
@@ -226,7 +223,7 @@ const Subscription = () => {
 
               {/* Success Message */}
               {status === 'success' && (
-                <div 
+                <div
                   className="mt-4 flex items-center justify-center gap-2 text-green-700 bg-green-50 px-4 py-3 rounded-xl border border-green-200"
                   role="alert"
                   aria-live="polite"

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { destinationApi } from '../utils/api';
+import { destinationApi } from '../utils/destinationApi';
 import ReactMarkdown from 'react-markdown';
 
 const DestinationPage = () => {

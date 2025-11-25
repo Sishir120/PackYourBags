@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { 
-  MapPin, 
-  ChevronLeft, 
-  Calendar, 
-  Users, 
-  Mail, 
-  CheckCircle, 
+import {
+  MapPin,
+  ChevronLeft,
+  Calendar,
+  Users,
+  Mail,
+  CheckCircle,
   ExternalLink,
   Clock,
   DollarSign,
@@ -15,7 +15,7 @@ import {
   Image as ImageIcon,
   Globe
 } from 'lucide-react';
-import { destinationApi } from '../utils/api';
+import { destinationApi } from '../utils/destinationApi';
 // Added import for the new automation service utility
 import { startAutomationService } from '../utils/automationService';
 import Loading from '../components/Loading';
@@ -60,13 +60,13 @@ const DestinationDeepDive = () => {
 
   const handleAutomationSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validate form data
     if (!formData.travelDates || !formData.email) {
       alert('Please fill in all required fields');
       return;
     }
-    
+
     // Submit automation service request
     try {
       const requestData = {
@@ -76,19 +76,19 @@ const DestinationDeepDive = () => {
         numberOfTravelers: formData.numberOfTravelers,
         email: formData.email
       };
-      
+
       // Call the startAutomationService utility function
       const response = await startAutomationService(requestData);
-      
+
       setAutomationSuccess(true);
-      
+
       // Reset form after successful submission
       setFormData({
         travelDates: '',
         numberOfTravelers: 1,
         email: ''
       });
-      
+
       // Close modal after 3 seconds
       setTimeout(() => {
         setIsAutomationModalOpen(false);
@@ -111,7 +111,7 @@ const DestinationDeepDive = () => {
       'Bali': 'https://affiliate.example.com/?destination=Bali&partner_id=PackYourBags123',
       'default': 'https://affiliate.example.com/?destination=' + encodeURIComponent(destinationName) + '&partner_id=PackYourBags123'
     };
-    
+
     return affiliateLinks[destinationName] || affiliateLinks['default'];
   };
 
@@ -163,8 +163,8 @@ const DestinationDeepDive = () => {
           </div>
           <h2 className="text-2xl font-bold text-gray-900 mb-2">Destination Not Found</h2>
           <p className="text-gray-600 mb-6">We couldn't find the destination you're looking for.</p>
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             Back to Home
@@ -182,7 +182,7 @@ const DestinationDeepDive = () => {
           Back to Home
         </Link>
       </div>
-      
+
       {/* Destination Images Carousel */}
       <div className="relative h-96 rounded-xl overflow-hidden shadow-lg mb-8">
         {images.length > 0 ? (
@@ -191,42 +191,41 @@ const DestinationDeepDive = () => {
               src={currentImage}
               alt={destination.name}
               className="w-full h-full object-cover"
-              onError={(e) => { 
+              onError={(e) => {
                 e.target.src = `https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200&q=90&dest=${encodeURIComponent(destination.name || 'travel')}`;
                 e.target.onerror = null;
               }}
             />
-            
+
             {/* Image Navigation Arrows (only show if there are multiple images) */}
             {images.length > 1 && (
               <>
-                <button 
+                <button
                   onClick={prevImage}
                   className="absolute left-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-opacity shadow-lg"
                 >
                   <ChevronLeft className="w-6 h-6 text-gray-800" />
                 </button>
-                <button 
+                <button
                   onClick={nextImage}
                   className="absolute right-4 top-1/2 -translate-y-1/2 w-10 h-10 bg-white/90 rounded-full flex items-center justify-center hover:bg-white transition-opacity shadow-lg"
                 >
                   <ChevronLeft className="w-6 h-6 text-gray-800 rotate-180" />
                 </button>
-                
+
                 {/* Image Indicators */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                   {images.map((_, index) => (
-                    <div 
+                    <div
                       key={index}
-                      className={`w-3 h-3 rounded-full transition-all ${
-                        index === currentImageIndex ? 'bg-white w-6' : 'bg-white/50'
-                      }`}
+                      className={`w-3 h-3 rounded-full transition-all ${index === currentImageIndex ? 'bg-white w-6' : 'bg-white/50'
+                        }`}
                     ></div>
                   ))}
                 </div>
               </>
             )}
-            
+
             {/* Image Count Badge */}
             {images.length > 1 && (
               <div className="absolute top-4 right-4 bg-black/50 text-white text-sm px-2 py-1 rounded-full">
@@ -240,7 +239,7 @@ const DestinationDeepDive = () => {
           </div>
         )}
       </div>
-      
+
       <div className="bg-white rounded-lg shadow-lg p-8">
         <div className="flex items-center mb-4">
           <MapPin className="inline-block mr-2" />
@@ -249,7 +248,7 @@ const DestinationDeepDive = () => {
         <div className="mb-6">
           <p className="text-gray-700">{destination.description}</p>
         </div>
-        
+
         {/* Google Maps Embed */}
         <div className="mb-8">
           <h2 className="text-xl font-bold mb-4 flex items-center">
@@ -267,7 +266,7 @@ const DestinationDeepDive = () => {
             ></iframe>
           </div>
         </div>
-        
+
         {/* Affiliate Link Section */}
         <div className="mb-8 p-6 bg-gradient-to-r from-sky-50 to-orange-50 rounded-xl border border-sky-200">
           <h2 className="text-xl font-bold mb-4 flex items-center">
@@ -293,7 +292,7 @@ const DestinationDeepDive = () => {
             </div>
           )}
         </div>
-        
+
         {/* Automation Service Section */}
         <div className="mb-8 p-6 bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl border border-blue-200">
           <h2 className="text-xl font-bold mb-4 flex items-center">
@@ -310,7 +309,7 @@ const DestinationDeepDive = () => {
             Start Automated Booking
           </button>
         </div>
-        
+
         {/* Additional Details */}
         <div className="mb-4">
           <h2 className="text-lg font-bold mb-3">Destination Details</h2>
@@ -338,7 +337,7 @@ const DestinationDeepDive = () => {
           </div>
         </div>
       </div>
-      
+
       {/* Automation Modal */}
       {isAutomationModalOpen && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">

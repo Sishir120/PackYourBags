@@ -16,7 +16,7 @@ import {
   Gamepad2,
 } from 'lucide-react';
 import { supabase } from '../utils/supabase';
-import { getFavorites } from '../utils/api';
+import { getFavorites } from '../utils/destinationApi';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = ({ user, onSignIn, onSignOut }) => {

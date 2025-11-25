@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { blogApi } from '../utils/blogApi'
-import { destinationApi } from '../utils/api'
+import { destinationApi } from '../utils/destinationApi'
 
 const AdminBlogGenerator = () => {
   const [destinations, setDestinations] = useState([])
@@ -98,11 +98,10 @@ const AdminBlogGenerator = () => {
                     key={cat}
                     type="button"
                     onClick={() => setCategory(cat)}
-                    className={`px-4 py-2 rounded-lg font-medium transition ${
-                      category === cat
+                    className={`px-4 py-2 rounded-lg font-medium transition ${category === cat
                         ? 'bg-green-600 text-white'
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
-                    }`}
+                      }`}
                   >
                     {cat}
                   </button>

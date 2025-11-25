@@ -1,19 +1,19 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import { itineraryApi, authApi } from '../utils/authApi'
-import { destinationApi } from '../utils/api'
+import { destinationApi } from '../utils/destinationApi'
 import SEO from '../components/SEO'
-import { 
-  Save, 
-  Plus, 
-  Trash2, 
-  Calendar, 
-  MapPin, 
-  DollarSign, 
-  Clock, 
-  Edit3, 
-  Eye, 
-  Download, 
+import {
+  Save,
+  Plus,
+  Trash2,
+  Calendar,
+  MapPin,
+  DollarSign,
+  Clock,
+  Edit3,
+  Eye,
+  Download,
   Share2,
   Star,
   AlertCircle,
@@ -167,9 +167,9 @@ const ItineraryBuilder = () => {
   const addActivity = (dayIndex) => {
     const newDays = [...itinerary.days]
     if (!newDays[dayIndex].activities) newDays[dayIndex].activities = []
-    newDays[dayIndex].activities.push({ 
-      time: '', 
-      activity: '', 
+    newDays[dayIndex].activities.push({
+      time: '',
+      activity: '',
       duration: '',
       location: '',
       notes: '',
@@ -180,9 +180,9 @@ const ItineraryBuilder = () => {
 
   const updateActivity = (dayIndex, actIndex, field, value) => {
     const newDays = [...itinerary.days]
-    newDays[dayIndex].activities[actIndex] = { 
-      ...newDays[dayIndex].activities[actIndex], 
-      [field]: value 
+    newDays[dayIndex].activities[actIndex] = {
+      ...newDays[dayIndex].activities[actIndex],
+      [field]: value
     }
     setItinerary({ ...itinerary, days: newDays })
   }
@@ -238,7 +238,7 @@ const ItineraryBuilder = () => {
   return (
     <div className="min-h-screen bg-gray-50 py-8">
       <SEO title={itinerary.title || 'Create Itinerary'} />
-      
+
       <div className="max-w-6xl mx-auto px-4">
         {/* Header */}
         <div className="bg-white rounded-lg shadow-lg p-6 mb-6">
@@ -254,7 +254,7 @@ const ItineraryBuilder = () => {
                 </div>
               )}
             </div>
-            
+
             <div className="flex flex-wrap gap-3">
               {editing ? (
                 <>
@@ -320,11 +320,10 @@ const ItineraryBuilder = () => {
                   <button
                     key={tab.id}
                     onClick={() => setActiveTab(tab.id)}
-                    className={`flex items-center gap-2 py-4 px-1 border-b-2 font-medium text-sm ${
-                      activeTab === tab.id
+                    className={`flex items-center gap-2 py-4 px-1 border-b-2 font-medium text-sm ${activeTab === tab.id
                         ? 'border-green-500 text-green-600'
                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
-                    }`}
+                      }`}
                   >
                     <tab.icon className="w-4 h-4" />
                     {tab.label}
@@ -466,7 +465,7 @@ const ItineraryBuilder = () => {
                             <Trash2 className="w-4 h-4" />
                           </button>
                         </div>
-                        
+
                         <div className="p-4">
                           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                             <div>
@@ -501,7 +500,7 @@ const ItineraryBuilder = () => {
                                 Add Activity
                               </button>
                             </div>
-                            
+
                             {day.activities?.length > 0 ? (
                               <div className="space-y-3">
                                 {day.activities.map((activity, actIndex) => (
@@ -648,9 +647,9 @@ const ItineraryBuilder = () => {
                           type="number"
                           value={itinerary.budget_breakdown?.[item.key] || ''}
                           onChange={(e) => {
-                            const newBreakdown = { 
-                              ...itinerary.budget_breakdown, 
-                              [item.key]: parseFloat(e.target.value) || 0 
+                            const newBreakdown = {
+                              ...itinerary.budget_breakdown,
+                              [item.key]: parseFloat(e.target.value) || 0
                             }
                             setItinerary({ ...itinerary, budget_breakdown: newBreakdown })
                           }}
@@ -684,7 +683,7 @@ const ItineraryBuilder = () => {
                     <div>
                       <h4 className="font-medium text-blue-900">Pro Tip</h4>
                       <p className="text-blue-700 text-sm mt-1">
-                        Use the notes section to add important information like passport details, 
+                        Use the notes section to add important information like passport details,
                         emergency contacts, or special requirements for your trip.
                       </p>
                     </div>
@@ -700,8 +699,8 @@ const ItineraryBuilder = () => {
               <div className="flex flex-wrap gap-6 mb-6">
                 <div className="flex items-center text-gray-600">
                   <Calendar className="w-5 h-5 mr-2" />
-                  <span>{itinerary.start_date ? new Date(itinerary.start_date).toLocaleDateString() : 'TBD'} 
-                  {itinerary.end_date ? ` - ${new Date(itinerary.end_date).toLocaleDateString()}` : ''}</span>
+                  <span>{itinerary.start_date ? new Date(itinerary.start_date).toLocaleDateString() : 'TBD'}
+                    {itinerary.end_date ? ` - ${new Date(itinerary.end_date).toLocaleDateString()}` : ''}</span>
                 </div>
                 <div className="flex items-center text-gray-600">
                   <Clock className="w-5 h-5 mr-2" />
@@ -749,7 +748,7 @@ const ItineraryBuilder = () => {
                           <p className="text-gray-600 text-sm">{new Date(day.date).toLocaleDateString()}</p>
                         )}
                       </div>
-                      
+
                       <div className="p-4">
                         {day.notes && (
                           <div className="mb-4 p-3 bg-blue-50 rounded">
@@ -781,15 +780,14 @@ const ItineraryBuilder = () => {
                                       <div className="text-sm text-gray-600 mt-1">{act.notes}</div>
                                     )}
                                     <div className="mt-1">
-                                      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${
-                                        act.category === 'sightseeing' ? 'bg-blue-100 text-blue-800' :
-                                        act.category === 'food' ? 'bg-green-100 text-green-800' :
-                                        act.category === 'transport' ? 'bg-yellow-100 text-yellow-800' :
-                                        act.category === 'accommodation' ? 'bg-purple-100 text-purple-800' :
-                                        act.category === 'shopping' ? 'bg-pink-100 text-pink-800' :
-                                        act.category === 'entertainment' ? 'bg-indigo-100 text-indigo-800' :
-                                        'bg-gray-100 text-gray-800'
-                                      }`}>
+                                      <span className={`inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium ${act.category === 'sightseeing' ? 'bg-blue-100 text-blue-800' :
+                                          act.category === 'food' ? 'bg-green-100 text-green-800' :
+                                            act.category === 'transport' ? 'bg-yellow-100 text-yellow-800' :
+                                              act.category === 'accommodation' ? 'bg-purple-100 text-purple-800' :
+                                                act.category === 'shopping' ? 'bg-pink-100 text-pink-800' :
+                                                  act.category === 'entertainment' ? 'bg-indigo-100 text-indigo-800' :
+                                                    'bg-gray-100 text-gray-800'
+                                        }`}>
                                         {act.category}
                                       </span>
                                     </div>

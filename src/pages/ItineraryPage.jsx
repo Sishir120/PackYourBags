@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { ChevronLeft, MapPin, Calendar, Users, Mail, CheckCircle, ExternalLink } from 'lucide-react';
-import { destinationApi } from '../utils/api';
+import { destinationApi } from '../utils/destinationApi';
 import { requestQuote } from '../utils/requestQuote';
 import Loading from '../components/Loading';
 
@@ -48,17 +48,17 @@ const ItineraryPage = () => {
   const checkAffiliateOptions = (dest) => {
     // This is a simplified implementation - in a real app, you would check actual affiliate APIs
     // For now, we'll simulate based on destination name and location
-    
+
     // Example logic for determining affiliate options
     const airbnbDestinations = ['Paris', 'New York', 'London', 'Tokyo', 'Barcelona', 'Rome', 'Amsterdam', 'Berlin'];
     const tripAdvisorDestinations = ['Paris', 'New York', 'London', 'Tokyo', 'Barcelona', 'Rome', 'Amsterdam', 'Berlin', 'Sydney', 'Dubai', 'Bangkok'];
-    
+
     const destName = dest.name || '';
     const destCountry = dest.country || '';
-    
+
     // Check if destination has Airbnb options
-    if (airbnbDestinations.some(city => 
-      destName.toLowerCase().includes(city.toLowerCase()) || 
+    if (airbnbDestinations.some(city =>
+      destName.toLowerCase().includes(city.toLowerCase()) ||
       destCountry.toLowerCase().includes(city.toLowerCase()))) {
       setAffiliateOption({
         type: 'airbnb',
@@ -68,10 +68,10 @@ const ItineraryPage = () => {
       });
       return;
     }
-    
+
     // Check if destination has TripAdvisor options
-    if (tripAdvisorDestinations.some(city => 
-      destName.toLowerCase().includes(city.toLowerCase()) || 
+    if (tripAdvisorDestinations.some(city =>
+      destName.toLowerCase().includes(city.toLowerCase()) ||
       destCountry.toLowerCase().includes(city.toLowerCase()))) {
       setAffiliateOption({
         type: 'tripadvisor',
@@ -81,7 +81,7 @@ const ItineraryPage = () => {
       });
       return;
     }
-    
+
     // No affiliate options available
     setAffiliateOption({
       type: 'none',
@@ -100,13 +100,13 @@ const ItineraryPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    
+
     // Validate form data
     if (!formData.travelDates || !formData.email) {
       alert('Please fill in all required fields');
       return;
     }
-    
+
     // Submit quote request
     try {
       const requestData = {
@@ -116,19 +116,19 @@ const ItineraryPage = () => {
         numberOfTravelers: formData.numberOfTravelers,
         email: formData.email
       };
-      
+
       // Call the requestQuote utility function
       const response = await requestQuote(requestData);
-      
+
       setBookingSuccess(true);
-      
+
       // Reset form after successful submission
       setFormData({
         travelDates: '',
         numberOfTravelers: 1,
         email: ''
       });
-      
+
       // Close modal after 3 seconds
       setTimeout(() => {
         setIsBookingModalOpen(false);
@@ -152,7 +152,7 @@ const ItineraryPage = () => {
   };
 
   if (loading) return <Loading />;
-  
+
   if (error) {
     return (
       <div className="min-h-screen flex items-center justify-center">
@@ -225,8 +225,8 @@ const ItineraryPage = () => {
       <div className="container mx-auto px-4">
         {/* Back Button */}
         <div className="mb-6">
-          <Link 
-            to="/" 
+          <Link
+            to="/"
             className="inline-flex items-center text-blue-600 hover:text-blue-800 transition-colors"
           >
             <ChevronLeft className="w-5 h-5 mr-1" />

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { Bell, TrendingDown, DollarSign, Clock, Search, Filter, RefreshCw, AlertTriangle, CheckCircle, Sparkles, Lightbulb, Zap, AlertCircle, BarChart2, Share2, Heart } from 'lucide-react'
-import { destinationApi } from '../utils/api'
+import { destinationApi } from '../utils/destinationApi'
 import CurrencyTicker from '../components/CurrencyTicker'
 import SEO from '../components/SEO'
 

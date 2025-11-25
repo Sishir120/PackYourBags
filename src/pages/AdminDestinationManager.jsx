@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { destinationApi } from '../utils/api';
+import { destinationApi } from '../utils/destinationApi';
 
 const AdminDestinationManager = () => {
   const [destinations, setDestinations] = useState([]);
@@ -48,7 +48,7 @@ const AdminDestinationManager = () => {
     setLoading(true);
     setError('');
     setMessage('');
-    
+
     try {
       // Call the backend API to update images
       const response = await fetch(`/api/admin/destinations/${selectedDestination.destination_id}/images`, {
@@ -60,19 +60,19 @@ const AdminDestinationManager = () => {
           images: newImages.filter(img => img.trim() !== '')
         })
       });
-      
+
       const result = await response.json();
-      
+
       if (result.success) {
         setMessage('Images updated successfully!');
         // Update the local state
-        const updatedDestinations = destinations.map(dest => 
-          dest.destination_id === selectedDestination.destination_id 
-            ? {...dest, images: result.images} 
+        const updatedDestinations = destinations.map(dest =>
+          dest.destination_id === selectedDestination.destination_id
+            ? { ...dest, images: result.images }
             : dest
         );
         setDestinations(updatedDestinations);
-        setSelectedDestination({...selectedDestination, images: result.images});
+        setSelectedDestination({ ...selectedDestination, images: result.images });
       } else {
         setError(result.error || 'Failed to update images');
       }
@@ -88,17 +88,17 @@ const AdminDestinationManager = () => {
     setLoading(true);
     setError('');
     setMessage('');
-    
+
     try {
       // Prepare highlights and local_tips arrays
-      const highlights = newDestination.highlights 
+      const highlights = newDestination.highlights
         ? newDestination.highlights.split(',').map(item => item.trim()).filter(item => item)
         : [];
-      
+
       const local_tips = newDestination.local_tips
         ? newDestination.local_tips.split(',').map(item => item.trim()).filter(item => item)
         : [];
-      
+
       // Prepare data for API
       const destinationData = {
         name: newDestination.name,
@@ -114,7 +114,7 @@ const AdminDestinationManager = () => {
         longitude: newDestination.longitude,
         images: ['', '', '', ''] // Empty images initially
       };
-      
+
       // Call the backend API to add a new destination
       const response = await fetch('/api/admin/destinations', {
         method: 'POST',
@@ -123,14 +123,14 @@ const AdminDestinationManager = () => {
         },
         body: JSON.stringify(destinationData)
       });
-      
+
       const result = await response.json();
-      
+
       if (result.success) {
         setMessage('Destination added successfully!');
         // Refresh the destinations list
         fetchDestinations();
-        
+
         // Reset form
         setNewDestination({
           name: '',
@@ -172,25 +172,25 @@ const AdminDestinationManager = () => {
     <div className="min-h-screen bg-gray-50 py-8">
       <div className="container mx-auto px-4">
         <h1 className="text-3xl font-bold text-gray-800 mb-8">Destination Management</h1>
-        
+
         {message && (
           <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded mb-6">
             {message}
           </div>
         )}
-        
+
         {error && (
           <div className="bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded mb-6">
             {error}
           </div>
         )}
-        
+
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           {/* Update Existing Destination Images */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Update Destination Images</h2>
             <p className="text-gray-600 mb-4">Select a destination to update its images</p>
-            
+
             <div className="mb-4">
               <label className="block text-sm font-medium text-gray-700 mb-2">
                 Select Destination
@@ -221,7 +221,7 @@ const AdminDestinationManager = () => {
                 ))}
               </select>
             </div>
-            
+
             {selectedDestination && (
               <form onSubmit={handleUpdateImages} className="space-y-4">
                 <div>
@@ -231,9 +231,9 @@ const AdminDestinationManager = () => {
                   <div className="grid grid-cols-2 gap-4 mb-4">
                     {selectedDestination.images?.map((img, index) => (
                       <div key={index} className="border rounded-lg overflow-hidden">
-                        <img 
-                          src={img} 
-                          alt={`Destination ${index + 1}`} 
+                        <img
+                          src={img}
+                          alt={`Destination ${index + 1}`}
                           className="w-full h-32 object-cover"
                           onError={(e) => {
                             e.target.src = 'https://images.unsplash.com/photo-1473496169904-6586040d009a?w=1200&q=80';
@@ -243,7 +243,7 @@ const AdminDestinationManager = () => {
                     ))}
                   </div>
                 </div>
-                
+
                 <div>
                   <h3 className="font-medium text-gray-700 mb-2">Update Images</h3>
                   {newImages.map((image, index) => (
@@ -261,7 +261,7 @@ const AdminDestinationManager = () => {
                     </div>
                   ))}
                 </div>
-                
+
                 <button
                   type="submit"
                   disabled={loading}
@@ -272,12 +272,12 @@ const AdminDestinationManager = () => {
               </form>
             )}
           </div>
-          
+
           {/* Add New Destination */}
           <div className="bg-white rounded-lg shadow-md p-6">
             <h2 className="text-xl font-semibold text-gray-800 mb-4">Add New Destination</h2>
             <p className="text-gray-600 mb-4">Add a new destination to the database</p>
-            
+
             <form onSubmit={handleAddDestination} className="space-y-4">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
@@ -287,12 +287,12 @@ const AdminDestinationManager = () => {
                   <input
                     type="text"
                     value={newDestination.name}
-                    onChange={(e) => setNewDestination({...newDestination, name: e.target.value})}
+                    onChange={(e) => setNewDestination({ ...newDestination, name: e.target.value })}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Country *
@@ -300,13 +300,13 @@ const AdminDestinationManager = () => {
                   <input
                     type="text"
                     value={newDestination.country}
-                    onChange={(e) => setNewDestination({...newDestination, country: e.target.value})}
+                    onChange={(e) => setNewDestination({ ...newDestination, country: e.target.value })}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -314,7 +314,7 @@ const AdminDestinationManager = () => {
                   </label>
                   <select
                     value={newDestination.continent}
-                    onChange={(e) => setNewDestination({...newDestination, continent: e.target.value})}
+                    onChange={(e) => setNewDestination({ ...newDestination, continent: e.target.value })}
                     required
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   >
@@ -328,14 +328,14 @@ const AdminDestinationManager = () => {
                     <option value="Antarctica">Antarctica</option>
                   </select>
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Budget Tier
                   </label>
                   <select
                     value={newDestination.budget_tier}
-                    onChange={(e) => setNewDestination({...newDestination, budget_tier: e.target.value})}
+                    onChange={(e) => setNewDestination({ ...newDestination, budget_tier: e.target.value })}
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   >
                     <option value="budget-friendly">Budget Friendly</option>
@@ -344,7 +344,7 @@ const AdminDestinationManager = () => {
                   </select>
                 </div>
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Highlights (comma-separated)
@@ -352,38 +352,38 @@ const AdminDestinationManager = () => {
                 <input
                   type="text"
                   value={newDestination.highlights}
-                  onChange={(e) => setNewDestination({...newDestination, highlights: e.target.value})}
+                  onChange={(e) => setNewDestination({ ...newDestination, highlights: e.target.value })}
                   placeholder="e.g., beaches, culture, nightlife"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Quick Fact
                 </label>
                 <textarea
                   value={newDestination.quick_fact}
-                  onChange={(e) => setNewDestination({...newDestination, quick_fact: e.target.value})}
+                  onChange={(e) => setNewDestination({ ...newDestination, quick_fact: e.target.value })}
                   placeholder="Interesting fact about this destination"
                   rows="2"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Description
                 </label>
                 <textarea
                   value={newDestination.description}
-                  onChange={(e) => setNewDestination({...newDestination, description: e.target.value})}
+                  onChange={(e) => setNewDestination({ ...newDestination, description: e.target.value })}
                   placeholder="Detailed description of the destination"
                   rows="3"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
-              
+
               <div>
                 <label className="block text-sm font-medium text-gray-700 mb-1">
                   Local Tips (comma-separated)
@@ -391,12 +391,12 @@ const AdminDestinationManager = () => {
                 <input
                   type="text"
                   value={newDestination.local_tips}
-                  onChange={(e) => setNewDestination({...newDestination, local_tips: e.target.value})}
+                  onChange={(e) => setNewDestination({ ...newDestination, local_tips: e.target.value })}
                   placeholder="e.g., best local food, cultural tips"
                   className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                 />
               </div>
-              
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
@@ -405,12 +405,12 @@ const AdminDestinationManager = () => {
                   <input
                     type="text"
                     value={newDestination.best_season}
-                    onChange={(e) => setNewDestination({...newDestination, best_season: e.target.value})}
+                    onChange={(e) => setNewDestination({ ...newDestination, best_season: e.target.value })}
                     placeholder="e.g., March to May"
                     className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                   />
                 </div>
-                
+
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">
                     Coordinates
@@ -419,21 +419,21 @@ const AdminDestinationManager = () => {
                     <input
                       type="text"
                       value={newDestination.latitude}
-                      onChange={(e) => setNewDestination({...newDestination, latitude: e.target.value})}
+                      onChange={(e) => setNewDestination({ ...newDestination, latitude: e.target.value })}
                       placeholder="Latitude"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                     <input
                       type="text"
                       value={newDestination.longitude}
-                      onChange={(e) => setNewDestination({...newDestination, longitude: e.target.value})}
+                      onChange={(e) => setNewDestination({ ...newDestination, longitude: e.target.value })}
                       placeholder="Longitude"
                       className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
                     />
                   </div>
                 </div>
               </div>
-              
+
               <button
                 type="submit"
                 disabled={loading}
@@ -444,7 +444,7 @@ const AdminDestinationManager = () => {
             </form>
           </div>
         </div>
-        
+
         {/* Top Destinations by Continent */}
         <div className="mt-12 bg-white rounded-lg shadow-md p-6">
           <h2 className="text-xl font-semibold text-gray-800 mb-4">Current Destinations by Continent</h2>
@@ -467,7 +467,7 @@ const AdminDestinationManager = () => {
             ))}
           </div>
         </div>
-        
+
         {/* Instructions */}
         <div className="mt-8 bg-blue-50 border border-blue-200 rounded-lg p-6">
           <h3 className="font-bold text-lg text-blue-800 mb-2">How to Use This Tool</h3>

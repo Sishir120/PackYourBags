@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, MapPin, Star } from 'lucide-react';
-import { getFavorites } from '../utils/api';
+import { getFavorites } from '../utils/destinationApi';
 import DestinationCard from '../components/DestinationCard';
 import Loading from '../components/Loading';
 
@@ -42,7 +42,7 @@ const FavoritesPage = ({ user }) => {
       <div className="container mx-auto px-4 py-16">
         <div className="text-center">
           <div className="text-red-500 text-xl mb-4">{error}</div>
-          <button 
+          <button
             onClick={fetchFavorites}
             className="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700"
           >
@@ -65,8 +65,8 @@ const FavoritesPage = ({ user }) => {
           <Heart className="w-16 h-16 text-gray-300 mx-auto mb-4" />
           <h2 className="text-2xl font-semibold text-gray-900 mb-2">No favorites yet</h2>
           <p className="text-gray-600 mb-6">Start exploring destinations and pin your favorites!</p>
-          <Link 
-            to="/destinations" 
+          <Link
+            to="/destinations"
             className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
           >
             Discover Destinations
@@ -75,9 +75,9 @@ const FavoritesPage = ({ user }) => {
       ) : (
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {favorites.map((fav) => (
-            <DestinationCard 
-              key={fav.destination.destination_id} 
-              destination={fav.destination} 
+            <DestinationCard
+              key={fav.destination.destination_id}
+              destination={fav.destination}
               user={user}
             />
           ))}
