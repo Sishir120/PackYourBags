@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, MapPin, Star } from 'lucide-react';
-import { getFavorites } from '../utils/destinationApi';
+import { getUserFavorites } from '../utils/destinationApi';
 import DestinationCard from '../components/DestinationCard';
 import Loading from '../components/Loading';
 
@@ -19,7 +19,7 @@ const FavoritesPage = ({ user }) => {
   const fetchFavorites = async () => {
     try {
       setLoading(true);
-      const response = await getFavorites(user.id);
+      const response = await getUserFavorites(user.id);
       if (response.success) {
         setFavorites(response.favorites);
       } else {

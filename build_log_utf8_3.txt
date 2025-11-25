@@ -1,0 +1,138 @@
+﻿
+> packyourbags-frontend@1.0.0 build
+> vite build
+
+[36mvite v7.2.4 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 2743 modules transformed.
+node.exe : 
+[31mΓ£ù[39m Build 
+failed in 10.76s
+At C:\Program Files\no
+dejs\npm.ps1:29 char:3
++   & $NODE_EXE 
+$NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: ([31mΓ£ù[   
+ 39m Build failed     
+in 10.76s:String)     
+[], RemoteExcept    
+ion
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+[31merror during 
+build:
+[31msrc/components/Au
+thModal.jsx (3:9): 
+"auth" is not 
+exported by "src/utils
+/supabase.js", 
+imported by "src/compo
+nents/AuthModal.jsx".
+[31m
+file: [36mC:/Users/si
+shi/OneDrive/Documents
+/python/PackYourBags/f
+rontend_temp/src/compo
+nents/AuthModal.jsx:3:
+9[31m
+[33m
+1: import React, { 
+useState } from 
+'react'
+2: import { X, Mail, 
+Lock, User } from 
+'lucide-react'
+3: import { auth } 
+from 
+'../utils/supabase'
+            ^
+4: 
+5: const AuthModal = 
+({ isOpen, onClose, 
+onAuthSuccess }) => {
+[31m
+    at getRollupError 
+(file:///C:/Users/sish
+i/OneDrive/Documents/p
+ython/PackYourBags/fro
+ntend_temp/node_module
+s/rollup/dist/es/share
+d/parseAst.js:401:41)
+    at error (file:///
+C:/Users/sishi/OneDriv
+e/Documents/python/Pac
+kYourBags/frontend_tem
+p/node_modules/rollup/
+dist/es/shared/parseAs
+t.js:397:42)
+    at Module.error (f
+ile:///C:/Users/sishi/
+OneDrive/Documents/pyt
+hon/PackYourBags/front
+end_temp/node_modules/
+rollup/dist/es/shared/
+node-entry.js:16956:16
+)
+    at 
+Module.traceVariable (
+file:///C:/Users/sishi
+/OneDrive/Documents/py
+thon/PackYourBags/fron
+tend_temp/node_modules
+/rollup/dist/es/shared
+/node-entry.js:17412:2
+9)
+    at ModuleScope.fin
+dVariable (file:///C:/
+Users/sishi/OneDrive/D
+ocuments/python/PackYo
+urBags/frontend_temp/n
+ode_modules/rollup/dis
+t/es/shared/node-entry
+.js:15076:39)
+    at ReturnValueScop
+e.findVariable (file:/
+//C:/Users/sishi/OneDr
+ive/Documents/python/P
+ackYourBags/frontend_t
+emp/node_modules/rollu
+p/dist/es/shared/node-
+entry.js:5649:38)
+    at FunctionBodySco
+pe.findVariable (file:
+///C:/Users/sishi/OneD
+rive/Documents/python/
+PackYourBags/frontend_
+temp/node_modules/roll
+up/dist/es/shared/node
+-entry.js:5649:38)
+    at ReturnValueScop
+e.findVariable (file:/
+//C:/Users/sishi/OneDr
+ive/Documents/python/P
+ackYourBags/frontend_t
+emp/node_modules/rollu
+p/dist/es/shared/node-
+entry.js:5649:38)
+    at FunctionBodySco
+pe.findVariable (file:
+///C:/Users/sishi/OneD
+rive/Documents/python/
+PackYourBags/frontend_
+temp/node_modules/roll
+up/dist/es/shared/node
+-entry.js:5649:38)
+    at BlockScope.find
+Variable (file:///C:/U
+sers/sishi/OneDrive/Do
+cuments/python/PackYou
+rBags/frontend_temp/no
+de_modules/rollup/dist
+/es/shared/node-entry.
+js:5649:38)[39m

@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../config';
-import { fetchAPI } from './api';
+import { fetchAPI } from './helpers';
 
 /**
  * Start the automation service for booking
@@ -33,7 +33,7 @@ export async function startAutomationService(automationData) {
       method: 'POST',
       body: JSON.stringify(automationData)
     });
-    
+
     return response;
   } catch (error) {
     console.error('Error starting automation service:', error);

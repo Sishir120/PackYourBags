@@ -1,5 +1,5 @@
 import { API_BASE_URL } from '../config';
-import { fetchAPI } from './api';
+import { fetchAPI } from './helpers';
 
 /**
  * Request a travel quote for a specific destination
@@ -33,7 +33,7 @@ export async function requestQuote(quoteData) {
       method: 'POST',
       body: JSON.stringify(quoteData)
     });
-    
+
     return response;
   } catch (error) {
     console.error('Error requesting quote:', error);

@@ -1,0 +1,69 @@
+﻿
+> packyourbags-frontend@1.0.0 build
+> vite build
+
+[36mvite v7.2.4 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32mΓ£ô[39m 2340 modules transformed.
+node.exe : 
+[31mΓ£ù[39m Build 
+failed in 7.89s
+At C:\Program Files\no
+dejs\npm.ps1:29 char:3
++   & $NODE_EXE 
+$NPM_CLI_JS $args
++   ~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~
+    + CategoryInfo    
+          : NotSpeci  
+  fied: ([31mΓ£ù[   
+ 39m Build failed     
+in 7.89s:String)     
+[], RemoteExcepti    
+on
+    + FullyQualifiedE 
+   rrorId : NativeCo  
+  mmandError
+ 
+[31merror during 
+build:
+[31mCould not 
+resolve "./api" from "
+src/utils/automationSe
+rvice.js"[31m
+file: [36mC:/Users/si
+shi/OneDrive/Documents
+/python/PackYourBags/f
+rontend_temp/src/utils
+/automationService.js
+[31m
+    at getRollupError 
+(file:///C:/Users/sish
+i/OneDrive/Documents/p
+ython/PackYourBags/fro
+ntend_temp/node_module
+s/rollup/dist/es/share
+d/parseAst.js:401:41)
+    at error (file:///
+C:/Users/sishi/OneDriv
+e/Documents/python/Pac
+kYourBags/frontend_tem
+p/node_modules/rollup/
+dist/es/shared/parseAs
+t.js:397:42)
+    at ModuleLoader.ha
+ndleInvalidResolvedId 
+(file:///C:/Users/sish
+i/OneDrive/Documents/p
+ython/PackYourBags/fro
+ntend_temp/node_module
+s/rollup/dist/es/share
+d/node-entry.js:21590:
+24)
+    at file:///C:/User
+s/sishi/OneDrive/Docum
+ents/python/PackYourBa
+gs/frontend_temp/node_
+modules/rollup/dist/es
+/shared/node-entry.js:
+21550:26[39m

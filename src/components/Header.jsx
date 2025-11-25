@@ -16,7 +16,7 @@ import {
   Gamepad2,
 } from 'lucide-react';
 import { supabase } from '../utils/supabase';
-import { getFavorites } from '../utils/destinationApi';
+import { getUserFavorites } from '../utils/destinationApi';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const Header = ({ user, onSignIn, onSignOut }) => {
@@ -65,7 +65,7 @@ const Header = ({ user, onSignIn, onSignOut }) => {
   const fetchFavoritesCount = async () => {
     if (!user?.id) return;
     try {
-      const response = await getFavorites(user.id);
+      const response = await getUserFavorites(user.id);
       if (response.success) {
         setFavoritesCount(response.count || 0);
       }
