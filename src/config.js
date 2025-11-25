@@ -1,9 +1,6 @@
-// API Configuration - Works with or without proxy
-const isDevelopment = import.meta.env.DEV
-const API_URL = import.meta.env.VITE_API_BASE_URL || 
-                (isDevelopment ? 'http://localhost:5000/api' : '/api')
-
-export const API_BASE_URL = API_URL
+// API Configuration
+// For Vercel deployment, API routes are at /api/*
+export const API_BASE_URL = '/api'
 
 // App Configuration
 export const APP_CONFIG = {
