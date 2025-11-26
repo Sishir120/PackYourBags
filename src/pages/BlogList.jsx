@@ -29,7 +29,7 @@ const BlogList = () => {
         page: currentPage,
         perPage: 12
       })
-      
+
       if (data.success) {
         setBlogs(data.blogs)
         setPagination(data.pagination)
@@ -70,10 +70,10 @@ const BlogList = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <SEO 
+      <SEO
         title="Travel Blog & Guides"
         description="Discover travel tips, destination guides, and adventure inspiration from PackYourBags blog."
-        keywords="travel blog, destination guides, travel tips, adventure stories"
+        keywords={["travel blog", "destination guides", "travel tips", "adventure stories"]}
         url="/blog"
       />
 
@@ -92,11 +92,10 @@ const BlogList = () => {
         <div className="flex flex-wrap gap-3 mb-10 justify-center">
           <button
             onClick={() => handleCategoryChange('')}
-            className={`px-6 py-2 rounded-full font-medium transition-all ${
-              !selectedCategory
+            className={`px-6 py-2 rounded-full font-medium transition-all ${!selectedCategory
                 ? 'bg-green-600 text-white shadow-lg'
                 : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
-            }`}
+              }`}
           >
             All Posts
           </button>
@@ -104,11 +103,10 @@ const BlogList = () => {
             <button
               key={cat.name}
               onClick={() => handleCategoryChange(cat.name)}
-              className={`px-6 py-2 rounded-full font-medium transition-all ${
-                selectedCategory === cat.name
+              className={`px-6 py-2 rounded-full font-medium transition-all ${selectedCategory === cat.name
                   ? 'bg-green-600 text-white shadow-lg'
                   : 'bg-white text-gray-700 hover:bg-gray-100 shadow'
-              }`}
+                }`}
             >
               {cat.name} ({cat.count})
             </button>
@@ -149,7 +147,7 @@ const BlogList = () => {
             >
               Previous
             </button>
-            
+
             {[...Array(pagination.pages)].map((_, i) => {
               const page = i + 1
               if (
@@ -161,11 +159,10 @@ const BlogList = () => {
                   <button
                     key={page}
                     onClick={() => handlePageChange(page)}
-                    className={`px-4 py-2 rounded-lg ${
-                      currentPage === page
+                    className={`px-4 py-2 rounded-lg ${currentPage === page
                         ? 'bg-green-600 text-white'
                         : 'bg-white hover:bg-gray-50'
-                    } shadow`}
+                      } shadow`}
                   >
                     {page}
                   </button>

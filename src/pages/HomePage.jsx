@@ -17,7 +17,7 @@ const HomePage = ({ user }) => {
             <SEO
                 title="AI Travel Planner & Itinerary Organizer 2025"
                 description="Plan your perfect trip with PackYourBags. AI-powered itineraries, hidden gems, and the best travel deals for 2025."
-                keywords="AI travel planner, custom itineraries, trip organizer, 2025 travel guide, hidden gems, sustainable travel"
+                keywords={["AI travel planner", "custom itineraries", "trip organizer", "2025 travel guide", "hidden gems", "sustainable travel"]}
             />
             <StructuredData data={OrganizationSchema} />
             <StructuredData data={WebSiteSchema} />

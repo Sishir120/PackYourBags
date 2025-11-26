@@ -202,7 +202,7 @@ const PriceTrackerPage = ({ user }) => {
       <SEO
         title="Flight Price Tracker & Deal Alerts"
         description="Track flight prices, get deal alerts, and save money on your next trip. Real-time currency exchange rates included."
-        keywords="cheap flights, flight price tracker, travel deals, price drop alerts, budget travel, currency exchange"
+        keywords={["cheap flights", "flight price tracker", "travel deals", "price drop alerts", "budget travel", "currency exchange"]}
       />
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
 

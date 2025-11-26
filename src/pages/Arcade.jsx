@@ -100,7 +100,7 @@ const Arcade = () => {
             <SEO
                 title="Travel Arcade - Play & Win"
                 description="Play travel-themed games like Marble Race, Geography Quiz, and more. Win rewards and challenge friends in the PackYourBags Arcade."
-                keywords="travel games, geography quiz, marble race, play to earn travel rewards, travel trivia"
+                keywords={["travel games", "geography quiz", "marble race", "play to earn travel rewards", "travel trivia"]}
             />
 
             <div className="min-h-screen bg-slate-950 pt-24 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">

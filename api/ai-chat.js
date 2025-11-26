@@ -20,12 +20,12 @@ export default async function handler(req, res) {
     }
 
     try {
-        const { message } = req.body;
+        const { messages } = req.body;
 
-        if (!message || typeof message !== 'string') {
+        if (!messages || !Array.isArray(messages)) {
             return res.status(400).json({
                 success: false,
-                error: 'Message is required'
+                error: 'Messages array is required'
             });
         }
 
@@ -33,9 +33,10 @@ export default async function handler(req, res) {
         const apiKey = process.env.OPENROUTER_API_KEY;
 
         if (!apiKey) {
+            console.error('OPENROUTER_API_KEY is missing');
             return res.status(500).json({
                 success: false,
-                error: 'AI service not configured'
+                error: 'AI service configuration error'
             });
         }
 
@@ -49,16 +50,7 @@ export default async function handler(req, res) {
             },
             body: JSON.stringify({
                 model: 'deepseek/deepseek-chat-free',
-                messages: [
-                    {
-                        role: 'system',
-                        content: 'You are TravelBot, a helpful travel assistant for PackYourBags. Help users plan trips, suggest destinations, provide travel tips, and answer travel-related questions. Be friendly, concise, and informative.'
-                    },
-                    {
-                        role: 'user',
-                        content: message
-                    }
-                ],
+                messages: messages,
                 max_tokens: 500,
                 temperature: 0.7
             })

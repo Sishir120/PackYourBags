@@ -14,7 +14,7 @@ const SEO = ({ title, description, keywords, image, url }) => {
       {/* Standard Metadata */}
       <title>{fullTitle}</title>
       <meta name="description" content={metaDescription} />
-      <meta name="keywords" content={metaKeywords} />
+      <meta name="keywords" content={Array.isArray(metaKeywords) ? metaKeywords.join(', ') : metaKeywords} />
       <link rel="canonical" href={metaUrl} />
 
       {/* Open Graph / Facebook */}

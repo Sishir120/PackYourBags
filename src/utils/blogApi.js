@@ -55,7 +55,7 @@ export const blogApi = {
     const blog = mockBlogs.find(b => b.slug === slug)
     if (!blog) throw new Error('Blog not found')
 
-    return { data: blog }
+    return { success: true, blog }
   },
 
   /**

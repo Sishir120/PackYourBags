@@ -133,7 +133,7 @@ const Destinations = ({ user }) => {
         <SEO
           title="Explore Top Destinations 2025"
           description="Discover the best places to visit in 2025. From hidden gems to popular hotspots, plan your next adventure with our AI travel guide."
-          keywords="best places to visit 2025, hidden travel gems, sustainable tourism, eco-friendly trips, travel destinations"
+          keywords={["best places to visit 2025", "hidden travel gems", "sustainable tourism", "eco-friendly trips", "travel destinations"]}
         />
         {/* Hero */}
         <div className="bg-slate-800 border-b border-slate-700 py-16">

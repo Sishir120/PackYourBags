@@ -13,7 +13,6 @@ const AIChatModal = ({ isOpen, onClose, destination = null }) => {
   const [showSubscriptionModal, setShowSubscriptionModal] = useState(false)
   const messagesEndRef = useRef(null)
   const textareaRef = useRef(null)
-  const sessionQuestions = useRef(0)
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -96,26 +95,6 @@ const AIChatModal = ({ isOpen, onClose, destination = null }) => {
     }
   }
 
-  const generateMockResponse = (input, context) => {
-    const lowerInput = input.toLowerCase()
-
-    if (lowerInput.includes('hello') || lowerInput.includes('hi')) {
-      return "Hello! I'm your AI travel assistant. How can I help you plan your next adventure?"
-    }
-
-    if (lowerInput.includes('paris') || (context.destination && context.destination.toLowerCase().includes('paris'))) {
-      return "Paris is wonderful! You should visit the Eiffel Tower, the Louvre, and enjoy a walk along the Seine. Don't forget to try some croissants!"
-    }
-
-    if (lowerInput.includes('tokyo') || (context.destination && context.destination.toLowerCase().includes('tokyo'))) {
-      return "Tokyo is amazing! Check out Shibuya Crossing, the Senso-ji Temple, and the Tsukiji Outer Market. The food is incredible!"
-    }
-
-    if (lowerInput.includes('budget') || lowerInput.includes('cost')) {
-      // Allow the API to handle this
-    }
-  }
-
   const handleKeyPress = (e) => {
     if (e.key === 'Enter' && !e.shiftKey) {
       e.preventDefault()
@@ -137,44 +116,28 @@ const AIChatModal = ({ isOpen, onClose, destination = null }) => {
     setIsLoading(true)
 
     try {
-      const apiKey = import.meta.env.VITE_OPENROUTER_API_KEY
+      // Prepare messages for the API
+      const apiMessages = [
+        {
+          role: 'system',
+          content: destination
+            ? `You are TravelBot, an expert AI travel assistant for ${destination.name}. You are helpful, enthusiastic, and knowledgeable about tourism, local culture, food, and travel tips for ${destination.name}. Keep answers concise and engaging.`
+            : "You are TravelBot, an expert AI travel assistant. You are helpful, enthusiastic, and knowledgeable about tourism, destinations, itineraries, and travel tips. Keep answers concise and engaging."
+        },
+        ...messages.filter(m => m.role !== 'system').map(m => ({
+          role: m.role,
+          content: m.content
+        })),
+        { role: "user", content: userMessage.content }
+      ]
 
-      if (!apiKey) {
-        setTimeout(() => {
-          const mockResponse = generateMockResponse(userMessage.content, { destination }) || "I'm having trouble connecting to my brain right now. Please try again later!"
-          setMessages(prev => [...prev, {
-            role: 'assistant',
-            content: mockResponse,
-            timestamp: new Date()
-          }])
-          setIsLoading(false)
-        }, 1000)
-        return
-      }
-
-      const response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      const response = await fetch(`${API_BASE_URL}/ai-chat`, {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${apiKey}`,
-          "HTTP-Referer": window.location.origin,
-          "X-Title": "PackYourBags",
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          "model": "openai/gpt-3.5-turbo",
-          "messages": [
-            {
-              "role": "system",
-              "content": destination
-                ? `You are TravelBot, an expert AI travel assistant for ${destination.name}. You are helpful, enthusiastic, and knowledgeable about tourism, local culture, food, and travel tips for ${destination.name}. Keep answers concise and engaging.`
-                : "You are TravelBot, an expert AI travel assistant. You are helpful, enthusiastic, and knowledgeable about tourism, destinations, itineraries, and travel tips. Keep answers concise and engaging."
-            },
-            ...messages.filter(m => m.role !== 'system').map(m => ({
-              role: m.role,
-              content: m.content
-            })),
-            { role: "user", content: userMessage.content }
-          ]
+          messages: apiMessages
         })
       });
 
@@ -183,7 +146,12 @@ const AIChatModal = ({ isOpen, onClose, destination = null }) => {
       }
 
       const data = await response.json()
-      const botContent = data.choices[0]?.message?.content || "I couldn't generate a response."
+
+      if (!data.success) {
+        throw new Error(data.error || "Failed to get response")
+      }
+
+      const botContent = data.response || "I couldn't generate a response."
 
       setMessages(prev => [...prev, {
         role: 'assistant',
@@ -199,7 +167,7 @@ const AIChatModal = ({ isOpen, onClose, destination = null }) => {
       console.error("Chat error:", error)
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: "Sorry, I encountered an error while thinking. Please try again.",
+        content: "Sorry, I encountered an error while thinking. Please try again later.",
         timestamp: new Date()
       }])
     } finally {
