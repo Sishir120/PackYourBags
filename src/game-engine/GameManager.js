@@ -172,7 +172,8 @@ export class GameManager {
         if (this.state !== 'RACING') return;
 
         const currentTime = Date.now();
-        const STUCK_THRESHOLD = 2000; // 2 seconds (reduced from 5)
+        const NUDGE_THRESHOLD = 1000; // 1 second
+        const RESPAWN_THRESHOLD = 3000; // 3 seconds
         const POSITION_TOLERANCE = 5; // pixels
 
         this.marbles.forEach(m => {
@@ -194,8 +195,17 @@ export class GameManager {
             if (distance < POSITION_TOLERANCE) {
                 tracking.stuckTime += (currentTime - tracking.lastCheckTime);
 
+                // Nudge if stuck for a bit
+                if (tracking.stuckTime >= NUDGE_THRESHOLD && tracking.stuckTime < RESPAWN_THRESHOLD) {
+                    // Apply random force to unstuck
+                    Matter.Body.applyForce(m.body, m.body.position, {
+                        x: (Math.random() - 0.5) * 0.005,
+                        y: -0.005 // Upward pop
+                    });
+                }
+
                 // Respawn if stuck for too long
-                if (tracking.stuckTime >= STUCK_THRESHOLD) {
+                if (tracking.stuckTime >= RESPAWN_THRESHOLD) {
                     this.respawnMarble(m);
                     tracking.stuckTime = 0;
                 }
@@ -212,7 +222,7 @@ export class GameManager {
     respawnMarble(marble) {
         // Respawn marble slightly ahead of its current position
         const currentY = marble.position.y;
-        const newY = currentY + 100; // Drop 100px ahead
+        const newY = currentY + 50; // Drop 50px ahead (reduced from 100 to avoid skipping too much)
         const newX = 200 + (Math.random() - 0.5) * 100; // Random X near center
 
         // Set new position
@@ -228,7 +238,7 @@ export class GameManager {
         // Give a small push
         Matter.Body.applyForce(marble.body, marble.body.position, {
             x: (Math.random() - 0.5) * 0.001,
-            y: 0.003
+            y: 0.005 // Stronger downward push
         });
 
         // Update tracking

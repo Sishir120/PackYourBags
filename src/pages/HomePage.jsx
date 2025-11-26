@@ -12,7 +12,7 @@ import CurrencyTicker from '../components/CurrencyTicker';
 
 const HomePage = ({ user }) => {
     return (
-        <div className="bg-transparent">
+        <div className="bg-transparent overflow-hidden">
             <SEO
                 title="AI Travel Planner & Itinerary Organizer 2025"
                 description="Plan your perfect trip with PackYourBags. AI-powered itineraries, hidden gems, and the best travel deals for 2025."

@@ -580,5 +580,197 @@ export const mockDestinations = [
         "review_count": 7800,
         "popularity_score": 96,
         "created_at": "2023-02-05T00:00:00Z"
+    },
+    {
+        "destination_id": "dest_new_001",
+        "name": "Great Wall of China",
+        "slug": "great-wall-china",
+        "country": "China",
+        "continent": "Asia",
+        "image_url": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&q=80",
+        "blog": "## The Dragon's Backbone: Great Wall of China\n\nThe Great Wall of China is one of the most impressive architectural feats in history. Stretching over 13,000 miles, it winds through mountains, deserts, and plains. Built over centuries by various dynasties, it stands as a symbol of China's strength and resilience.",
+        "highlights": [
+            "Mutianyu Section",
+            "Badaling",
+            "Jinshanling Hiking",
+            "Simatai Night Tour",
+            "Watchtowers"
+        ],
+        "quick_fact": "The Great Wall is not a single continuous wall but a collection of walls and fortifications built by different dynasties.",
+        "coordinates": {
+            "lat": 40.4319,
+            "lng": 116.5704
+        },
+        "best_season": "Spring (April-May) and Autumn (September-October)",
+        "budget_tier": "mid-range",
+        "local_tips": [
+            "Visit Mutianyu for a less crowded experience than Badaling",
+            "Take the toboggan ride down for a fun descent",
+            "Bring plenty of water and comfortable hiking shoes"
+        ],
+        "description": "Experience the majesty of the Great Wall of China, a UNESCO World Heritage site and one of the New Seven Wonders of the World. Walk along the ancient stones, marvel at the panoramic views, and immerse yourself in centuries of history.",
+        "estimated_budget": 1500,
+        "price_range": {
+            "min": 1200,
+            "max": 2000
+        },
+        "rating": 4.9,
+        "review_count": 15420,
+        "popularity_score": 99,
+        "created_at": "2023-03-10T00:00:00Z"
+    },
+    {
+        "destination_id": "dest_new_002",
+        "name": "Paris",
+        "slug": "paris-france",
+        "country": "France",
+        "continent": "Europe",
+        "image_url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
+        "blog": "## The City of Light: Paris\n\nParis, the capital of France, is a global center for art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.",
+        "highlights": [
+            "Eiffel Tower",
+            "Louvre Museum",
+            "Notre-Dame Cathedral",
+            "Montmartre",
+            "Seine River Cruise",
+            "Champs-Élysées"
+        ],
+        "quick_fact": "Paris is known as the 'City of Light' both because of its leading role during the Age of Enlightenment and more literally because Paris was one of the first large European cities to use gas street lighting.",
+        "coordinates": {
+            "lat": 48.8566,
+            "lng": 2.3522
+        },
+        "best_season": "June to August and September to October",
+        "budget_tier": "luxury",
+        "local_tips": [
+            "Learn a few basic French phrases; locals appreciate the effort",
+            "Use the Metro, it's efficient and covers the whole city",
+            "Enjoy a picnic by the Seine or in the Luxembourg Gardens"
+        ],
+        "description": "Paris is a dream destination for many, offering romance, history, and world-class culture. From the iconic Eiffel Tower to the artistic streets of Montmartre, every corner of Paris tells a story. Indulge in exquisite pastries, visit world-renowned museums, and soak up the unique atmosphere of the French capital.",
+        "estimated_budget": 2500,
+        "price_range": {
+            "min": 2000,
+            "max": 3500
+        },
+        "rating": 4.8,
+        "review_count": 25600,
+        "popularity_score": 100,
+        "created_at": "2023-03-11T00:00:00Z"
+    },
+    {
+        "destination_id": "dest_new_003",
+        "name": "Santorini",
+        "slug": "santorini-greece",
+        "country": "Greece",
+        "continent": "Europe",
+        "image_url": "https://images.unsplash.com/photo-1613395877344-13d4c280d288?w=800&q=80",
+        "blog": "## The Jewel of the Aegean: Santorini\n\nSantorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera (crater).",
+        "highlights": [
+            "Oia Sunset",
+            "Red Beach",
+            "Ancient Thera",
+            "Fira",
+            "Volcanic Boat Tour",
+            "Wine Tasting"
+        ],
+        "quick_fact": "Santorini is essentially what remains after an enormous volcanic eruption that destroyed the earliest settlements on a formerly single island, and created the current geological caldera.",
+        "coordinates": {
+            "lat": 36.3932,
+            "lng": 25.4615
+        },
+        "best_season": "September to October and May to June",
+        "budget_tier": "luxury",
+        "local_tips": [
+            "Book accommodation in Oia well in advance for the best sunset views",
+            "Rent an ATV to explore the island's hidden beaches",
+            "Try the local fava and tomato fritters"
+        ],
+        "description": "Santorini is the supermodel of the Greek islands, a head-turner whose face is instantly recognizable around the world: multicolored cliffs soar out of a sea-drowned caldera, topped by drifts of whitewashed buildings. With its reputation for dazzling panoramas, romantic sunsets, and volcanic-sand beaches, it's hardly surprising the island features on so many travelers' bucket lists.",
+        "estimated_budget": 2200,
+        "price_range": {
+            "min": 1800,
+            "max": 3000
+        },
+        "rating": 4.9,
+        "review_count": 12300,
+        "popularity_score": 98,
+        "created_at": "2023-03-12T00:00:00Z"
+    },
+    {
+        "destination_id": "dest_new_004",
+        "name": "Machu Picchu",
+        "slug": "machu-picchu-peru",
+        "country": "Peru",
+        "continent": "South America",
+        "image_url": "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80",
+        "blog": "## The Lost City of the Incas: Machu Picchu\n\nMachu Picchu is an Incan citadel set high in the Andes Mountains in Peru, above the Urubamba River valley. Built in the 15th century and later abandoned, it’s renowned for its sophisticated dry-stone walls that fuse huge blocks without the use of mortar, intriguing buildings that play on astronomical alignments and panoramic views.",
+        "highlights": [
+            "Inca Trail",
+            "Sun Gate",
+            "Temple of the Sun",
+            "Intihuatana Stone",
+            "Huayna Picchu"
+        ],
+        "quick_fact": "Machu Picchu was built around 1450 but abandoned a century later at the time of the Spanish Conquest. It was unknown to the outside world before being brought to international attention in 1911 by the American historian Hiram Bingham.",
+        "coordinates": {
+            "lat": -13.1631,
+            "lng": -72.5450
+        },
+        "best_season": "April to October (Dry Season)",
+        "budget_tier": "mid-range",
+        "local_tips": [
+            "Acclimatize to the altitude in Cusco for a few days before visiting",
+            "Book your train and entrance tickets months in advance",
+            "Bring insect repellent and sun protection"
+        ],
+        "description": "Machu Picchu stands 2,430 m above sea-level, in the middle of a tropical mountain forest, in an extraordinarily beautiful setting. It was probably the most amazing urban creation of the Inca Empire at its height; its giant walls, terraces and ramps seem as if they have been cut naturally in the continuous rock escarpments.",
+        "estimated_budget": 1800,
+        "price_range": {
+            "min": 1500,
+            "max": 2500
+        },
+        "rating": 5.0,
+        "review_count": 18900,
+        "popularity_score": 100,
+        "created_at": "2023-03-13T00:00:00Z"
+    },
+    {
+        "destination_id": "dest_new_005",
+        "name": "Grand Canyon",
+        "slug": "grand-canyon-usa",
+        "country": "USA",
+        "continent": "North America",
+        "image_url": "https://images.unsplash.com/photo-1615551043360-33de8b5f410c?w=800&q=80",
+        "blog": "## Nature's Masterpiece: Grand Canyon\n\nThe Grand Canyon in Arizona is a natural formation distinguished by layered bands of red rock, revealing millions of years of geological history in cross-section. Vast in scale, the canyon averages 10 miles across and a mile deep along its 277-mile length.",
+        "highlights": [
+            "South Rim",
+            "Bright Angel Trail",
+            "Skywalk",
+            "Colorado River Rafting",
+            "Havasu Falls"
+        ],
+        "quick_fact": "The Grand Canyon is 277 miles (446 km) long, up to 18 miles (29 km) wide and attains a depth of over a mile (6,093 feet or 1,857 meters).",
+        "coordinates": {
+            "lat": 36.1069,
+            "lng": -112.1129
+        },
+        "best_season": "March to May and September to November",
+        "budget_tier": "mid-range",
+        "local_tips": [
+            "Visit the North Rim for a quieter experience (open mid-May to mid-Oct)",
+            "Catch the sunrise or sunset at Mather Point",
+            "Bring plenty of water if hiking into the canyon"
+        ],
+        "description": "Unique combinations of geologic color and erosional forms decorate a canyon that is 277 river miles (446km) long, up to 18 miles (29km) wide, and a mile (1.6km) deep. The Grand Canyon overwhelms our senses through its immense size.",
+        "estimated_budget": 1200,
+        "price_range": {
+            "min": 800,
+            "max": 1800
+        },
+        "rating": 4.9,
+        "review_count": 22100,
+        "popularity_score": 99,
+        "created_at": "2023-03-14T00:00:00Z"
     }
 ];

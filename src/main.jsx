@@ -2,24 +2,21 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { BrowserRouter } from 'react-router-dom'
 import { HelmetProvider } from 'react-helmet-async'
-import App from './App.jsx'
+import App from './App'
 import './index.css'
-import './components/lightswind.css'
+
+// Context Providers
+import { AuthProvider } from './context/AuthProvider'
+import { SubscriptionProvider } from './context/SubscriptionContext'
+import { GameLimitProvider } from './context/GameLimitContext'
+
+// Utils
 import { initSentry } from './utils/sentry'
 import { initStorageMigration } from './utils/migrateStorage'
-import { fetchCSRFToken } from './utils/csrf'
-import { API_BASE_URL } from './config'
 
-// Initialize Sentry error tracking
+// Initialize services
 initSentry()
-
-// Migrate old storage to encrypted format
 initStorageMigration()
-
-// Fetch CSRF token on app load
-// fetchCSRFToken(API_BASE_URL).catch(err => {
-//   console.warn('Failed to fetch CSRF token:', err)
-// })
 
 // Add error boundary for better error handling
 if (typeof window !== 'undefined' && window.addEventListener) {
@@ -32,19 +29,6 @@ if (typeof window !== 'undefined' && window.addEventListener) {
   })
 }
 
-// Check if required DOM elements exist before rendering
-if (typeof document !== 'undefined' && document.getElementById('root')) {
-  ReactDOM.createRoot(document.getElementById('root')).render(
-    <React.StrictMode>
-      <BrowserRouter>
-        <HelmetProvider>
-          <App />
-        </HelmetProvider>
-      </BrowserRouter>
-    </React.StrictMode>,
-  )
-}
-
 // Register service worker for PWA
 if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
   if (window.addEventListener) {
@@ -53,3 +37,19 @@ if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
     })
   }
 }
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <React.StrictMode>
+    <HelmetProvider>
+      <BrowserRouter>
+        <AuthProvider>
+          <SubscriptionProvider>
+            <GameLimitProvider>
+              <App />
+            </GameLimitProvider>
+          </SubscriptionProvider>
+        </AuthProvider>
+      </BrowserRouter>
+    </HelmetProvider>
+  </React.StrictMode>,
+)

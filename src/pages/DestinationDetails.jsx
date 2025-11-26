@@ -95,7 +95,7 @@ const DestinationDetails = () => {
 
   return (
     <ErrorBoundary>
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-gray-50 overflow-hidden">
         {/* Back Button */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
           <Link
@@ -257,13 +257,39 @@ const DestinationDetails = () => {
                   <div className="space-y-4">
                     {destination.local_tips.map((tip, index) => (
                       <div key={index} className="flex items-start gap-4 p-6 bg-white rounded-xl shadow-sm">
-                        <div className="mt-1 w-2 h-2 bg-blue-500 rounded-full flex-shrink-0"></div>
+                        <div className="flex-shrink-0 w-8 h-8 bg-blue-100 rounded-full flex items-center justify-center">
+                          <span className="text-blue-600 font-bold text-sm">{index + 1}</span>
+                        </div>
                         <p className="text-gray-700">{tip}</p>
                       </div>
                     ))}
                   </div>
                 </section>
               )}
+
+              {/* Travel Guide Blog */}
+              <section className="mb-12">
+                <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
+                  <div className="flex items-start justify-between mb-4">
+                    <div>
+                      <h2 className="text-3xl font-bold text-gray-900 mb-2">
+                        Complete Travel Guide
+                      </h2>
+                      <p className="text-gray-600">
+                        Everything you need to know about visiting {destination.name}
+                      </p>
+                    </div>
+                  </div>
+                  <p className="text-gray-700 mb-6 leading-relaxed">
+                    {destination.quick_fact || `Discover insider tips, top attractions, best times to visit, and local secrets for an unforgettable ${destination.name} experience.`}
+                  </p>
+                  <Link to={`/destination/${id}/blog`}>
+                    <button className="px-6 py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors font-semibold shadow-md hover:shadow-lg">
+                      Read Full Travel Guide
+                    </button>
+                  </Link>
+                </div>
+              </section>
             </div>
 
             {/* Sidebar */}
