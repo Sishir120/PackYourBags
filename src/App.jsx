@@ -46,6 +46,7 @@ import OnboardingFlow from './components/OnboardingFlow'
 import EmailCapturePopup from './components/EmailCapturePopup'
 import ArcadeTeaser from './components/ArcadeTeaser'
 import HomePage from './pages/HomePage'
+import AuthCallback from './pages/AuthCallback'
 
 import { SubscriptionProvider } from './context/SubscriptionContext'
 import { GameLimitProvider } from './context/GameLimitContext'
@@ -185,6 +186,7 @@ function App() {
                 <Route path="/itinerary/new" element={<ItineraryBuilder />} />
                 <Route path="/itinerary/:id" element={<ItineraryBuilder />} />
                 <Route path="/favorites" element={<FavoritesPage user={user} />} />
+                <Route path="/auth/callback" element={<AuthCallback />} />
                 <Route path="/subscription" element={<SubscriptionPage />} />
                 <Route path="/about" element={<AboutUs />} />
                 <Route path="/terms" element={<Terms />} />
