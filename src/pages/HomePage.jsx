@@ -7,7 +7,8 @@ import AsSeenIn from '../components/AsSeenIn';
 import AIHighlight from '../components/AIHighlight';
 import Testimonials from '../components/Testimonials';
 import Newsletter from '../components/Newsletter';
-import SEO from '../components/SEO';
+import SEO from '../components/SEOHead';
+import StructuredData, { OrganizationSchema, WebSiteSchema } from '../components/StructuredData';
 import CurrencyTicker from '../components/CurrencyTicker';
 
 const HomePage = ({ user }) => {
@@ -18,6 +19,8 @@ const HomePage = ({ user }) => {
                 description="Plan your perfect trip with PackYourBags. AI-powered itineraries, hidden gems, and the best travel deals for 2025."
                 keywords="AI travel planner, custom itineraries, trip organizer, 2025 travel guide, hidden gems, sustainable travel"
             />
+            <StructuredData data={OrganizationSchema} />
+            <StructuredData data={WebSiteSchema} />
             <Hero />
 
             <RouletteSection user={user} />

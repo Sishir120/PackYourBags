@@ -1,7 +1,17 @@
 User-agent: *
 Allow: /
-Disallow: /admin
-Disallow: /profile
-Disallow: /settings
 
-Sitemap: https://packyourbags.app/sitemap.xml
+# Disallow admin routes
+Disallow: /admin
+Disallow: /admin/*
+
+# Disallow auth callback (no need to index)
+Disallow: /auth/callback
+
+# Allow all other pages
+Allow: /destinations
+Allow: /blog
+Allow: /arcade
+
+# Sitemap location
+Sitemap: https://packyourbags.vercel.app/sitemap.xml
