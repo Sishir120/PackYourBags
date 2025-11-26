@@ -1,5 +1,5 @@
-import { API_BASE_URL } from '../config'
-import { mockBlogs } from '../data/mockBlogs'
+import { API_BASE_URL } from '../config.js'
+import { mockBlogs } from '../data/mockBlogs.js'
 
 /**
  * Blog API utilities
