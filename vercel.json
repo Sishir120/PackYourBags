@@ -54,20 +54,18 @@
         {
             "source": "/api/(.*)",
             "destination": "/api/$1"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/assets/(.*)",
-            "dest": "/assets/$1"
         },
         {
-            "src": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|mp3|wav|ogg))",
-            "dest": "/$1"
+            "source": "/assets/(.*)",
+            "destination": "/assets/$1"
         },
         {
-            "src": "/(.*)",
-            "dest": "/index.html"
+            "source": "/(.*\\.(js|css|png|jpg|jpeg|gif|svg|ico|woff|woff2|ttf|eot|webp|mp3|wav|ogg))",
+            "destination": "/$1"
+        },
+        {
+            "source": "/(.*)",
+            "destination": "/index.html"
         }
     ]
 }
