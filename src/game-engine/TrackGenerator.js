@@ -16,6 +16,12 @@ export class TrackGenerator {
                 return this.createSplitPathChunk(startY, height);
             case 'funnel':
                 return this.createFunnelChunk(startY, height);
+            case 'donut':
+                return this.createDonutChunk(startY, height);
+            case 'wavyPlatform':
+                return this.createWavyPlatformChunk(startY, height);
+            case 'spinner':
+                return this.createSpinnerChunk(startY, height);
             default:
                 return this.createStraightChunk(startY, height);
         }
@@ -153,6 +159,112 @@ export class TrackGenerator {
         });
 
         bodies.push(leftWall, rightWall);
+        bodies.push(...this.createStraightChunk(startY, height));
+        return bodies;
+    }
+
+    createDonutChunk(startY, height) {
+        // Safe donut-themed obstacles (hollow circles)
+        const bodies = [];
+        const numDonuts = 4;
+        const spacing = height / (numDonuts + 1);
+
+        for (let i = 0; i < numDonuts; i++) {
+            const y = startY + (i + 1) * spacing;
+            const x = (i % 2 === 0) ? this.width * 0.3 : this.width * 0.7;
+
+            // Create donut as a compound body (outer circle with inner hole)
+            const outerRadius = 35;
+            const innerRadius = 15;
+
+            // Use a polygon to simulate donut shape
+            const donut = Matter.Bodies.circle(x, y, outerRadius, {
+                isStatic: true,
+                friction: 0.05,
+                restitution: 0.5,
+                render: {
+                    fillStyle: '#f59e0b', // Donut color
+                    strokeStyle: '#92400e',
+                    lineWidth: 3
+                }
+            });
+
+            bodies.push(donut);
+        }
+
+        bodies.push(...this.createStraightChunk(startY, height));
+        return bodies;
+    }
+
+    createWavyPlatformChunk(startY, height) {
+        // Curved/wavy platforms
+        const bodies = [];
+        const numWaves = 3;
+        const waveHeight = height / numWaves;
+
+        for (let i = 0; i < numWaves; i++) {
+            const y = startY + i * waveHeight + waveHeight / 2;
+            const isLeft = i % 2 === 0;
+
+            // Create curved platform using angled rectangles
+            const segments = 5;
+            for (let s = 0; s < segments; s++) {
+                const segmentWidth = this.width * 0.5 / segments;
+                const xStart = isLeft ? 50 : this.width / 2;
+                const x = xStart + s * segmentWidth + segmentWidth / 2;
+                const curveOffset = Math.sin((s / segments) * Math.PI) * 30;
+
+                const segment = Matter.Bodies.rectangle(x, y + curveOffset, segmentWidth + 5, 15, {
+                    isStatic: true,
+                    angle: Math.sin((s / segments) * Math.PI) * 0.3,
+                    friction: 0.05,
+                    restitution: 0.4,
+                    render: { fillStyle: '#3b82f6' } // Blue wavy platforms
+                });
+
+                bodies.push(segment);
+            }
+        }
+
+        bodies.push(...this.createStraightChunk(startY, height));
+        return bodies;
+    }
+
+    createSpinnerChunk(startY, height) {
+        // Rotating spinner obstacles (visual only, static for safety)
+        const bodies = [];
+        const numSpinners = 3;
+        const spacing = height / (numSpinners + 1);
+
+        for (let i = 0; i < numSpinners; i++) {
+            const y = startY + (i + 1) * spacing;
+            const x = this.width / 2;
+
+            // Create spinner arms (cross shape)
+            const armLength = 80;
+            const armWidth = 15;
+
+            // Horizontal arm
+            const hArm = Matter.Bodies.rectangle(x, y, armLength, armWidth, {
+                isStatic: true,
+                angle: (i * Math.PI / 4), // Varied angles for visual interest
+                friction: 0.05,
+                restitution: 0.5,
+                render: { fillStyle: '#eab308' } // Gold spinner
+            });
+
+            // Vertical arm
+            const vArm = Matter.Bodies.rectangle(x, y, armWidth, armLength, {
+                isStatic: true,
+                angle: (i * Math.PI / 4),
+                friction: 0.05,
+                restitution: 0.5,
+                render: { fillStyle: '#eab308' }
+            });
+
+            bodies.push(hArm, vArm);
+        }
+
         bodies.push(...this.createStraightChunk(startY, height));
         return bodies;
     }

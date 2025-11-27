@@ -48,8 +48,8 @@ export class GameManager {
         Matter.Composite.add(this.world, startPlatform);
         currentY += 200;
 
-        // Generate Random Chunks
-        const chunkTypes = ['zigzag', 'pegField', 'split', 'funnel', 'straight'];
+        // Generate Random Chunks with visual variety
+        const chunkTypes = ['zigzag', 'split', 'funnel', 'straight', 'donut', 'wavyPlatform', 'spinner'];
 
         for (let i = 0; i < numChunks; i++) {
             const type = chunkTypes[Math.floor(Math.random() * chunkTypes.length)];
