@@ -73,16 +73,21 @@ export class GameManager {
         });
         Matter.Composite.add(this.world, sensor);
 
-        // Walls to prevent falling off world
-        const leftWall = Matter.Bodies.rectangle(-20, currentY / 2, 40, currentY + 2000, {
+        // Stronger walls to prevent marble penetration
+        const wallThickness = 60; // Increased from 40 for better collision
+        const leftWall = Matter.Bodies.rectangle(-30, currentY / 2, wallThickness, currentY + 2000, {
             isStatic: true,
-            friction: 0.3, // Increased friction to prevent sliding
-            restitution: 0.2 // Reduced bounciness
+            friction: 0.1, // Lower friction for better deflection
+            restitution: 0.5, // Higher restitution for bouncing off walls
+            label: 'boundary',
+            render: { fillStyle: '#1e293b' }
         });
-        const rightWall = Matter.Bodies.rectangle(420, currentY / 2, 40, currentY + 2000, {
+        const rightWall = Matter.Bodies.rectangle(430, currentY / 2, wallThickness, currentY + 2000, {
             isStatic: true,
-            friction: 0.3, // Increased friction to prevent sliding
-            restitution: 0.2 // Reduced bounciness
+            friction: 0.1,
+            restitution: 0.5,
+            label: 'boundary',
+            render: { fillStyle: '#1e293b' }
         });
         Matter.Composite.add(this.world, [leftWall, rightWall]);
 
@@ -262,6 +267,23 @@ export class GameManager {
         // Update Physics with fixed timestep for stability
         const fixedTimeStep = 1000 / 60; // 60 FPS
         Matter.Engine.update(this.engine, fixedTimeStep);
+
+        // Enforce boundaries - prevent marbles from going through walls
+        this.marbles.forEach(m => {
+            const pos = m.position;
+            const radius = m.radius;
+            const minX = radius + 5; // 5px padding from left wall
+            const maxX = 400 - radius - 5; // 5px padding from right wall
+
+            // If marble is outside bounds, push it back and reverse velocity
+            if (pos.x < minX) {
+                Matter.Body.setPosition(m.body, { x: minX, y: pos.y });
+                Matter.Body.setVelocity(m.body, { x: Math.abs(m.body.velocity.x) * 0.5, y: m.body.velocity.y });
+            } else if (pos.x > maxX) {
+                Matter.Body.setPosition(m.body, { x: maxX, y: pos.y });
+                Matter.Body.setVelocity(m.body, { x: -Math.abs(m.body.velocity.x) * 0.5, y: m.body.velocity.y });
+            }
+        });
 
         // Check for stuck marbles every frame
         this.checkStuckMarbles();
