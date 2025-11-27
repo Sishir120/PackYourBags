@@ -1,0 +1,25 @@
+[36mvite v7.2.4 [32mbuilding client environment for production...[36m[39m
+transforming...
+[32m✓[39m 28 modules transformed.
+[31m✗[39m Build failed in 2.54s
+[31merror during build:
+[31m[vite:esbuild] Transform failed with 1 error:
+C:/Users/sishi/OneDrive/Documents/python/PackYourBags/frontend_temp/src/pages/PriceTrackerPage.jsx:541:0: ERROR: Expected "finally" but found "export"[31m
+file: [36mC:/Users/sishi/OneDrive/Documents/python/PackYourBags/frontend_temp/src/pages/PriceTrackerPage.jsx:541:0[31m
+[33m
+[33mExpected "finally" but found "export"[33m
+539 |      }
+540 |  
+541 |  export default PriceTrackerPage
+    |  ^
+[31m
+    at failureErrorWithLog (C:\Users\sishi\OneDrive\Documents\python\PackYourBags\frontend_temp\node_modules\esbuild\lib\main.js:1467:15)
+    at C:\Users\sishi\OneDrive\Documents\python\PackYourBags\frontend_temp\node_modules\esbuild\lib\main.js:736:50
+    at responseCallbacks.<computed> (C:\Users\sishi\OneDrive\Documents\python\PackYourBags\frontend_temp\node_modules\esbuild\lib\main.js:603:9)
+    at handleIncomingPacket (C:\Users\sishi\OneDrive\Documents\python\PackYourBags\frontend_temp\node_modules\esbuild\lib\main.js:658:12)
+    at Socket.readFromStdout (C:\Users\sishi\OneDrive\Documents\python\PackYourBags\frontend_temp\node_modules\esbuild\lib\main.js:581:7)
+    at Socket.emit (node:events:518:28)
+    at addChunk (node:internal/streams/readable:561:12)
+    at readableAddChunkPushByteMode (node:internal/streams/readable:512:3)
+    at Readable.push (node:internal/streams/readable:392:5)
+    at Pipe.onStreamRead (node:internal/stream_base_commons:189:23)[39m

@@ -172,9 +172,9 @@ export class GameManager {
         if (this.state !== 'RACING') return;
 
         const currentTime = Date.now();
-        const NUDGE_THRESHOLD = 1000; // 1 second
-        const RESPAWN_THRESHOLD = 3000; // 3 seconds
-        const POSITION_TOLERANCE = 5; // pixels
+        const NUDGE_THRESHOLD = 500; // 0.5 seconds - faster detection
+        const RESPAWN_THRESHOLD = 2000; // 2 seconds - faster respawn
+        const POSITION_TOLERANCE = 3; // pixels - tighter tolerance
 
         this.marbles.forEach(m => {
             if (m.isFinished) return;
@@ -195,13 +195,17 @@ export class GameManager {
             if (distance < POSITION_TOLERANCE) {
                 tracking.stuckTime += (currentTime - tracking.lastCheckTime);
 
-                // Nudge if stuck for a bit
+                // Nudge if stuck for a bit - more aggressive
                 if (tracking.stuckTime >= NUDGE_THRESHOLD && tracking.stuckTime < RESPAWN_THRESHOLD) {
-                    // Apply random force to unstuck
+                    // Apply stronger random force to unstuck
+                    const angle = Math.random() * Math.PI * 2;
                     Matter.Body.applyForce(m.body, m.body.position, {
-                        x: (Math.random() - 0.5) * 0.005,
-                        y: -0.005 // Upward pop
+                        x: Math.cos(angle) * 0.008,
+                        y: Math.sin(angle) * 0.008 - 0.003 // Slight upward bias
                     });
+
+                    // Also give it a spin to help escape
+                    Matter.Body.setAngularVelocity(m.body, (Math.random() - 0.5) * 0.2);
                 }
 
                 // Respawn if stuck for too long

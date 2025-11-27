@@ -10,11 +10,13 @@ import {
   DollarSign,
   Calendar,
   ChevronRight,
-  Globe
+  Globe,
+  Ticket
 } from 'lucide-react'
 import { destinationApi } from '../utils/destinationApi'
 import Loading from '../components/Loading'
 import ErrorBoundary from '../components/ErrorBoundary'
+import DreamTicket from '../components/DreamTicket'
 
 const DestinationDetails = () => {
   const { id } = useParams()
@@ -23,6 +25,7 @@ const DestinationDetails = () => {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
+  const [showDreamTicket, setShowDreamTicket] = useState(false)
 
   useEffect(() => {
     fetchDestinationDetails()
@@ -162,6 +165,13 @@ const DestinationDetails = () => {
                 </div>
 
                 <div className="flex gap-3">
+                  <button
+                    onClick={() => setShowDreamTicket(true)}
+                    className="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors flex items-center gap-2 font-bold border border-white/30"
+                  >
+                    <Ticket className="w-5 h-5" />
+                    <span className="hidden sm:inline">Dream Ticket</span>
+                  </button>
                   <button className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-colors">
                     <Heart className="w-6 h-6" />
                   </button>
@@ -347,6 +357,18 @@ const DestinationDetails = () => {
             </div>
           </div>
         </div>
+
+        {/* Dream Ticket Modal */}
+        {showDreamTicket && (
+          <DreamTicket
+            destination={{
+              name: destination.name,
+              image: currentImage,
+              country: destination.country
+            }}
+            onClose={() => setShowDreamTicket(false)}
+          />
+        )}
       </div>
     </ErrorBoundary>
   )

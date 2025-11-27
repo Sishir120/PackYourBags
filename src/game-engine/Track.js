@@ -38,9 +38,9 @@ export const Track = {
 
         for (let y = waveStart; y <= waveEnd; y += 50) {
             const xOffset = Math.sin((y - waveStart) * waveFreq) * waveAmp;
-            // Narrower track for more collisions (Gap ~100px)
-            leftPoints.push({ x: 150 + xOffset, y });
-            rightPoints.push({ x: 250 + xOffset, y });
+            // Wider track to prevent sticking (Gap ~150px)
+            leftPoints.push({ x: 125 + xOffset, y });
+            rightPoints.push({ x: 275 + xOffset, y });
         }
         addWallStrip(leftPoints);
         addWallStrip(rightPoints);
@@ -83,14 +83,14 @@ export const Track = {
             maxY: 5800
         });
 
-        // 5. Split Path (6000 - 7000)
+        // 5. Split Path (6000 - 7000) - Widened to prevent bottlenecks
         walls.push({ start: { x: 0, y: 6000 }, end: { x: 0, y: 7000 }, restitution: 0.2 });
         walls.push({ start: { x: width, y: 6000 }, end: { x: width, y: 7000 }, restitution: 0.2 });
-        // Island
-        walls.push({ start: { x: 200, y: 6100 }, end: { x: 150, y: 6300 }, restitution: 0.5 });
-        walls.push({ start: { x: 200, y: 6100 }, end: { x: 250, y: 6300 }, restitution: 0.5 });
-        walls.push({ start: { x: 150, y: 6300 }, end: { x: 150, y: 6900 }, restitution: 0.5 });
-        walls.push({ start: { x: 250, y: 6300 }, end: { x: 250, y: 6900 }, restitution: 0.5 });
+        // Island (wider gaps on sides)
+        walls.push({ start: { x: 200, y: 6100 }, end: { x: 130, y: 6300 }, restitution: 0.5 });
+        walls.push({ start: { x: 200, y: 6100 }, end: { x: 270, y: 6300 }, restitution: 0.5 });
+        walls.push({ start: { x: 130, y: 6300 }, end: { x: 130, y: 6900 }, restitution: 0.5 });
+        walls.push({ start: { x: 270, y: 6300 }, end: { x: 270, y: 6900 }, restitution: 0.5 });
 
         // 6. Zig-Zag Drop (7000 - 9000)
         walls.push({ start: { x: 0, y: 7000 }, end: { x: 0, y: 9000 }, restitution: 0.2 });
@@ -105,26 +105,26 @@ export const Track = {
             }
         }
 
-        // 7. Plinko Field (9000 - 11000)
+        // 7. Simplified Drop Zone (9000 - 11000) - Removed Plinko obstacles to prevent sticking
         walls.push({ start: { x: 0, y: 9000 }, end: { x: 0, y: 11000 }, restitution: 0.2 });
         walls.push({ start: { x: width, y: 9000 }, end: { x: width, y: 11000 }, restitution: 0.2 });
 
-        for (let row = 0; row < 20; row++) {
-            for (let col = 0; col < 6; col++) {
-                const offset = (row % 2) * 30;
-                const x = 60 + col * 60 + offset;
-                const y = 9100 + row * 90;
-                if (x > 40 && x < 360) {
-                    obstacles.push(new Marble({
-                        position: { x, y },
-                        radius: 8,
-                        isStatic: true,
-                        restitution: 0.6,
-                        color: '#fbbf24'
-                    }));
-                    obstacles[obstacles.length - 1].isStatic = true;
-                }
-            }
+        // Add gentle zigzag platforms instead of static marbles
+        for (let i = 0; i < 5; i++) {
+            const y = 9200 + i * 350;
+            const xOffset = (i % 2) * 150;
+            // Left platform
+            walls.push({
+                start: { x: 50 + xOffset, y },
+                end: { x: 150 + xOffset, y: y + 80 },
+                restitution: 0.4
+            });
+            // Right platform
+            walls.push({
+                start: { x: 250 + xOffset, y },
+                end: { x: 350 + xOffset, y: y + 80 },
+                restitution: 0.4
+            });
         }
 
         // 8. Teleporter Zone (11000)

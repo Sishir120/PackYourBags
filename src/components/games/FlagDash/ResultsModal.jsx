@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, RotateCcw, MapPin } from 'lucide-react';
+import { Trophy, RotateCcw, MapPin, Share2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 
 const ResultsModal = ({ winner, onReset }) => {
@@ -39,6 +39,26 @@ const ResultsModal = ({ winner, onReset }) => {
                 </p>
 
                 <div className="space-y-3">
+                    <button
+                        onClick={() => {
+                            const text = `I just won the Flag Dash race with ${winner.name} ${winner.flag}! Can you beat my luck? Play now at PackYourBags!`;
+                            if (navigator.share) {
+                                navigator.share({
+                                    title: 'Flag Dash Winner!',
+                                    text: text,
+                                    url: window.location.href
+                                }).catch(console.error);
+                            } else {
+                                navigator.clipboard.writeText(`${text} ${window.location.href}`);
+                                alert('Result copied to clipboard!');
+                            }
+                        }}
+                        className="w-full bg-purple-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-purple-700 transition-colors flex items-center justify-center gap-2"
+                    >
+                        <Share2 className="w-5 h-5" />
+                        Share Victory
+                    </button>
+
                     <button className="w-full bg-teal-600 text-white py-3 rounded-xl font-bold shadow-lg hover:bg-teal-700 transition-colors flex items-center justify-center gap-2">
                         <MapPin className="w-5 h-5" />
                         Explore {winner.name}

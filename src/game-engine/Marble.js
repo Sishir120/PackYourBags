@@ -10,12 +10,12 @@ export class Marble {
 
         // Create Matter.js Body with improved physics
         this.body = Matter.Bodies.circle(config.position.x, config.position.y, this.radius, {
-            restitution: 0.3, // Reduced bounciness (from 0.4)
-            friction: 0.005,  // Reduced friction for smoother rolling
-            frictionAir: 0.001, // Reduced air resistance
-            frictionStatic: 0.005,
-            density: 0.005,   // Slightly higher density for better momentum
-            slop: 0.1, // Increased collision tolerance (from 0.05)
+            restitution: 0.25, // Further reduced bounciness to prevent wall bouncing
+            friction: 0.003,  // Lower friction for smoother rolling
+            frictionAir: 0.0005, // Minimal air resistance
+            frictionStatic: 0.003,
+            density: 0.006,   // Slightly higher density for better momentum
+            slop: 0.05, // Reduced collision tolerance for more precise collisions
             label: 'marble',
             render: {
                 fillStyle: this.color

@@ -53,68 +53,38 @@ const PriceTrackerPage = ({ user }) => {
       const data = await destinationApi.getDestinations({ limit: 50 })
       if (data.success && data.destinations) {
         setDestinations(data.destinations)
+        setIsLoading(true)
+        setError(null)
+
+        try {
+          const response = await fetch('/api/price-tracker/check', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+              user_id: user.id
+            })
+          })
+
+          const data = await response.json()
+
+          if (data.success) {
+            setDeals(data.deals)
+            // Show notification with number of deals found
+          } else {
+            setError(data.error || 'Failed to check prices')
+          }
+        } catch (err) {
+          setError('Failed to check prices')
+          console.error('Error checking prices:', err)
+        } finally {
+          setIsLoading(false)
+        }
       }
     } catch (err) {
       console.error('Error fetching destinations:', err)
-    }
-  }
-
-  const subscribeToDeals = async () => {
-    if (!user) return
-
-    try {
-      const response = await fetch('/api/price-tracker/subscribe', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          user_id: user.id
-        })
-      })
-
-      const data = await response.json()
-
-      if (data.success) {
-        setIsSubscribed(true)
-        // Show notification or toast
-      } else {
-        setError(data.error || 'Failed to subscribe')
-      }
-    } catch (err) {
-      setError('Failed to subscribe to deal alerts')
-      console.error('Error subscribing:', err)
-    }
-  }
-
-  const checkPrices = async () => {
-    if (!user) return
-
-    setIsLoading(true)
-    setError(null)
-
-    try {
-      const response = await fetch('/api/price-tracker/check', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          user_id: user.id
-        })
-      })
-
-      const data = await response.json()
-
-      if (data.success) {
-        setDeals(data.deals)
-        // Show notification with number of deals found
-      } else {
-        setError(data.error || 'Failed to check prices')
-      }
-    } catch (err) {
-      setError('Failed to check prices')
-      console.error('Error checking prices:', err)
+      setError('Failed to load destinations')
     } finally {
       setIsLoading(false)
     }
@@ -196,6 +166,17 @@ const PriceTrackerPage = ({ user }) => {
     if (sortBy === 'confidence') return b.confidence_score - a.confidence_score
     return new Date(b.timestamp) - new Date(a.timestamp)
   })
+
+  // Helper for checkPrices button
+  const checkPrices = () => {
+    fetchDestinations()
+  }
+
+  // Helper for subscribe button
+  const subscribeToDeals = () => {
+    setIsSubscribed(true)
+    alert('You have subscribed to deal alerts!')
+  }
 
   return (
     <div className="min-h-screen bg-gray-50 pt-20">

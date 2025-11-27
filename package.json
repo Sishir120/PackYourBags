@@ -26,6 +26,7 @@
     "dotenv": "^17.2.3",
     "framer-motion": "^12.23.24",
     "howler": "^2.2.4",
+    "html2canvas": "^1.4.1",
     "lightswind": "^3.1.18",
     "lucide-react": "^0.552.0",
     "matter-js": "^0.20.0",

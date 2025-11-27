@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import { Trophy, Lock, Star, Play, Pause, RotateCcw, Zap, Shield, Clock } from 'lucide-react';
+import { Trophy, Lock, Star, Play, Pause, RotateCcw, Zap, Shield, Clock, Share2 } from 'lucide-react';
 import confetti from 'canvas-confetti';
 import { SoundManager } from '../../utils/SoundManager';
 import { useSubscription } from '../../context/SubscriptionContext';
@@ -285,12 +285,33 @@ const TravelBingo = () => {
                     <h2 className="text-4xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 to-orange-500 mb-4">
                         BINGO!
                     </h2>
-                    <button
-                        onClick={() => { setBingo(false); setIsPlaying(false); }}
-                        className="px-8 py-3 bg-white text-slate-900 rounded-full font-bold hover:scale-105 transition-transform"
-                    >
-                        Play Again
-                    </button>
+                    <div className="flex gap-3 justify-center">
+                        <button
+                            onClick={() => {
+                                const text = `I just got BINGO in ${mode} mode! Can you beat my luck? Play now at PackYourBags!`;
+                                if (navigator.share) {
+                                    navigator.share({
+                                        title: 'Travel Bingo Winner!',
+                                        text: text,
+                                        url: window.location.href
+                                    }).catch(console.error);
+                                } else {
+                                    navigator.clipboard.writeText(`${text} ${window.location.href}`);
+                                    alert('Result copied to clipboard!');
+                                }
+                            }}
+                            className="px-8 py-3 bg-purple-600 text-white rounded-full font-bold hover:scale-105 transition-transform flex items-center gap-2"
+                        >
+                            <Share2 className="w-5 h-5" />
+                            Share Victory
+                        </button>
+                        <button
+                            onClick={() => { setBingo(false); setIsPlaying(false); }}
+                            className="px-8 py-3 bg-white text-slate-900 rounded-full font-bold hover:scale-105 transition-transform"
+                        >
+                            Play Again
+                        </button>
+                    </div>
                 </motion.div>
             ) : (
                 <div className="text-center">
