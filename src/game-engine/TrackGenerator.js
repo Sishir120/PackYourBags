@@ -71,28 +71,34 @@ export class TrackGenerator {
     }
 
     createPegFieldChunk(startY, height) {
+        // Replaced static pegs with gentle platforms to prevent sticking
         const bodies = [];
-        const rows = 8;
-        const cols = 7;
-        const rowHeight = height / rows;
-        const colWidth = (this.width - 100) / cols;
+        const numPlatforms = 5;
+        const platformHeight = height / numPlatforms;
 
-        for (let r = 0; r < rows; r++) {
-            const y = startY + r * rowHeight + rowHeight / 2;
-            const offset = (r % 2 === 0) ? 0 : colWidth / 2;
+        for (let i = 0; i < numPlatforms; i++) {
+            const y = startY + i * platformHeight + platformHeight / 2;
+            const xOffset = (i % 2) * 100;
 
-            for (let c = 0; c < cols; c++) {
-                const x = 50 + c * colWidth + offset;
-                if (x < this.width - 50) {
-                    const peg = Matter.Bodies.circle(x, y, 8, {
-                        isStatic: true,
-                        friction: 0.01,
-                        restitution: 0.6, // Bouncy pegs
-                        render: { fillStyle: '#64748b' }
-                    });
-                    bodies.push(peg);
-                }
-            }
+            // Left platform
+            const leftPlatform = Matter.Bodies.rectangle(80 + xOffset, y, 120, 15, {
+                isStatic: true,
+                angle: Math.PI / 12,
+                friction: 0.05,
+                restitution: 0.4,
+                render: { fillStyle: '#475569' }
+            });
+
+            // Right platform
+            const rightPlatform = Matter.Bodies.rectangle(320 - xOffset, y, 120, 15, {
+                isStatic: true,
+                angle: -Math.PI / 12,
+                friction: 0.05,
+                restitution: 0.4,
+                render: { fillStyle: '#475569' }
+            });
+
+            bodies.push(leftPlatform, rightPlatform);
         }
 
         bodies.push(...this.createStraightChunk(startY, height));
