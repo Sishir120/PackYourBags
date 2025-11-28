@@ -1,0 +1,941 @@
+{
+  "errors": [],
+  "generated_at": "2025-11-04T07:56:11Z",
+  "metrics": {
+    ".\\ai_service.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 5,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 5,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 379,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\app.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 290,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\app_old_backup.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 375,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\config.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 1,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 1,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 52,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\database.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 13,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\generate_blogs.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 91,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\migrate_data.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 87,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\models.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 210,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\routes\\ai_blog_routes.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 196,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\routes\\auth_routes.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 177,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\routes\\blog_routes.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 241,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\routes\\itinerary_routes.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 140,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\routes\\personalization_routes.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 46,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\routes\\seo_routes.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 230,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\routes\\subscription_routes.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 291,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\security.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 44,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\services\\blog_generator.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 168,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\services\\personalization.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 144,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\test_ai.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 66,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\test_complete_system.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 4,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 4,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 107,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\test_phase2.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 6,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 6,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 116,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\test_phase3.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 8,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 8,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 228,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\update_images.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 40,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\update_images_simple.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 101,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\update_real_images.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 71,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    ".\\validators.py": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 0,
+      "CONFIDENCE.MEDIUM": 0,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 0,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 74,
+      "nosec": 0,
+      "skipped_tests": 0
+    },
+    "_totals": {
+      "CONFIDENCE.HIGH": 0,
+      "CONFIDENCE.LOW": 23,
+      "CONFIDENCE.MEDIUM": 2,
+      "CONFIDENCE.UNDEFINED": 0,
+      "SEVERITY.HIGH": 0,
+      "SEVERITY.LOW": 0,
+      "SEVERITY.MEDIUM": 25,
+      "SEVERITY.UNDEFINED": 0,
+      "loc": 3977,
+      "nosec": 0,
+      "skipped_tests": 0
+    }
+  },
+  "results": [
+    {
+      "code": "199             \n200             response = requests.post(\n201                 \"https://api.anthropic.com/v1/messages\",\n202                 headers=headers,\n203                 json=data\n204             )\n205             response.raise_for_status()\n",
+      "col_offset": 23,
+      "end_col_offset": 13,
+      "filename": ".\\ai_service.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 200,
+      "line_range": [
+        200,
+        201,
+        202,
+        203,
+        204
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "223             \n224             response = requests.post(url, json=data)\n225             response.raise_for_status()\n",
+      "col_offset": 23,
+      "end_col_offset": 52,
+      "filename": ".\\ai_service.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 224,
+      "line_range": [
+        224
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "245             \n246             response = requests.post(url, json=data)\n247             response.raise_for_status()\n",
+      "col_offset": 23,
+      "end_col_offset": 52,
+      "filename": ".\\ai_service.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 246,
+      "line_range": [
+        246
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "274             \n275             response = requests.post(\n276                 \"https://openrouter.ai/api/v1/chat/completions\",\n277                 headers=headers,\n278                 json=data\n279             )\n280             response.raise_for_status()\n",
+      "col_offset": 23,
+      "end_col_offset": 13,
+      "filename": ".\\ai_service.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 275,
+      "line_range": [
+        275,
+        276,
+        277,
+        278,
+        279
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "302             \n303             response = requests.post(\n304                 \"https://openrouter.ai/api/v1/chat/completions\",\n305                 headers=headers,\n306                 json=data\n307             )\n308             response.raise_for_status()\n",
+      "col_offset": 23,
+      "end_col_offset": 13,
+      "filename": ".\\ai_service.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 303,
+      "line_range": [
+        303,
+        304,
+        305,
+        306,
+        307
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "466     port = int(os.getenv('PORT', 5000))\n467     host = os.getenv('HOST', '0.0.0.0')\n468     debug = os.getenv('FLASK_DEBUG', 'True').lower() == 'true'\n",
+      "col_offset": 29,
+      "end_col_offset": 38,
+      "filename": ".\\app_old_backup.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 605,
+        "link": "https://cwe.mitre.org/data/definitions/605.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces.",
+      "line_number": 467,
+      "line_range": [
+        467
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b104_hardcoded_bind_all_interfaces.html",
+      "test_id": "B104",
+      "test_name": "hardcoded_bind_all_interfaces"
+    },
+    {
+      "code": "31     # Server Configuration\n32     HOST = os.getenv('HOST', '0.0.0.0')\n33     PORT = int(os.getenv('PORT', 5000))\n",
+      "col_offset": 29,
+      "end_col_offset": 38,
+      "filename": ".\\config.py",
+      "issue_confidence": "MEDIUM",
+      "issue_cwe": {
+        "id": 605,
+        "link": "https://cwe.mitre.org/data/definitions/605.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Possible binding to all interfaces.",
+      "line_number": 32,
+      "line_range": [
+        32
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b104_hardcoded_bind_all_interfaces.html",
+      "test_id": "B104",
+      "test_name": "hardcoded_bind_all_interfaces"
+    },
+    {
+      "code": "44         # Test profile without auth (should fail)\n45         response = requests.get(\"http://localhost:5000/api/auth/profile\")\n46         print(f\"\u2713 Auth protection working: {response.status_code == 401}\")\n",
+      "col_offset": 19,
+      "end_col_offset": 73,
+      "filename": ".\\test_complete_system.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 45,
+      "line_range": [
+        45
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "55     try:\n56         response = requests.get(\"http://localhost:5000/api/blogs\")\n57         data = response.json()\n",
+      "col_offset": 19,
+      "end_col_offset": 66,
+      "filename": ".\\test_complete_system.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 56,
+      "line_range": [
+        56
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "69         # Test sitemap\n70         sitemap = requests.get(\"http://localhost:5000/sitemap.xml\")\n71         print(f\"\u2713 Sitemap Status: {sitemap.status_code}\")\n",
+      "col_offset": 18,
+      "end_col_offset": 67,
+      "filename": ".\\test_complete_system.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 70,
+      "line_range": [
+        70
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "73         # Test robots\n74         robots = requests.get(\"http://localhost:5000/robots.txt\")\n75         print(f\"\u2713 Robots.txt Status: {robots.status_code}\")\n",
+      "col_offset": 17,
+      "end_col_offset": 65,
+      "filename": ".\\test_complete_system.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 74,
+      "line_range": [
+        74
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "11     print(\"\\n\ud83e\uddea Testing API Root...\")\n12     response = requests.get(f\"{BASE_URL}/\")\n13     print(f\"\u2713 Status: {response.status_code}\")\n",
+      "col_offset": 15,
+      "end_col_offset": 43,
+      "filename": ".\\test_phase2.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 12,
+      "line_range": [
+        12
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "19     print(\"\\n\ud83e\uddea Testing Destinations API...\")\n20     response = requests.get(f\"{BASE_URL}/api/destinations\")\n21     data = response.json()\n",
+      "col_offset": 15,
+      "end_col_offset": 59,
+      "filename": ".\\test_phase2.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 20,
+      "line_range": [
+        20
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "29     print(\"\\n\ud83e\uddea Testing Blogs API...\")\n30     response = requests.get(f\"{BASE_URL}/api/blogs\")\n31     data = response.json()\n",
+      "col_offset": 15,
+      "end_col_offset": 52,
+      "filename": ".\\test_phase2.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 30,
+      "line_range": [
+        30
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "38     print(\"\\n\ud83e\uddea Testing SEO Sitemap...\")\n39     response = requests.get(f\"{BASE_URL}/sitemap.xml\")\n40     print(f\"\u2713 Status: {response.status_code}\")\n",
+      "col_offset": 15,
+      "end_col_offset": 54,
+      "filename": ".\\test_phase2.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 39,
+      "line_range": [
+        39
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "47     print(\"\\n\ud83e\uddea Testing robots.txt...\")\n48     response = requests.get(f\"{BASE_URL}/robots.txt\")\n49     print(f\"\u2713 Status: {response.status_code}\")\n",
+      "col_offset": 15,
+      "end_col_offset": 53,
+      "filename": ".\\test_phase2.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 48,
+      "line_range": [
+        48
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "55     print(\"\\n\ud83e\uddea Testing Blog Categories...\")\n56     response = requests.get(f\"{BASE_URL}/api/blogs/categories\")\n57     data = response.json()\n",
+      "col_offset": 15,
+      "end_col_offset": 63,
+      "filename": ".\\test_phase2.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 56,
+      "line_range": [
+        56
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "17     \n18     response = requests.post(f\"{BASE_URL}/auth/register\", json={\n19         \"email\": f\"test{hash('test') % 10000}@example.com\",\n20         \"password\": \"testpass123\",\n21         \"name\": \"Test User\"\n22     })\n23     \n",
+      "col_offset": 15,
+      "end_col_offset": 6,
+      "filename": ".\\test_phase3.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 18,
+      "line_range": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "41     # Use existing test user\n42     response = requests.post(f\"{BASE_URL}/auth/login\", json={\n43         \"email\": \"test@example.com\",\n44         \"password\": \"testpass123\"\n45     })\n46     \n",
+      "col_offset": 15,
+      "end_col_offset": 6,
+      "filename": ".\\test_phase3.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 42,
+      "line_range": [
+        42,
+        43,
+        44,
+        45
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "65     \n66     response = requests.get(\n67         f\"{BASE_URL}/auth/profile\",\n68         headers={\"Authorization\": f\"Bearer {ACCESS_TOKEN}\"}\n69     )\n70     \n",
+      "col_offset": 15,
+      "end_col_offset": 5,
+      "filename": ".\\test_phase3.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 66,
+      "line_range": [
+        66,
+        67,
+        68,
+        69
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "86     \n87     response = requests.put(\n88         f\"{BASE_URL}/auth/profile\",\n89         headers={\n90             \"Authorization\": f\"Bearer {ACCESS_TOKEN}\",\n91             \"Content-Type\": \"application/json\"\n92         },\n93         json={\n94             \"preferences\": {\n95                 \"budget_tier\": \"mid-range\",\n96                 \"categories\": [\"Adventure\", \"Culture\"],\n97                 \"preferred_continents\": [\"Asia\", \"Europe\"]\n98             }\n99         }\n100     )\n101     \n",
+      "col_offset": 15,
+      "end_col_offset": 5,
+      "filename": ".\\test_phase3.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 87,
+      "line_range": [
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "115     \n116     response = requests.post(\n117         f\"{BASE_URL}/itineraries\",\n118         headers={\n119             \"Authorization\": f\"Bearer {ACCESS_TOKEN}\",\n120             \"Content-Type\": \"application/json\"\n121         },\n122         json={\n123             \"title\": \"Nepal Adventure 2025\",\n124             \"description\": \"7-day trek in the Himalayas\",\n125             \"destination_id\": \"dest_001\",\n126             \"start_date\": \"2025-03-01T00:00:00\",\n127             \"end_date\": \"2025-03-07T00:00:00\",\n128             \"days\": [\n129                 {\n130                     \"day\": 1,\n131                     \"activities\": [\n132                         {\"time\": \"09:00\", \"activity\": \"Arrive in Kathmandu\"},\n133                         {\"time\": \"14:00\", \"activity\": \"Visit Durbar Square\"}\n134                     ]\n135                 },\n136                 {\n137                     \"day\": 2,\n138                     \"activities\": [\n139                         {\"time\": \"06:00\", \"activity\": \"Drive to Pokhara\"},\n140                         {\"time\": \"15:00\", \"activity\": \"Lakeside walk\"}\n141                     ]\n142                 }\n143             ],\n144             \"estimated_budget\": 1200\n145         }\n146     )\n147     \n",
+      "col_offset": 15,
+      "end_col_offset": 5,
+      "filename": ".\\test_phase3.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 116,
+      "line_range": [
+        116,
+        117,
+        118,
+        119,
+        120,
+        121,
+        122,
+        123,
+        124,
+        125,
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132,
+        133,
+        134,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "165     \n166     response = requests.get(\n167         f\"{BASE_URL}/itineraries\",\n168         headers={\"Authorization\": f\"Bearer {ACCESS_TOKEN}\"}\n169     )\n170     \n",
+      "col_offset": 15,
+      "end_col_offset": 5,
+      "filename": ".\\test_phase3.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 166,
+      "line_range": [
+        166,
+        167,
+        168,
+        169
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "185     \n186     response = requests.get(\n187         f\"{BASE_URL}/personalization/recommendations?limit=5\",\n188         headers={\"Authorization\": f\"Bearer {ACCESS_TOKEN}\"}\n189     )\n190     \n",
+      "col_offset": 15,
+      "end_col_offset": 5,
+      "filename": ".\\test_phase3.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 186,
+      "line_range": [
+        186,
+        187,
+        188,
+        189
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    },
+    {
+      "code": "208     \n209     response = requests.post(\n210         f\"{BASE_URL}/personalization/track\",\n211         headers={\n212             \"Authorization\": f\"Bearer {ACCESS_TOKEN}\",\n213             \"Content-Type\": \"application/json\"\n214         },\n215         json={\n216             \"type\": \"destination_view\",\n217             \"destination_id\": \"dest_001\",\n218             \"continent\": \"Asia\"\n219         }\n220     )\n221     \n",
+      "col_offset": 15,
+      "end_col_offset": 5,
+      "filename": ".\\test_phase3.py",
+      "issue_confidence": "LOW",
+      "issue_cwe": {
+        "id": 400,
+        "link": "https://cwe.mitre.org/data/definitions/400.html"
+      },
+      "issue_severity": "MEDIUM",
+      "issue_text": "Call to requests without timeout",
+      "line_number": 209,
+      "line_range": [
+        209,
+        210,
+        211,
+        212,
+        213,
+        214,
+        215,
+        216,
+        217,
+        218,
+        219,
+        220
+      ],
+      "more_info": "https://bandit.readthedocs.io/en/1.8.6/plugins/b113_request_without_timeout.html",
+      "test_id": "B113",
+      "test_name": "request_without_timeout"
+    }
+  ]
+}

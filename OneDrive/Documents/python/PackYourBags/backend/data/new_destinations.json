@@ -1,0 +1,130 @@
+[
+  {
+    "id": "dest_021",
+    "name": "Santorini",
+    "slug": "santorini-greece",
+    "country": "Greece",
+    "continent": "Europe",
+    "image_url": "https://images.unsplash.com/photo-1590003431020-08abf9895a9f?w=1200&q=80",
+    "highlights": ["Oia Sunset Views", "Red Beach", "Ancient Akrotiri", "White-Washed Villages", "Volcanic Hot Springs"],
+    "quick_fact": "Santorini was formed by a volcanic eruption that destroyed the center of a circular island, creating the iconic caldera we see today.",
+    "coordinates": {
+      "lat": 36.3932,
+      "lng": 25.4615
+    },
+    "best_season": "April to June and September to October for pleasant weather and fewer crowds",
+    "budget_tier": "luxury"
+  },
+  {
+    "id": "dest_022",
+    "name": "Machu Picchu",
+    "slug": "machu-picchu-peru",
+    "country": "Peru",
+    "continent": "South America",
+    "image_url": "https://images.unsplash.com/photo-1526392060635-9d6019884377?w=1200&q=80",
+    "highlights": ["Inca Citadel", "Huayna Picchu Mountain", "Inti Punku (Sun Gate)", "Temple of the Sun", "Sacred Valley"],
+    "quick_fact": "Machu Picchu sits at 2,430 meters (7,970 feet) above sea level and was designated a UNESCO World Heritage Site in 1983.",
+    "coordinates": {
+      "lat": -13.1631,
+      "lng": -72.5450
+    },
+    "best_season": "May to September during the dry season with clear skies",
+    "budget_tier": "mid-range"
+  },
+  {
+    "id": "dest_023",
+    "name": "Safari in Serengeti",
+    "slug": "serengeti-safari-tanzania",
+    "country": "Tanzania",
+    "continent": "Africa",
+    "image_url": "https://images.unsplash.com/photo-1590003939009-d0b0a5d8e6a6?w=1200&q=80",
+    "highlights": ["Great Migration", "Big Five Safari", "Ngorongoro Crater", "Hot Air Balloon Safari", "Maasai Cultural Experience"],
+    "quick_fact": "The Serengeti is home to over 3 million large mammals, making it one of the most biodiverse ecosystems in the world.",
+    "coordinates": {
+      "lat": -2.1530,
+      "lng": 34.6857
+    },
+    "best_season": "June to October for the Great Migration and dry season wildlife viewing",
+    "budget_tier": "luxury"
+  },
+  {
+    "id": "dest_024",
+    "name": "Tokyo",
+    "slug": "tokyo-japan",
+    "country": "Japan",
+    "continent": "Asia",
+    "image_url": "https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1200&q=80",
+    "highlights": ["Shibuya Crossing", "Senso-ji Temple", "Tsukiji Outer Market", "Tokyo Skytree", "Harajuku District"],
+    "quick_fact": "Tokyo is the world's most populous metropolitan area with over 37 million residents in the greater metropolitan region.",
+    "coordinates": {
+      "lat": 35.6762,
+      "lng": 139.6503
+    },
+    "best_season": "March to May (spring) and September to November (autumn) for mild weather and beautiful cherry blossoms or fall foliage",
+    "budget_tier": "luxury"
+  },
+  {
+    "id": "dest_025",
+    "name": "New York City",
+    "slug": "new-york-city-usa",
+    "country": "USA",
+    "continent": "North America",
+    "image_url": "https://images.unsplash.com/photo-1496585391839-5330b6039b11?w=1200&q=80",
+    "highlights": ["Times Square", "Central Park", "Statue of Liberty", "Empire State Building", "Brooklyn Bridge"],
+    "quick_fact": "New York City is made up of five boroughs: Manhattan, Brooklyn, Queens, The Bronx, and Staten Island.",
+    "coordinates": {
+      "lat": 40.7128,
+      "lng": -74.0060
+    },
+    "best_season": "April to June and September to November for comfortable temperatures and fewer crowds",
+    "budget_tier": "luxury"
+  },
+  {
+    "id": "dest_026",
+    "name": "Sydney",
+    "slug": "sydney-australia",
+    "country": "Australia",
+    "continent": "Oceania",
+    "image_url": "https://images.unsplash.com/photo-1506973035762-964019c3c9f2?w=1200&q=80",
+    "highlights": ["Sydney Opera House", "Bondi Beach", "Harbour Bridge Climb", "Darling Harbour", "Blue Mountains"],
+    "quick_fact": "The Sydney Opera House is a UNESCO World Heritage Site and one of the most recognizable buildings in the world.",
+    "coordinates": {
+      "lat": -33.8688,
+      "lng": 151.2093
+    },
+    "best_season": "September to November (spring) and March to May (autumn) for mild weather",
+    "budget_tier": "luxury"
+  },
+  {
+    "id": "dest_027",
+    "name": "Petra",
+    "slug": "petra-jordan",
+    "country": "Jordan",
+    "continent": "Asia",
+    "image_url": "https://images.unsplash.com/photo-1589636945480-6c7a2c1f0b7e?w=1200&q=80",
+    "highlights": ["Al-Khazneh (The Treasury)", "Monastery (Ad-Deir)", "Siq Canyon", "Royal Tombs", "High Place of Sacrifice"],
+    "quick_fact": "Petra was established as early as 312 BC as the capital city of the Nabataean Kingdom and is carved directly into rose-red cliffs.",
+    "coordinates": {
+      "lat": 30.3285,
+      "lng": 35.4444
+    },
+    "best_season": "March to May and September to November for comfortable temperatures",
+    "budget_tier": "mid-range"
+  },
+  {
+    "id": "dest_028",
+    "name": "Banff National Park",
+    "slug": "banff-national-park-canada",
+    "country": "Canada",
+    "continent": "North America",
+    "image_url": "https://images.unsplash.com/photo-1503614472-8c93d56e92ce?w=1200&q=80",
+    "highlights": ["Lake Louise", "Moraine Lake", "Banff Gondola", "Johnston Canyon", "Icefields Parkway"],
+    "quick_fact": "Banff National Park is Canada's oldest national park, established in 1885, and part of the Canadian Rocky Mountain Parks UNESCO World Heritage Site.",
+    "coordinates": {
+      "lat": 51.4968,
+      "lng": -115.9281
+    },
+    "best_season": "June to August for summer activities and December to March for skiing",
+    "budget_tier": "luxury"
+  }
+]
