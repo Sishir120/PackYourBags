@@ -9,13 +9,33 @@
             }
         }
     ],
-    "routes": [
+    "rewrites": [
         {
-            "handle": "filesystem"
-        },
+            "source": "/(.*)",
+            "destination": "/frontend_temp/index.html"
+        }
+    ],
+    "headers": [
         {
-            "src": "/(.*)",
-            "dest": "/frontend_temp/dist/index.html"
+            "source": "/(.*)",
+            "headers": [
+                {
+                    "key": "X-Content-Type-Options",
+                    "value": "nosniff"
+                },
+                {
+                    "key": "X-Frame-Options",
+                    "value": "SAMEORIGIN"
+                },
+                {
+                    "key": "X-XSS-Protection",
+                    "value": "1; mode=block"
+                },
+                {
+                    "key": "Referrer-Policy",
+                    "value": "strict-origin-when-cross-origin"
+                }
+            ]
         }
     ]
 }
