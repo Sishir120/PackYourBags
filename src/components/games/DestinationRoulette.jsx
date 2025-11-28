@@ -1,29 +1,36 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Play, RotateCcw, Sparkles, MapPin } from 'lucide-react';
+import { useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import { SoundManager } from '../../utils/SoundManager';
+import { mockDestinations } from '../../data/mockDestinations';
 
-const DESTINATIONS = [
-    { name: 'Paris', country: 'France', flag: '🇫🇷', color: '#3B82F6' },
-    { name: 'Tokyo', country: 'Japan', flag: '🇯🇵', color: '#EF4444' },
-    { name: 'New York', country: 'USA', flag: '🇺🇸', color: '#10B981' },
-    { name: 'London', country: 'UK', flag: '🇬🇧', color: '#F59E0B' },
-    { name: 'Barcelona', country: 'Spain', flag: '🇪🇸', color: '#8B5CF6' },
-    { name: 'Dubai', country: 'UAE', flag: '🇦🇪', color: '#EC4899' },
-    { name: 'Bali', country: 'Indonesia', flag: '🇮🇩', color: '#14B8A6' },
-    { name: 'Rome', country: 'Italy', flag: '🇮🇹', color: '#F97316' },
-    { name: 'Sydney', country: 'Australia', flag: '🇦🇺', color: '#06B6D4' },
-    { name: 'Amsterdam', country: 'Netherlands', flag: '🇳🇱', color: '#A855F7' },
-    { name: 'Singapore', country: 'Singapore', flag: '🇸🇬', color: '#EF4444' },
-    { name: 'Santorini', country: 'Greece', flag: '🇬🇷', color: '#3B82F6' },
-];
+// Select 12 diverse destinations for the roulette
+const ROULETTE_DESTINATIONS = [
+    mockDestinations.find(d => d.slug === 'paris-france'),
+    mockDestinations.find(d => d.slug === 'kyoto-japan'),
+    mockDestinations.find(d => d.slug === 'great-wall-china'),
+    mockDestinations.find(d => d.slug === 'santorini-greece'),
+    mockDestinations.find(d => d.slug === 'machu-picchu-peru'),
+    mockDestinations.find(d => d.slug === 'grand-canyon-usa'),
+    mockDestinations.find(d => d.slug === 'bali-indonesia'),
+    mockDestinations.find(d => d.slug === 'reykjavik-iceland'),
+    mockDestinations.find(d => d.slug === 'dubrovnik-croatia'),
+    mockDestinations.find(d => d.slug === 'prague-czech-republic'),
+    mockDestinations.find(d => d.slug === 'porto-portugal'),
+    mockDestinations.find(d => d.slug === 'pokhara-nepal'),
+].filter(Boolean); // Remove any undefined entries
+
+// Color palette for the wheel
+const COLORS = ['#3B82F6', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6', '#EC4899', '#14B8A6', '#F97316', '#06B6D4', '#A855F7', '#84CC16', '#F43F5E'];
 
 const DestinationRoulette = () => {
     const [isSpinning, setIsSpinning] = useState(false);
     const [selectedDestination, setSelectedDestination] = useState(null);
     const [rotation, setRotation] = useState(0);
     const wheelRef = useRef(null);
+    const navigate = useNavigate();
 
     const spinWheel = () => {
         if (isSpinning) return;
@@ -32,11 +39,11 @@ const DestinationRoulette = () => {
         setSelectedDestination(null);
 
         // Random destination
-        const randomIndex = Math.floor(Math.random() * DESTINATIONS.length);
-        const destination = DESTINATIONS[randomIndex];
+        const randomIndex = Math.floor(Math.random() * ROULETTE_DESTINATIONS.length);
+        const destination = ROULETTE_DESTINATIONS[randomIndex];
 
         // Calculate rotation
-        const segmentAngle = 360 / DESTINATIONS.length;
+        const segmentAngle = 360 / ROULETTE_DESTINATIONS.length;
         const targetAngle = randomIndex * segmentAngle;
         const spins = 5; // Number of full rotations
         const finalRotation = rotation + (360 * spins) + targetAngle;
@@ -52,7 +59,7 @@ const DestinationRoulette = () => {
                 particleCount: 100,
                 spread: 70,
                 origin: { y: 0.6 },
-                colors: [destination.color]
+                colors: [COLORS[randomIndex % COLORS.length]]
             });
         }, 4000);
     };
@@ -60,6 +67,13 @@ const DestinationRoulette = () => {
     const resetWheel = () => {
         setRotation(0);
         setSelectedDestination(null);
+    };
+
+    const handleViewDetails = () => {
+        if (selectedDestination) {
+            const destId = selectedDestination.destination_id || selectedDestination.id;
+            navigate(`/destination/${destId}`);
+        }
     };
 
     // Play tick sounds while spinning
@@ -72,7 +86,7 @@ const DestinationRoulette = () => {
         }
     }, [isSpinning]);
 
-    const segmentAngle = 360 / DESTINATIONS.length;
+    const segmentAngle = 360 / ROULETTE_DESTINATIONS.length;
 
     return (
         <div className="bg-slate-800/50 backdrop-blur-md rounded-3xl p-6 sm:p-8 border border-slate-700 shadow-2xl">
@@ -82,7 +96,7 @@ const DestinationRoulette = () => {
                         <Sparkles className="w-6 h-6 text-white" />
                     </div>
                     <div>
-                        <h2 className="text-2xl font-bold text-white">To-Do Roulette</h2>
+                        <h2 className="text-2xl font-bold text-white">Destination Roulette</h2>
                         <p className="text-sm text-slate-400">Spin to discover your next trip!</p>
                     </div>
                 </div>
@@ -108,8 +122,8 @@ const DestinationRoulette = () => {
                         transition={{ duration: 4, ease: "easeOut" }}
                         className="w-full h-full rounded-full relative shadow-2xl"
                         style={{
-                            background: `conic-gradient(${DESTINATIONS.map((dest, i) =>
-                                `${dest.color} ${i * segmentAngle}deg ${(i + 1) * segmentAngle}deg`
+                            background: `conic-gradient(${ROULETTE_DESTINATIONS.map((dest, i) =>
+                                `${COLORS[i % COLORS.length]} ${i * segmentAngle}deg ${(i + 1) * segmentAngle}deg`
                             ).join(', ')})`
                         }}
                     >
@@ -121,22 +135,25 @@ const DestinationRoulette = () => {
                         </div>
 
                         {/* Destination labels */}
-                        {DESTINATIONS.map((dest, index) => {
+                        {ROULETTE_DESTINATIONS.map((dest, index) => {
                             const angle = (index * segmentAngle) + (segmentAngle / 2);
                             const radian = (angle - 90) * (Math.PI / 180);
                             const radius = 120;
                             const x = Math.cos(radian) * radius;
                             const y = Math.sin(radian) * radius;
 
+                            // Get first letter of destination name
+                            const initial = dest.name.charAt(0);
+
                             return (
                                 <div
                                     key={index}
-                                    className="absolute top-1/2 left-1/2 text-white font-bold text-xs sm:text-sm whitespace-nowrap"
+                                    className="absolute top-1/2 left-1/2 text-white font-bold text-lg whitespace-nowrap"
                                     style={{
                                         transform: `translate(-50%, -50%) translate(${x}px, ${y}px) rotate(${angle}deg)`,
                                     }}
                                 >
-                                    <span className="text-2xl">{dest.flag}</span>
+                                    <span className="bg-white/20 backdrop-blur-sm px-2 py-1 rounded">{initial}</span>
                                 </div>
                             );
                         })}
@@ -166,14 +183,14 @@ const DestinationRoulette = () => {
                             className="mt-8 p-6 bg-gradient-to-br from-slate-700 to-slate-800 rounded-2xl border-2 border-slate-600 text-center w-full max-w-sm"
                         >
                             <p className="text-slate-400 text-sm mb-2">Your Next Destination</p>
-                            <div className="text-6xl mb-3">{selectedDestination.flag}</div>
+                            <div className="text-6xl mb-3">🌍</div>
                             <h3 className="text-3xl font-bold text-white mb-1">{selectedDestination.name}</h3>
                             <p className="text-cyan-400 font-medium">{selectedDestination.country}</p>
                             <button
-                                onClick={() => window.open(`/destinations?search=${selectedDestination.name}`, '_blank')}
+                                onClick={handleViewDetails}
                                 className="mt-4 px-6 py-2 bg-cyan-600 hover:bg-cyan-700 text-white rounded-lg font-medium transition-colors"
                             >
-                                Explore Destination
+                                View Quest Details
                             </button>
                         </motion.div>
                     )}
