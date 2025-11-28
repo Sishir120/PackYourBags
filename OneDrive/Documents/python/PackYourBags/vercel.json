@@ -1,48 +1,6 @@
 {
-    "version": 2,
-    "builds": [
-        {
-            "src": "frontend_temp/package.json",
-            "use": "@vercel/static-build",
-            "config": {
-                "distDir": "dist"
-            }
-        }
-    ],
-    "routes": [
-        {
-            "src": "/assets/(.*)",
-            "dest": "/frontend_temp/dist/assets/$1"
-        },
-        {
-            "src": "/(.*)\\.(ico|png|jpg|jpeg|svg|json|js|css|xml|txt)",
-            "dest": "/frontend_temp/dist/$1.$2"
-        },
-        {
-            "handle": "filesystem"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/frontend_temp/dist/index.html"
-        }
-    ],
-    "headers": [
-        {
-            "source": "/(.*)",
-            "headers": [
-                {
-                    "key": "X-Content-Type-Options",
-                    "value": "nosniff"
-                },
-                {
-                    "key": "X-Frame-Options",
-                    "value": "SAMEORIGIN"
-                },
-                {
-                    "key": "X-XSS-Protection",
-                    "value": "1; mode=block"
-                }
-            ]
-        }
-    ]
+    "buildCommand": "cd frontend_temp && npm run vercel-build",
+    "outputDirectory": "frontend_temp/dist",
+    "installCommand": "cd frontend_temp && npm install",
+    "framework": null
 }
