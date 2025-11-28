@@ -18,8 +18,6 @@ export class TrackGenerator {
                 return this.createFunnelChunk(startY, height);
             case 'donut':
                 return this.createDonutChunk(startY, height);
-            case 'wavyPlatform':
-                return this.createWavyPlatformChunk(startY, height);
             case 'spinner':
                 return this.createSpinnerChunk(startY, height);
             default:
@@ -196,39 +194,7 @@ export class TrackGenerator {
         return bodies;
     }
 
-    createWavyPlatformChunk(startY, height) {
-        // Curved/wavy platforms
-        const bodies = [];
-        const numWaves = 3;
-        const waveHeight = height / numWaves;
 
-        for (let i = 0; i < numWaves; i++) {
-            const y = startY + i * waveHeight + waveHeight / 2;
-            const isLeft = i % 2 === 0;
-
-            // Create curved platform using angled rectangles
-            const segments = 5;
-            for (let s = 0; s < segments; s++) {
-                const segmentWidth = this.width * 0.5 / segments;
-                const xStart = isLeft ? 50 : this.width / 2;
-                const x = xStart + s * segmentWidth + segmentWidth / 2;
-                const curveOffset = Math.sin((s / segments) * Math.PI) * 30;
-
-                const segment = Matter.Bodies.rectangle(x, y + curveOffset, segmentWidth + 5, 15, {
-                    isStatic: true,
-                    angle: Math.sin((s / segments) * Math.PI) * 0.3,
-                    friction: 0.05,
-                    restitution: 0.4,
-                    render: { fillStyle: '#3b82f6' } // Blue wavy platforms
-                });
-
-                bodies.push(segment);
-            }
-        }
-
-        bodies.push(...this.createStraightChunk(startY, height));
-        return bodies;
-    }
 
     createSpinnerChunk(startY, height) {
         // Rotating spinner obstacles (visual only, static for safety)
