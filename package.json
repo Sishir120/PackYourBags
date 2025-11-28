@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build && node src/utils/sitemapGenerator.js",
+    "vercel-build": "vite build && node src/utils/sitemapGenerator.js",
     "preview": "vite preview",
     "test": "playwright test",
     "test:ui": "playwright test --ui",
