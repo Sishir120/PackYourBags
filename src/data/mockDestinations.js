@@ -387,200 +387,7 @@ export const mockDestinations = [
         "popularity_score": 91,
         "created_at": "2023-01-10T00:00:00Z"
     },
-    {
-        "destination_id": "dest_011",
-        "name": "Great Wall of China",
-        "slug": "great-wall-china",
-        "country": "China",
-        "continent": "Asia",
-        "image_url": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        "blog": "## A Wonder of the World: The Great Wall\n\nThe Great Wall of China is a series of fortifications that were built across the historical northern borders of ancient Chinese states and Imperial China as protection against various nomadic groups from the Eurasian Steppe. Several walls were built from as early as the 7th century BC, with selective stretches later joined together by Qin Shi Huang (220–206 BC), the first emperor of China.",
-        "highlights": [
-            "Mutianyu Section",
-            "Badaling Section",
-            "Jinshanling Hiking",
-            "Watchtowers",
-            "Simatai Night Tour"
-        ],
-        "quick_fact": "The Great Wall is the longest wall in the world, stretching over 13,000 miles, and has a history of more than 2,300 years.",
-        "coordinates": {
-            "lat": 40.4319,
-            "lng": 116.5704
-        },
-        "best_season": "Spring (April-May) and Autumn (September-October)",
-        "budget_tier": "mid-range",
-        "local_tips": [
-            "Visit the Mutianyu section for fewer crowds and a toboggan ride down",
-            "Bring plenty of water and comfortable hiking shoes",
-            "Arrive early in the morning to beat the tour buses"
-        ],
-        "description": "The Great Wall of China is one of the most iconic structures in human history. Stretching thousands of miles across rugged terrain, it offers breathtaking views and a deep connection to China's ancient past. Whether you're hiking the steep steps of Jinshanling or taking a leisurely walk at Mutianyu, standing atop this architectural marvel is a once-in-a-lifetime experience.",
-        "estimated_budget": 1500,
-        "price_range": {
-            "min": 1200,
-            "max": 2000
-        },
-        "rating": 4.9,
-        "review_count": 5420,
-        "popularity_score": 99,
-        "created_at": "2023-02-01T00:00:00Z"
-    },
-    {
-        "destination_id": "dest_012",
-        "name": "Paris",
-        "slug": "paris-france",
-        "country": "France",
-        "continent": "Europe",
-        "image_url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        "blog": "## The City of Light: Paris\n\nParis, France's capital, is a major European city and a global center for art, fashion, gastronomy and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.",
-        "highlights": [
-            "Eiffel Tower",
-            "Louvre Museum",
-            "Notre-Dame Cathedral",
-            "Arc de Triomphe",
-            "Montmartre",
-            "Seine River Cruise"
-        ],
-        "quick_fact": "Paris is often called the 'City of Light' both because of its leading role during the Age of Enlightenment and more literally because Paris was one of the first European cities to adopt gas street lighting.",
-        "coordinates": {
-            "lat": 48.8566,
-            "lng": 2.3522
-        },
-        "best_season": "June to August and September to October",
-        "budget_tier": "luxury",
-        "local_tips": [
-            "Purchase a Paris Museum Pass to skip lines",
-            "Enjoy a picnic near the Eiffel Tower at Champ de Mars",
-            "Explore the hidden covered passages (Passages Couverts)"
-        ],
-        "description": "Paris is the epitome of romance, culture, and history. From the iconic Eiffel Tower to the world-class art at the Louvre, every corner of the city tells a story. Stroll along the Seine, enjoy a croissant at a sidewalk cafe, or get lost in the artistic streets of Montmartre. Paris is a destination that captivates the heart and soul of every traveler.",
-        "estimated_budget": 2500,
-        "price_range": {
-            "min": 2000,
-            "max": 3500
-        },
-        "rating": 4.8,
-        "review_count": 8900,
-        "popularity_score": 100,
-        "created_at": "2023-02-02T00:00:00Z"
-    },
-    {
-        "destination_id": "dest_013",
-        "name": "Santorini",
-        "slug": "santorini-greece",
-        "country": "Greece",
-        "continent": "Europe",
-        "image_url": "https://images.unsplash.com/photo-1613395877344-13d4c79e4284?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        "blog": "## The Jewel of the Aegean: Santorini\n\nSantorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera (crater). They overlook the sea, small islands to the west and beaches made up of black, red and white lava pebbles.",
-        "highlights": [
-            "Oia Sunset",
-            "Red Beach",
-            "Fira Town",
-            "Ancient Akrotiri",
-            "Caldera Boat Tour",
-            "Winery Tours"
-        ],
-        "quick_fact": "Santorini is essentially what remains after an enormous volcanic eruption that destroyed the earliest settlements on a formerly single island, and created the current geological caldera.",
-        "coordinates": {
-            "lat": 36.3932,
-            "lng": 25.4615
-        },
-        "best_season": "Late April to early November",
-        "budget_tier": "luxury",
-        "local_tips": [
-            "Watch the sunset from Oia Castle, but arrive early",
-            "Rent an ATV to explore the island's hidden beaches",
-            "Visit the Santo Wines winery for a tasting with a view"
-        ],
-        "description": "Santorini is world-famous for its stunning sunsets, white-washed buildings with blue domes, and crystal-clear waters. It is the perfect destination for romance and relaxation. Explore the volcanic beaches, wander through the charming streets of Oia, and indulge in delicious Greek cuisine while overlooking the breathtaking caldera.",
-        "estimated_budget": 2200,
-        "price_range": {
-            "min": 1800,
-            "max": 3000
-        },
-        "rating": 4.9,
-        "review_count": 4500,
-        "popularity_score": 98,
-        "created_at": "2023-02-03T00:00:00Z"
-    },
-    {
-        "destination_id": "dest_014",
-        "name": "Machu Picchu",
-        "slug": "machu-picchu-peru",
-        "country": "Peru",
-        "continent": "South America",
-        "image_url": "https://images.unsplash.com/photo-1587595431973-160d0d94add1?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        "blog": "## The Lost City of the Incas: Machu Picchu\n\nMachu Picchu is an Incan citadel set high in the Andes Mountains in Peru, above the Urubamba River valley. Built in the 15th century and later abandoned, it’s renowned for its sophisticated dry-stone walls that fuse huge blocks without the use of mortar, intriguing buildings that play on astronomical alignments and panoramic views. Its exact former use remains a mystery.",
-        "highlights": [
-            "Inca Trail",
-            "Sun Gate",
-            "Temple of the Sun",
-            "Intihuatana Stone",
-            "Huayna Picchu",
-            "Llama Spotting"
-        ],
-        "quick_fact": "Machu Picchu was built around 1450 but abandoned a century later at the time of the Spanish Conquest. It remained unknown to the outside world until 1911.",
-        "coordinates": {
-            "lat": -13.1631,
-            "lng": -72.5450
-        },
-        "best_season": "April to October (Dry Season)",
-        "budget_tier": "mid-range",
-        "local_tips": [
-            "Book your entrance tickets and train months in advance",
-            "Acclimatize in Cusco for a few days before visiting",
-            "Bring insect repellent and sun protection"
-        ],
-        "description": "Machu Picchu is a mystical ancient city shrouded in clouds and mystery. Hidden high in the Andes, this UNESCO World Heritage site offers a glimpse into the incredible engineering and culture of the Inca civilization. Whether you hike the Inca Trail or take the train, the first sight of the citadel is a moment you will never forget.",
-        "estimated_budget": 1800,
-        "price_range": {
-            "min": 1500,
-            "max": 2500
-        },
-        "rating": 4.9,
-        "review_count": 6200,
-        "popularity_score": 97,
-        "created_at": "2023-02-04T00:00:00Z"
-    },
-    {
-        "destination_id": "dest_015",
-        "name": "Grand Canyon",
-        "slug": "grand-canyon-usa",
-        "country": "USA",
-        "continent": "North America",
-        "image_url": "https://images.unsplash.com/photo-1615551043360-33de8b5f410c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80",
-        "blog": "## Nature's Masterpiece: The Grand Canyon\n\nThe Grand Canyon in Arizona is a natural formation distinguished by layered bands of red rock, revealing millions of years of geological history in cross-section. Vast in scale, the canyon averages 10 miles across and a mile deep along its 277-mile length. Much of the area is a national park, with Colorado River white-water rapids and sweeping vistas.",
-        "highlights": [
-            "South Rim",
-            "Bright Angel Trail",
-            "Havasu Falls",
-            "Skywalk",
-            "Colorado River Rafting",
-            "Helicopter Tour"
-        ],
-        "quick_fact": "The Grand Canyon is 277 miles (446 km) long, up to 18 miles (29 km) wide and attains a depth of over a mile (6,093 feet or 1,857 meters).",
-        "coordinates": {
-            "lat": 36.1069,
-            "lng": -112.1129
-        },
-        "best_season": "March to May and September to November",
-        "budget_tier": "mid-range",
-        "local_tips": [
-            "Visit the North Rim for a quieter experience (open mid-May to mid-Oct)",
-            "Catch the sunrise or sunset at Mather Point",
-            "Bring plenty of water if hiking into the canyon"
-        ],
-        "description": "The Grand Canyon is one of the most awe-inspiring natural wonders on Earth. Its immense size and colorful landscape leave visitors speechless. Whether you're hiking the rim, rafting the Colorado River, or simply taking in the views, the Grand Canyon offers an adventure of a lifetime.",
-        "estimated_budget": 1300,
-        "price_range": {
-            "min": 1000,
-            "max": 1800
-        },
-        "rating": 4.8,
-        "review_count": 7800,
-        "popularity_score": 96,
-        "created_at": "2023-02-05T00:00:00Z"
-    },
+
     {
         "destination_id": "dest_new_001",
         "name": "Great Wall of China",
@@ -664,7 +471,7 @@ export const mockDestinations = [
         "slug": "santorini-greece",
         "country": "Greece",
         "continent": "Europe",
-        "image_url": "https://images.unsplash.com/photo-1613395877344-13d4c280d288?w=800&q=80",
+        "image_url": "/images/destinations/santorini-greece.jpg",
         "blog": "## The Jewel of the Aegean: Santorini\n\nSantorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera (crater).",
         "highlights": [
             "Oia Sunset",
@@ -772,5 +579,132 @@ export const mockDestinations = [
         "review_count": 22100,
         "popularity_score": 99,
         "created_at": "2023-03-14T00:00:00Z"
+    },
+    {
+        "destination_id": "dest_new_006",
+        "name": "Banff",
+        "slug": "banff-canada",
+        "country": "Canada",
+        "continent": "North America",
+        "image_url": getDestinationImage('banff-canada'),
+        "blog": "## The Crown Jewel of the Canadian Rockies: Banff\n\nBanff is a resort town in the province of Alberta, located within Banff National Park. The peaks of Mt. Rundle and Mt. Cascade, part of the Rocky Mountains, dominate its skyline. On Banff Avenue, the main thoroughfare, boutiques and restaurants mix with château-style hotels and souvenir shops. The surrounding 6,500 square kilometers of parkland are home to wildlife including elk and grizzly bears.",
+        "highlights": [
+            "Lake Louise",
+            "Moraine Lake",
+            "Banff Gondola",
+            "Johnston Canyon",
+            "Peyto Lake",
+            "Hot Springs",
+            "Icefields Parkway"
+        ],
+        "quick_fact": "Banff National Park, established in 1885, is Canada's oldest national park and part of the Canadian Rocky Mountain Parks UNESCO World Heritage Site.",
+        "coordinates": {
+            "lat": 51.1784,
+            "lng": -115.5708
+        },
+        "best_season": "June to August for hiking, December to March for skiing",
+        "budget_tier": "mid-range",
+        "local_tips": [
+            "Book accommodations well in advance, especially for summer and ski season",
+            "Take the scenic Icefields Parkway drive to Jasper",
+            "Visit Lake Louise early in the morning to avoid crowds",
+            "Bring bear spray if hiking in the backcountry",
+            "Try the local elk or bison dishes at Banff restaurants"
+        ],
+        "description": "Nestled in the heart of the Canadian Rockies, Banff offers breathtaking mountain scenery, pristine turquoise lakes, and world-class outdoor adventures. Whether you're skiing down powdery slopes, hiking through alpine meadows, or soaking in natural hot springs with mountain views, Banff delivers an unforgettable wilderness experience combined with charming mountain town hospitality.",
+        "estimated_budget": 1600,
+        "price_range": {
+            "min": 1200,
+            "max": 2200
+        },
+        "rating": 4.9,
+        "review_count": 14500,
+        "popularity_score": 97,
+        "created_at": "2023-03-15T00:00:00Z"
+    },
+    {
+        "destination_id": "dest_new_007",
+        "name": "Taj Mahal",
+        "slug": "taj-mahal-india",
+        "country": "India",
+        "continent": "Asia",
+        "image_url": getDestinationImage('taj-mahal-india'),
+        "blog": "## The Monument of Eternal Love: Taj Mahal\n\nThe Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor Shah Jahan to house the tomb of his favorite wife, Mumtaz Mahal. The tomb is the centerpiece of a 17-hectare complex, which includes a mosque and a guest house, and is set in formal gardens bounded on three sides by a crenellated wall.",
+        "highlights": [
+            "Main Mausoleum",
+            "Reflection Pool",
+            "Mughal Gardens",
+            "Agra Fort",
+            "Mehtab Bagh",
+            "Yamuna River View",
+            "Intricate Marble Inlay"
+        ],
+        "quick_fact": "The Taj Mahal took approximately 22 years to build and required the labor of 20,000 artisans. It's considered the finest example of Mughal architecture, combining elements from Persian, Ottoman Turkish, and Indian architectural styles.",
+        "coordinates": {
+            "lat": 27.1751,
+            "lng": 78.0421
+        },
+        "best_season": "October to March (cooler weather)",
+        "budget_tier": "budget",
+        "local_tips": [
+            "Visit at sunrise for the most magical lighting and fewer crowds",
+            "The Taj Mahal is closed on Fridays",
+            "Wear shoe covers or remove shoes before entering the mausoleum",
+            "Photography is not allowed inside the main tomb",
+            "Combine your visit with Agra Fort for a full day of Mughal history"
+        ],
+        "description": "The Taj Mahal stands as the ultimate symbol of love and one of the world's most recognizable monuments. This architectural masterpiece showcases the pinnacle of Mughal art, with its perfect symmetry, intricate marble inlay work, and stunning white marble that changes color throughout the day. A visit to the Taj Mahal is a journey into India's rich history and a testament to eternal love.",
+        "estimated_budget": 800,
+        "price_range": {
+            "min": 600,
+            "max": 1200
+        },
+        "rating": 4.8,
+        "review_count": 32400,
+        "popularity_score": 100,
+        "created_at": "2023-03-16T00:00:00Z"
+    },
+    {
+        "destination_id": "dest_new_008",
+        "name": "Petra",
+        "slug": "petra-jordan",
+        "country": "Jordan",
+        "continent": "Asia",
+        "image_url": getDestinationImage('petra-jordan'),
+        "blog": "## The Rose City: Petra\n\nPetra is a famous archaeological site in Jordan's southwestern desert. Dating to around 300 B.C., it was the capital of the Nabatean Kingdom. Accessed via a narrow canyon called Al Siq, it contains tombs and temples carved into pink sandstone cliffs, earning its nickname, the 'Rose City.' Perhaps its most famous structure is the 45m-high Al Khazneh, a temple with an ornate, Greek-style facade.",
+        "highlights": [
+            "The Treasury (Al-Khazneh)",
+            "The Monastery (Ad Deir)",
+            "The Siq",
+            "Royal Tombs",
+            "High Place of Sacrifice",
+            "Petra by Night",
+            "Roman Theater"
+        ],
+        "quick_fact": "Petra was unknown to the Western world until 1812, when it was rediscovered by Swiss explorer Johann Ludwig Burckhardt. It's one of the New Seven Wonders of the World.",
+        "coordinates": {
+            "lat": 30.3285,
+            "lng": 35.4444
+        },
+        "best_season": "March to May and September to November",
+        "budget_tier": "mid-range",
+        "local_tips": [
+            "Wear comfortable hiking shoes; the site involves a lot of walking",
+            "Start early to avoid the heat and crowds",
+            "Hire a local Bedouin guide for insider knowledge and hidden spots",
+            "Don't miss the hike to the Monastery - it's less crowded than the Treasury",
+            "Bring plenty of water and sun protection",
+            "Experience Petra by Night for a magical candlelit atmosphere"
+        ],
+        "description": "Petra is one of the world's most precious cultural properties and a UNESCO World Heritage Site. This ancient city carved into rose-red cliffs is a testament to the ingenuity of the Nabataean people. Walking through the narrow Siq and emerging to see the Treasury is an unforgettable moment. Beyond the famous facade, Petra offers days of exploration through tombs, temples, and stunning desert landscapes.",
+        "estimated_budget": 1400,
+        "price_range": {
+            "min": 1000,
+            "max": 2000
+        },
+        "rating": 4.9,
+        "review_count": 16800,
+        "popularity_score": 98,
+        "created_at": "2023-03-17T00:00:00Z"
     }
 ];
