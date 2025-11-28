@@ -27,6 +27,8 @@ export const destinationImages = {
     'great-wall-china': '/images/destinations/great-wall-china.jpg',
     'taj-mahal-india': '/images/destinations/taj-mahal-india.jpg',
     'eiffel-tower-france': '/images/destinations/eiffel-tower-france.jpg',
+    'paris-france': '/images/destinations/paris-france.jpg',
+    'grand-canyon-usa': '/images/destinations/grand-canyon-usa.jpg',
     'banff-canada': '/images/destinations/banff,canada.jpg',
     'petra-jordan': '/images/destinations/Petra,Jordan.jpg',
     'great-barrier-reef-australia': '/images/destinations/Great Barrier Reef, Austrailia.jpg',
