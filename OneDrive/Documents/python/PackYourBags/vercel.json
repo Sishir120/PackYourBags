@@ -1,6 +1,21 @@
 {
-    "buildCommand": "cd frontend_temp && npm run vercel-build",
-    "outputDirectory": "frontend_temp/dist",
-    "installCommand": "cd frontend_temp && npm install",
-    "framework": null
+    "version": 2,
+    "builds": [
+        {
+            "src": "frontend_temp/package.json",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "dist"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "handle": "filesystem"
+        },
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
 }
