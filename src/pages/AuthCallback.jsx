@@ -14,7 +14,7 @@ const AuthCallback = () => {
 
                 if (error) {
                     console.error('Auth callback error:', error)
-                    navigate('/login?error=auth_failed')
+                    navigate('/?auth_error=auth_failed')
                     return
                 }
 
@@ -24,11 +24,11 @@ const AuthCallback = () => {
                     navigate('/')
                 } else {
                     // No session found, redirect to login
-                    navigate('/login')
+                    navigate('/?auth_error=no_session')
                 }
             } catch (err) {
                 console.error('Callback handling error:', err)
-                navigate('/login?error=unknown')
+                navigate('/?auth_error=unknown')
             }
         }
 

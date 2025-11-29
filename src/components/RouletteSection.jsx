@@ -112,8 +112,8 @@ const RouletteSection = () => {
     <section className="py-24 bg-white relative overflow-hidden">
       {/* Background Elements */}
       <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-amber-50 rounded-full blur-3xl opacity-50 transform translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-orange-50 rounded-full blur-3xl opacity-50 transform -translate-x-1/2 translate-y-1/2"></div>
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-amber-50 rounded-full opacity-30 transform translate-x-1/2 -translate-y-1/2"></div>
+        <div className="absolute bottom-0 left-0 w-1/3 h-1/3 bg-orange-50 rounded-full opacity-30 transform -translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="container-custom relative z-10">

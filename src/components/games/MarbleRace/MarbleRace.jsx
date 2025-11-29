@@ -258,17 +258,36 @@ const MarbleRace = () => {
 
         // Draw Background
         const gradient = ctx.createLinearGradient(0, 0, 0, height);
-        gradient.addColorStop(0, '#1e293b'); // Slate 800
-        gradient.addColorStop(1, '#0f172a'); // Slate 900
+        gradient.addColorStop(0, '#0f172a'); // Slate 900
+        gradient.addColorStop(1, '#1e293b'); // Slate 800
         ctx.fillStyle = gradient;
         ctx.fillRect(0, 0, width, height);
+
+        // Grid Pattern Overlay
+        ctx.save();
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.03)';
+        ctx.lineWidth = 1;
+        const gridSize = 40;
+        const offset = (Date.now() / 50) % gridSize; // Animated grid
+
+        ctx.beginPath();
+        for (let x = 0; x <= width; x += gridSize) {
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, height);
+        }
+        for (let y = offset - gridSize; y <= height; y += gridSize) {
+            ctx.moveTo(0, y);
+            ctx.lineTo(width, y);
+        }
+        ctx.stroke();
+        ctx.restore();
 
         ctx.save();
 
         // Apply Camera Transform
         const zoom = gm.camera.zoom;
         const translateX = (width / 2) - (200 * zoom);
-        const translateY = -gm.camera.y * zoom;
+        const translateY = -gm.camera.y * zoom + (height / 3); // Offset to keep action in middle-top
 
         ctx.translate(translateX, translateY);
         ctx.scale(zoom, zoom);
@@ -276,18 +295,11 @@ const MarbleRace = () => {
         // Render All Matter.js Bodies (Track, Walls, Obstacles)
         const bodies = Matter.Composite.allBodies(gm.world);
 
+        // 1. Draw Track/Walls first
         bodies.forEach(body => {
-            if (body.label === 'marble') return; // Skip marbles, we draw them separately with flags
-            if (body.label === 'finishLine') {
-                ctx.fillStyle = '#10b981';
-                ctx.globalAlpha = 0.3;
-                ctx.fillRect(body.position.x - 200, body.position.y - 10, 400, 20);
-                ctx.globalAlpha = 1.0;
-                return;
-            }
+            if (body.label === 'marble') return;
 
             ctx.beginPath();
-
             if (body.circleRadius) {
                 ctx.arc(body.position.x, body.position.y, body.circleRadius, 0, Math.PI * 2);
             } else {
@@ -299,78 +311,139 @@ const MarbleRace = () => {
                 ctx.lineTo(vertices[0].x, vertices[0].y);
             }
 
-            ctx.fillStyle = body.render.fillStyle || '#ccc';
-            ctx.fill();
-            ctx.strokeStyle = '#000';
-            ctx.lineWidth = 1;
-            ctx.stroke();
+            if (body.label === 'finishLine') {
+                // Finish Line - Checkerboard pattern
+                ctx.save();
+                ctx.clip();
+                const checkSize = 20;
+                ctx.fillStyle = '#10b981';
+                ctx.fillRect(body.bounds.min.x, body.bounds.min.y, body.bounds.max.x - body.bounds.min.x, body.bounds.max.y - body.bounds.min.y);
+
+                ctx.fillStyle = '#ffffff';
+                for (let i = 0; i < (body.bounds.max.x - body.bounds.min.x) / checkSize; i++) {
+                    if (i % 2 === 0) ctx.fillRect(body.bounds.min.x + i * checkSize, body.bounds.min.y, checkSize, 20);
+                }
+                ctx.restore();
+            } else if (body.label === 'boundary') {
+                // Walls - Neon Glow
+                ctx.shadowBlur = 15;
+                ctx.shadowColor = '#3b82f6'; // Blue glow
+                ctx.fillStyle = '#1e293b';
+                ctx.fill();
+                ctx.shadowBlur = 0;
+
+                ctx.strokeStyle = '#3b82f6';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            } else {
+                // Obstacles
+                ctx.fillStyle = body.render.fillStyle || '#475569';
+                ctx.fill();
+
+                // 3D effect for obstacles
+                ctx.strokeStyle = 'rgba(255,255,255,0.1)';
+                ctx.lineWidth = 2;
+                ctx.stroke();
+            }
         });
 
-        // Draw Trails
+        // 2. Draw Trails
         gm.marbles.forEach(m => {
             if (!trailsRef.current[m.id]) trailsRef.current[m.id] = [];
             const trail = trailsRef.current[m.id];
 
             // Add current position
             trail.push({ x: m.position.x, y: m.position.y });
-            if (trail.length > 10) trail.shift(); // Reduced from 20 to 10 for better performance
+            if (trail.length > 20) trail.shift(); // Longer trails
 
             if (trail.length > 1) {
-                ctx.beginPath();
-                ctx.moveTo(trail[0].x, trail[0].y);
-                for (let i = 1; i < trail.length; i++) {
-                    ctx.lineTo(trail[i].x, trail[i].y);
-                }
-                ctx.strokeStyle = `rgba(255, 255, 255, 0.2)`;
-                ctx.lineWidth = m.radius;
+                // Draw glowy trail
+                ctx.save();
                 ctx.lineCap = 'round';
-                ctx.stroke();
+                ctx.lineJoin = 'round';
+
+                // Outer glow
+                ctx.shadowBlur = 10;
+                ctx.shadowColor = m.color;
+
+                // Draw segments with fading opacity
+                for (let i = 0; i < trail.length - 1; i++) {
+                    const opacity = (i / trail.length);
+                    ctx.beginPath();
+                    ctx.moveTo(trail[i].x, trail[i].y);
+                    ctx.lineTo(trail[i + 1].x, trail[i + 1].y);
+                    ctx.strokeStyle = `rgba(${hexToRgb(m.color)}, ${opacity})`;
+                    ctx.lineWidth = m.radius * 0.8 * opacity; // Tapering width
+                    ctx.stroke();
+                }
+                ctx.restore();
             }
         });
 
-        // Overlay Flags on Marbles
+        // 3. Draw Marbles
         gm.marbles.forEach(m => {
             const { x, y } = m.position;
             const r = m.radius;
 
             ctx.save();
             ctx.translate(x, y);
-
-            // Rotate based on body angle
             ctx.rotate(m.body.angle);
+
+            // Marble Shadow/Glow
+            ctx.shadowBlur = 15;
+            ctx.shadowColor = m.color;
 
             ctx.beginPath();
             ctx.arc(0, 0, r, 0, Math.PI * 2);
             ctx.clip();
 
-            // Find flag
+            // Flag Texture
             const img = flagsCache.current[m.countryId];
-
             if (img && img.complete) {
-                // Draw flag centered (and slightly larger to cover)
                 ctx.drawImage(img, -r * 1.5, -r * 1.5, r * 3, r * 3);
             } else {
-                // Fallback to color
                 ctx.fillStyle = m.color;
                 ctx.fill();
             }
 
-            // Gloss/Shine
-            const grad = ctx.createRadialGradient(-r / 3, -r / 3, r / 4, 0, 0, r);
-            grad.addColorStop(0, 'rgba(255,255,255,0.7)');
-            grad.addColorStop(1, 'rgba(255,255,255,0)');
+            // Glass/Sphere Effect overlay
+            const grad = ctx.createRadialGradient(-r / 3, -r / 3, r / 10, 0, 0, r);
+            grad.addColorStop(0, 'rgba(255,255,255,0.9)'); // Highlight
+            grad.addColorStop(0.4, 'rgba(255,255,255,0.1)');
+            grad.addColorStop(1, 'rgba(0,0,0,0.4)'); // Shadow edge
             ctx.fillStyle = grad;
             ctx.fill();
 
-            // Border
-            ctx.strokeStyle = 'rgba(0,0,0,0.2)';
+            // Rim light
+            ctx.beginPath();
+            ctx.arc(0, 0, r, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(255,255,255,0.3)';
             ctx.lineWidth = 1;
             ctx.stroke();
 
             ctx.restore();
+
+            // Name Label (if leader or close)
+            if (m.rank <= 3) {
+                ctx.fillStyle = 'white';
+                ctx.font = 'bold 12px Inter, sans-serif';
+                ctx.textAlign = 'center';
+                ctx.shadowColor = 'black';
+                ctx.shadowBlur = 4;
+                ctx.fillText(m.country.code.toUpperCase(), x, y - r - 8);
+                ctx.shadowBlur = 0;
+            }
         });
 
         ctx.restore();
+    };
+
+    // Helper for hex to rgb
+    const hexToRgb = (hex) => {
+        const result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
+        return result ?
+            `${parseInt(result[1], 16)}, ${parseInt(result[2], 16)}, ${parseInt(result[3], 16)}` :
+            '255, 255, 255';
     };
 
     const resetGame = () => {

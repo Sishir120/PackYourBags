@@ -48,8 +48,8 @@ export class GameManager {
         Matter.Composite.add(this.world, startPlatform);
         currentY += 200;
 
-        // Generate Random Chunks with visual variety
-        const chunkTypes = ['zigzag', 'split', 'funnel', 'straight', 'donut', 'wavyPlatform', 'spinner'];
+        // Generate Random Chunks with visual variety - excluding wavyPlatform
+        const chunkTypes = ['zigzag', 'funnel', 'straight', 'donut', 'spinner', 'split'];
 
         for (let i = 0; i < numChunks; i++) {
             const type = chunkTypes[Math.floor(Math.random() * chunkTypes.length)];
@@ -127,7 +127,7 @@ export class GameManager {
 
         // Spawn Marbles
         const cols = 4;
-        const colWidth = 40;
+        const colWidth = 30; // Reduced from 40 to match smaller marble size
         const startX = 200 - (cols * colWidth) / 2;
 
         this.marbles = countries.map((country, i) => {

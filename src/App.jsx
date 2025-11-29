@@ -98,10 +98,21 @@ function App() {
       return () => subscription.unsubscribe()
     }
 
-    // Check for saved theme preference
     const savedTheme = localStorage.getItem('theme') || 'light';
     setTheme(savedTheme);
     document.documentElement.setAttribute('data-theme', savedTheme);
+
+    // Check for auth error in URL
+    const params = new URLSearchParams(window.location.search);
+    const authError = params.get('auth_error');
+    if (authError) {
+      // Clear the param
+      window.history.replaceState({}, document.title, window.location.pathname);
+      // Show error (could be improved with a toast later)
+      if (authError === 'auth_failed') alert('Authentication failed. Please try again.');
+      else if (authError === 'no_session') alert('Could not sign in. Please try again.');
+      else alert('An unknown authentication error occurred.');
+    }
   }, [])
 
   // Update theme when it changes
