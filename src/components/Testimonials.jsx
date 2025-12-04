@@ -93,13 +93,27 @@ const Testimonials = () => {
             </div>
             <div className="hidden md:block w-px h-16 bg-neutral-200"></div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-neutral-900 mb-1">15k+</div>
-              <div className="text-sm font-bold text-neutral-500 uppercase tracking-wider">Happy Travelers</div>
+              <div className="text-4xl font-bold text-neutral-900 mb-1">50k+</div>
+              <div className="text-sm font-bold text-neutral-500 uppercase tracking-wider">Trips Planned</div>
             </div>
             <div className="hidden md:block w-px h-16 bg-neutral-200"></div>
             <div className="text-center">
-              <div className="text-4xl font-bold text-neutral-900 mb-1">98%</div>
-              <div className="text-sm font-bold text-neutral-500 uppercase tracking-wider">Recommend Us</div>
+              <div className="text-4xl font-bold text-neutral-900 mb-1">120+</div>
+              <div className="text-sm font-bold text-neutral-500 uppercase tracking-wider">Countries Covered</div>
+            </div>
+          </div>
+
+          <div className="mt-12 inline-block bg-gradient-to-r from-primary-50 to-primary-100 border border-primary-200 rounded-2xl p-6 max-w-2xl mx-auto">
+            <p className="text-primary-800 font-medium">
+              "Switching to <span className="font-bold">Pro</span> was the best decision. The detailed PDF itineraries and offline access saved us so much stress during our Europe trip!"
+            </p>
+            <div className="flex items-center justify-center gap-2 mt-3">
+              <div className="flex -space-x-2">
+                <img className="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=64&h=64&fit=crop" alt="User" />
+                <img className="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=64&h=64&fit=crop" alt="User" />
+                <img className="w-8 h-8 rounded-full border-2 border-white" src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=64&h=64&fit=crop" alt="User" />
+              </div>
+              <span className="text-sm text-primary-600 font-bold">+2,000 Pro Travelers this month</span>
             </div>
           </div>
         </div>

@@ -32,6 +32,41 @@ export const mockDestinations = [
             "Explore the nearby Sarangkot hill for panoramic views of the sunrise over the Himalayas",
             "Attend the annual Pokhara Street Festival in December for a vibrant cultural experience"
         ],
+        "itinerary": {
+            "duration": "3 Days",
+            "description": "Experience the best of Pokhara's nature and adventure in this action-packed 3-day itinerary.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Lakeside Serenity & World Peace Pagoda",
+                    "activities": "Morning boat ride on Phewa Lake. Hike to World Peace Pagoda for sunset views. Dinner at Lakeside."
+                },
+                {
+                    "day": 2,
+                    "title": "Sarangkot Sunrise & Adventure",
+                    "activities": "Early morning drive to Sarangkot for sunrise. Paragliding adventure. Visit Davis Falls and Gupteshwor Cave."
+                },
+                {
+                    "day": 3,
+                    "title": "Culture & Relaxation",
+                    "activities": "Visit International Mountain Museum. Relax at Begnas Lake. Evening stroll and shopping in Lakeside."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "What is the best time to visit Pokhara?",
+                "answer": "The best time is from September to November (autumn) and March to May (spring) for clear mountain views."
+            },
+            {
+                "question": "Is paragliding safe in Pokhara?",
+                "answer": "Yes, Pokhara is one of the world's top paragliding spots with experienced pilots and strict safety regulations."
+            },
+            {
+                "question": "Do I need a permit to visit Pokhara?",
+                "answer": "No permit is needed for Pokhara city, but you'll need TIMS and ACAP permits if you plan to trek in the Annapurna region."
+            }
+        ],
         "description": "Pokhara, a picturesque city in Nepal, is renowned for its stunning lakes, majestic mountain views, and vibrant culture. It serves as the perfect gateway to the Himalayas, offering a wide range of activities for nature lovers and adventure enthusiasts. Whether you seek tranquility by the lakeside or thrill through paragliding and trekking, Pokhara has something for everyone. With a backdrop of the Annapurna mountain range, this charming city is a must-visit destination for those seeking a blend of natural beauty and outdoor adventures.",
         "estimated_budget": 899,
         "price_range": {
@@ -137,6 +172,58 @@ export const mockDestinations = [
             "Seminyak Beach",
             "Mount Batur",
             "Sacred Monkey Forest"
+        ],
+        "local_tips": [
+            "Rent a scooter to explore the island at your own pace, but drive carefully",
+            "Visit temples early in the morning to avoid crowds and heat",
+            "Respect local customs: wear a sash and sarong when entering temples",
+            "Try Nasi Goreng and Satay from local warungs (eateries)",
+            "Bargain politely at local markets like Ubud Art Market"
+        ],
+        "itinerary": {
+            "duration": "5 Days",
+            "description": "A perfect blend of culture, nature, and relaxation in the Island of Gods.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Ubud Culture & Monkey Forest",
+                    "activities": "Explore the Sacred Monkey Forest. Visit Ubud Palace and Art Market. Walk through Campuhan Ridge."
+                },
+                {
+                    "day": 2,
+                    "title": "Rice Terraces & Water Temples",
+                    "activities": "Sunrise at Tegalalang Rice Terrace. Visit Tirta Empul Holy Water Temple. Coffee plantation tour."
+                },
+                {
+                    "day": 3,
+                    "title": "Mount Batur Sunrise Trek",
+                    "activities": "Early morning trek up Mount Batur for sunrise. Relax in natural hot springs. Afternoon massage."
+                },
+                {
+                    "day": 4,
+                    "title": "Uluwatu Cliffs & Kecak Dance",
+                    "activities": "Relax at Padang Padang Beach. Visit Uluwatu Temple at sunset. Watch the traditional Kecak Fire Dance."
+                },
+                {
+                    "day": 5,
+                    "title": "Seminyak Beach & Sunset",
+                    "activities": "Shopping in Seminyak boutiques. Beach club relaxation. Farewell dinner on the beach."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "Do I need a visa for Bali?",
+                "answer": "Many nationalities can get a Visa on Arrival (VOA) for 30 days, which is extendable once."
+            },
+            {
+                "question": "What is the currency in Bali?",
+                "answer": "The currency is the Indonesian Rupiah (IDR). Cash is widely used, but cards are accepted in major areas."
+            },
+            {
+                "question": "Is tap water safe to drink?",
+                "answer": "No, it is recommended to drink bottled or filtered water in Bali to avoid 'Bali Belly'."
+            }
         ],
         "quick_fact": "Island of gods featuring emerald rice paddies, ancient temples, and tropical beaches",
         "coordinates": {
@@ -452,7 +539,49 @@ export const mockDestinations = [
         "local_tips": [
             "Learn a few basic French phrases; locals appreciate the effort",
             "Use the Metro, it's efficient and covers the whole city",
-            "Enjoy a picnic by the Seine or in the Luxembourg Gardens"
+            "Enjoy a picnic by the Seine or in the Luxembourg Gardens",
+            "Visit the Louvre on Wednesday or Friday evenings when it's open late and less crowded",
+            "Don't tip huge amounts; service is usually included, but small change is appreciated"
+        ],
+        "itinerary": {
+            "duration": "4 Days",
+            "description": "Immerse yourself in the romance, art, and history of the City of Light.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "The Icons: Eiffel & Seine",
+                    "activities": "Visit the Eiffel Tower. Picnic on Champ de Mars. Seine River Cruise at sunset."
+                },
+                {
+                    "day": 2,
+                    "title": "Art & History",
+                    "activities": "Explore the Louvre Museum. Walk through Tuileries Garden. Visit Place de la Concorde."
+                },
+                {
+                    "day": 3,
+                    "title": "Bohemian Montmartre",
+                    "activities": "Climb to Sacré-Cœur Basilica. Explore the artistic streets of Montmartre. Watch a cabaret show."
+                },
+                {
+                    "day": 4,
+                    "title": "Notre Dame & Latin Quarter",
+                    "activities": "See Notre Dame Cathedral (exterior). Explore Shakespeare and Company bookstore. Dinner in the Latin Quarter."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "Is the Paris Museum Pass worth it?",
+                "answer": "Yes, if you plan to visit more than 3-4 museums or monuments, it saves money and time."
+            },
+            {
+                "question": "How do I get around Paris?",
+                "answer": "The Metro is the fastest way. Walking is great for sightseeing. Taxis and Uber are also available."
+            },
+            {
+                "question": "Do people speak English in Paris?",
+                "answer": "Yes, most people in tourism and younger generations speak English, but a polite 'Bonjour' goes a long way."
+            }
         ],
         "description": "Paris is a dream destination for many, offering romance, history, and world-class culture. From the iconic Eiffel Tower to the artistic streets of Montmartre, every corner of Paris tells a story. Indulge in exquisite pastries, visit world-renowned museums, and soak up the unique atmosphere of the French capital.",
         "estimated_budget": 2500,

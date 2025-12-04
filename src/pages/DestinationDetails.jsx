@@ -11,14 +11,15 @@ import {
   Calendar,
   ChevronRight,
   Globe,
-  Ticket
+  Ticket,
+  Zap
 } from 'lucide-react'
 import { destinationApi } from '../utils/destinationApi'
 import Loading from '../components/Loading'
 import ErrorBoundary from '../components/ErrorBoundary'
 import DreamTicket from '../components/DreamTicket'
 import StructuredData, { createTouristDestinationSchema, createFAQPageSchema } from '../components/StructuredData'
-import StructuredData, { createTouristDestinationSchema, createFAQPageSchema } from '../components/StructuredData'
+import { useSubscription } from '../context/SubscriptionContext'
 
 const DestinationDetails = () => {
   const { id } = useParams()
@@ -28,6 +29,7 @@ const DestinationDetails = () => {
   const [error, setError] = useState(null)
   const [currentImageIndex, setCurrentImageIndex] = useState(0)
   const [showDreamTicket, setShowDreamTicket] = useState(false)
+  const { setShowUpgradeModal } = useSubscription()
 
   useEffect(() => {
     fetchDestinationDetails()
@@ -372,6 +374,26 @@ const DestinationDetails = () => {
                       <span className="text-gray-600">Country</span>
                       <span className="font-medium">{destination.country}</span>
                     </div>
+                  </div>
+                </div>
+
+                {/* Upgrade Banner */}
+                <div className="bg-gradient-to-br from-primary-600 to-primary-800 rounded-xl shadow-lg p-6 text-white relative overflow-hidden">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full blur-2xl -mr-16 -mt-16"></div>
+                  <div className="relative z-10">
+                    <div className="flex items-center gap-2 mb-3">
+                      <Zap className="w-5 h-5 text-amber-300" />
+                      <h3 className="font-bold text-lg">Unlock Pro Features</h3>
+                    </div>
+                    <p className="text-primary-100 text-sm mb-4">
+                      Customize this itinerary, export to PDF/Calendar, and get price alerts.
+                    </p>
+                    <button
+                      onClick={() => setShowUpgradeModal(true)}
+                      className="w-full py-2 bg-white text-primary-700 font-bold rounded-lg hover:bg-primary-50 transition-colors shadow-sm"
+                    >
+                      Upgrade Now
+                    </button>
                   </div>
                 </div>
 

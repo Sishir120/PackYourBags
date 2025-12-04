@@ -108,9 +108,22 @@ const AIChatModal = ({ isOpen, onClose, destination = null }) => {
 
     } catch (error) {
       console.error("Chat error:", error)
+
+      let errorMessage = "❌ Sorry, I encountered an error. "
+
+      if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
+        errorMessage += "Please check your internet connection or try again later."
+      } else if (error.message.includes('API Error: 500')) {
+        errorMessage += "The AI service is temporarily unavailable. Please try again in a moment."
+      } else if (error.message.includes('API Error: 401') || error.message.includes('API Error: 403')) {
+        errorMessage += "Authentication error. Please contact support."
+      } else {
+        errorMessage += error.message || "Please try again."
+      }
+
       setMessages(prev => [...prev, {
         role: 'assistant',
-        content: "Sorry, I encountered an error while thinking. Please try again later.",
+        content: errorMessage,
         timestamp: new Date()
       }])
     } finally {
