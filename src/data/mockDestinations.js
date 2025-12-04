@@ -32,6 +32,29 @@ export const mockDestinations = [
             "Explore the nearby Sarangkot hill for panoramic views of the sunrise over the Himalayas",
             "Attend the annual Pokhara Street Festival in December for a vibrant cultural experience"
         ],
+        "accommodations": [
+            {
+                "name": "Temple Tree Resort & Spa",
+                "type": "Luxury",
+                "price": "$120/night",
+                "rating": 4.8,
+                "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80"
+            },
+            {
+                "name": "Hotel Middle Path",
+                "type": "Mid-range",
+                "price": "$45/night",
+                "rating": 4.6,
+                "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80"
+            },
+            {
+                "name": "Zostel Pokhara",
+                "type": "Budget",
+                "price": "$15/night",
+                "rating": 4.5,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
+        ],
         "itinerary": {
             "duration": "3 Days",
             "description": "Experience the best of Pokhara's nature and adventure in this action-packed 3-day itinerary.",
@@ -179,6 +202,29 @@ export const mockDestinations = [
             "Respect local customs: wear a sash and sarong when entering temples",
             "Try Nasi Goreng and Satay from local warungs (eateries)",
             "Bargain politely at local markets like Ubud Art Market"
+        ],
+        "accommodations": [
+            {
+                "name": "The Kayon Jungle Resort",
+                "type": "Luxury",
+                "price": "$350/night",
+                "rating": 4.9,
+                "image": "https://images.unsplash.com/photo-1571896349842-6e53ce41e86a?w=400&q=80"
+            },
+            {
+                "name": "Ubud Village Hotel",
+                "type": "Mid-range",
+                "price": "$120/night",
+                "rating": 4.7,
+                "image": "https://images.unsplash.com/photo-1540541338287-41700207dee6?w=400&q=80"
+            },
+            {
+                "name": "Puri Garden Hotel",
+                "type": "Budget",
+                "price": "$30/night",
+                "rating": 4.5,
+                "image": "https://images.unsplash.com/photo-1566665797739-1674de7a421a?w=400&q=80"
+            }
         ],
         "itinerary": {
             "duration": "5 Days",
@@ -481,7 +527,7 @@ export const mockDestinations = [
         "slug": "great-wall-china",
         "country": "China",
         "continent": "Asia",
-        "image_url": "https://images.unsplash.com/photo-1508804185872-d7badad00f7d?w=800&q=80",
+        "image_url": getDestinationImage('great-wall-china'),
         "blog": "## The Dragon's Backbone: Great Wall of China\n\nThe Great Wall of China is one of the most impressive architectural feats in history. Stretching over 13,000 miles, it winds through mountains, deserts, and plains. Built over centuries by various dynasties, it stands as a symbol of China's strength and resilience.",
         "highlights": [
             "Mutianyu Section",
@@ -519,7 +565,7 @@ export const mockDestinations = [
         "slug": "paris-france",
         "country": "France",
         "continent": "Europe",
-        "image_url": "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800&q=80",
+        "image_url": getDestinationImage('paris-france'),
         "blog": "## The City of Light: Paris\n\nParis, the capital of France, is a global center for art, fashion, gastronomy, and culture. Its 19th-century cityscape is crisscrossed by wide boulevards and the River Seine. Beyond such landmarks as the Eiffel Tower and the 12th-century, Gothic Notre-Dame cathedral, the city is known for its cafe culture and designer boutiques along the Rue du Faubourg Saint-Honoré.",
         "highlights": [
             "Eiffel Tower",
@@ -542,6 +588,29 @@ export const mockDestinations = [
             "Enjoy a picnic by the Seine or in the Luxembourg Gardens",
             "Visit the Louvre on Wednesday or Friday evenings when it's open late and less crowded",
             "Don't tip huge amounts; service is usually included, but small change is appreciated"
+        ],
+        "accommodations": [
+            {
+                "name": "Shangri-La Paris",
+                "type": "Luxury",
+                "price": "$1200/night",
+                "rating": 4.9,
+                "image": "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=400&q=80"
+            },
+            {
+                "name": "Hotel Fabric",
+                "type": "Mid-range",
+                "price": "$250/night",
+                "rating": 4.7,
+                "image": "https://images.unsplash.com/photo-1551882547-ff40c63fe5fa?w=400&q=80"
+            },
+            {
+                "name": "Generator Paris",
+                "type": "Budget",
+                "price": "$40/night",
+                "rating": 4.3,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
         ],
         "itinerary": {
             "duration": "4 Days",
@@ -600,7 +669,7 @@ export const mockDestinations = [
         "slug": "santorini-greece",
         "country": "Greece",
         "continent": "Europe",
-        "image_url": "/images/destinations/santorini-greece.jpg",
+        "image_url": getDestinationImage('santorini-greece'),
         "blog": "## The Jewel of the Aegean: Santorini\n\nSantorini is one of the Cyclades islands in the Aegean Sea. It was devastated by a volcanic eruption in the 16th century BC, forever shaping its rugged landscape. The whitewashed, cubiform houses of its 2 principal towns, Fira and Oia, cling to cliffs above an underwater caldera (crater).",
         "highlights": [
             "Oia Sunset",
@@ -639,7 +708,7 @@ export const mockDestinations = [
         "slug": "machu-picchu-peru",
         "country": "Peru",
         "continent": "South America",
-        "image_url": "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=800&q=80",
+        "image_url": getDestinationImage('machu-picchu-peru'),
         "blog": "## The Lost City of the Incas: Machu Picchu\n\nMachu Picchu is an Incan citadel set high in the Andes Mountains in Peru, above the Urubamba River valley. Built in the 15th century and later abandoned, it’s renowned for its sophisticated dry-stone walls that fuse huge blocks without the use of mortar, intriguing buildings that play on astronomical alignments and panoramic views.",
         "highlights": [
             "Inca Trail",
@@ -677,7 +746,7 @@ export const mockDestinations = [
         "slug": "grand-canyon-usa",
         "country": "USA",
         "continent": "North America",
-        "image_url": "https://images.unsplash.com/photo-1615551043360-33de8b5f410c?w=800&q=80",
+        "image_url": getDestinationImage('grand-canyon-usa'),
         "blog": "## Nature's Masterpiece: Grand Canyon\n\nThe Grand Canyon in Arizona is a natural formation distinguished by layered bands of red rock, revealing millions of years of geological history in cross-section. Vast in scale, the canyon averages 10 miles across and a mile deep along its 277-mile length.",
         "highlights": [
             "South Rim",

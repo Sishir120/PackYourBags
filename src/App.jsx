@@ -49,6 +49,7 @@ import HomePage from './pages/HomePage'
 import PlanningPage from './pages/PlanningPage'
 import AuthCallback from './pages/AuthCallback'
 import Profile from './pages/ProfileV2'
+import ComingSoon from './pages/ComingSoon'
 
 import { SubscriptionProvider } from './context/SubscriptionContext'
 import { GameLimitProvider } from './context/GameLimitContext'
@@ -211,6 +212,16 @@ function App() {
                 <Route path="/lightswind-demo" element={<LightswindDemo />} />
                 <Route path="/lightswind-form" element={<LightswindTravelForm />} />
                 <Route path="/settings" element={<div className="pt-20">Settings Page</div>} />
+
+                {/* Placeholder Routes */}
+                <Route path="/pricing" element={<ComingSoon title="Pricing Plans" />} />
+                <Route path="/contact" element={<ComingSoon title="Contact Us" />} />
+                <Route path="/careers" element={<ComingSoon title="Careers" />} />
+                <Route path="/agencies" element={<ComingSoon title="For Agencies" />} />
+                <Route path="/creators" element={<ComingSoon title="For Creators" />} />
+                <Route path="/affiliates" element={<ComingSoon title="Affiliate Program" />} />
+                <Route path="/cookies" element={<ComingSoon title="Cookie Policy" />} />
+
                 <Route path="*" element={<NotFound />} />
               </Routes>
             </main>

@@ -30,7 +30,7 @@ const EmailCapturePopup = ({ onClose, variant = 'A' }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
-    
+
     // Simulate API call
     setTimeout(() => {
       setIsSubscribed(true);
@@ -69,7 +69,7 @@ const EmailCapturePopup = ({ onClose, variant = 'A' }) => {
       <div className="bg-gradient-to-br from-sky-500 to-orange-500 rounded-2xl max-w-md w-full shadow-2xl overflow-hidden animate-scale-in">
         {/* Close button */}
         <div className="flex justify-end p-4">
-          <button 
+          <button
             onClick={handleSkip}
             className="text-white/70 hover:text-white"
             aria-label="Close popup"
@@ -83,19 +83,19 @@ const EmailCapturePopup = ({ onClose, variant = 'A' }) => {
             <div className="w-16 h-16 bg-white/20 rounded-full flex items-center justify-center mx-auto mb-4 backdrop-blur-sm">
               <Sparkles className="w-8 h-8 text-white" />
             </div>
-            
+
             {variant === 'A' ? (
               <h2 className="text-2xl font-bold text-white mb-2">
-                Grab the AI Travel Cheat Sheet (takes 10s)
+                Unlock 3 Premium Itineraries for Free
               </h2>
             ) : (
               <h2 className="text-2xl font-bold text-white mb-2">
-                Get a free custom itinerary in your inbox
+                Join the Pro Waitlist & Get 50% Off
               </h2>
             )}
-            
+
             <p className="text-white/90">
-              Join 50K+ travelers who get exclusive deals and travel tips
+              Get expert-curated travel plans and exclusive deals delivered to your inbox.
             </p>
           </div>
 
@@ -110,7 +110,7 @@ const EmailCapturePopup = ({ onClose, variant = 'A' }) => {
                 required
               />
             </div>
-            
+
             <button
               type="submit"
               disabled={isLoading}
@@ -118,7 +118,7 @@ const EmailCapturePopup = ({ onClose, variant = 'A' }) => {
             >
               {isLoading ? 'Sending...' : 'Get My Free Guide'}
             </button>
-            
+
             <p className="text-white/70 text-xs text-center">
               We respect your privacy. Unsubscribe at any time.
             </p>

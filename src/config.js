@@ -1,6 +1,11 @@
 // API Configuration
-// For Vercel deployment, API routes are at /api/*
-export const API_BASE_URL = '/api'
+// Smart API URL: Use local backend in development, Vercel serverless in production
+const isDevelopment = window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1';
+export const API_BASE_URL = isDevelopment
+  ? 'http://localhost:5000/api'  // Direct connection to local backend
+  : '/api';  // Vercel serverless functions in production
+
+console.log('🔧 API Mode:', isDevelopment ? 'LOCAL DEV' : 'PRODUCTION', '| API URL:', API_BASE_URL);
 
 // App Configuration
 export const APP_CONFIG = {

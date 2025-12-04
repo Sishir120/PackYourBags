@@ -12,7 +12,8 @@ import {
   ChevronRight,
   Globe,
   Ticket,
-  Zap
+  Zap,
+  Star
 } from 'lucide-react'
 import { destinationApi } from '../utils/destinationApi'
 import Loading from '../components/Loading'
@@ -277,6 +278,42 @@ const DestinationDetails = () => {
                           <span className="text-blue-600 font-bold text-sm">{index + 1}</span>
                         </div>
                         <p className="text-gray-700">{tip}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* Where to Stay */}
+              {destination.accommodations && destination.accommodations.length > 0 && (
+                <section className="mb-12">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Where to Stay</h2>
+                  <div className="grid md:grid-cols-3 gap-6">
+                    {destination.accommodations.map((hotel, index) => (
+                      <div key={index} className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100 group hover:shadow-md transition-shadow">
+                        <div className="h-40 overflow-hidden relative">
+                          <img
+                            src={hotel.image}
+                            alt={hotel.name}
+                            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                          />
+                          <div className="absolute top-2 right-2 bg-white/90 backdrop-blur-sm px-2 py-1 rounded-md text-xs font-bold text-gray-900">
+                            {hotel.type}
+                          </div>
+                        </div>
+                        <div className="p-4">
+                          <div className="flex justify-between items-start mb-2">
+                            <h3 className="font-bold text-gray-900 line-clamp-1">{hotel.name}</h3>
+                            <div className="flex items-center gap-1 text-sm font-bold text-amber-500">
+                              <Star className="w-3 h-3 fill-current" />
+                              {hotel.rating}
+                            </div>
+                          </div>
+                          <p className="text-gray-500 text-sm mb-4">{hotel.price}</p>
+                          <button className="w-full py-2 bg-blue-50 text-blue-600 font-bold rounded-lg hover:bg-blue-100 transition-colors text-sm">
+                            Check Availability
+                          </button>
+                        </div>
                       </div>
                     ))}
                   </div>
