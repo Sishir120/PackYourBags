@@ -43,7 +43,7 @@ const Testimonials = () => {
             </span>
           </div>
           <h2 className="text-4xl sm:text-5xl font-bold text-neutral-900 mb-6">
-            Travelers Love <span className="text-primary-600">PackYourBags</span>
+            Testimonials
           </h2>
           <p className="text-xl text-neutral-600 max-w-3xl mx-auto font-medium">
             Join thousands of happy travelers who discovered their perfect destinations with our AI-powered platform

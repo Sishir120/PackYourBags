@@ -11,7 +11,7 @@ import AIHighlight from './components/AIHighlight'
 import Testimonials from './components/Testimonials'
 import Newsletter from './components/Newsletter'
 import Destinations from './pages/Destinations'
-import DestinationDetails from './pages/DestinationDetails'
+import DestinationDetails from './pages/DestinationDetailsV2'
 import DestinationBlogPage from './pages/DestinationBlogPage'
 import ItineraryPage from './pages/ItineraryPage'
 import DestinationDeepDive from './pages/DestinationDeepDive'
@@ -46,7 +46,9 @@ import OnboardingFlow from './components/OnboardingFlow'
 import EmailCapturePopup from './components/EmailCapturePopup'
 import ArcadeTeaser from './components/ArcadeTeaser'
 import HomePage from './pages/HomePage'
+import PlanningPage from './pages/PlanningPage'
 import AuthCallback from './pages/AuthCallback'
+import Profile from './pages/ProfileV2'
 
 import { SubscriptionProvider } from './context/SubscriptionContext'
 import { GameLimitProvider } from './context/GameLimitContext'
@@ -175,6 +177,7 @@ function App() {
             <main className="flex-grow pt-16 pb-20 md:pb-0">
               <Routes>
                 <Route path="/" element={<HomePage user={user} />} />
+                <Route path="/plan" element={<PlanningPage />} />
                 <Route path="/destinations" element={<Destinations user={user} />} />
                 <Route path="/destination/:id" element={<DestinationDetails />} />
                 <Route path="/destination/:id/blog" element={<DestinationBlogPage />} />
@@ -192,7 +195,7 @@ function App() {
                 <Route path="/arcade/plinko" element={<Plinko />} />
                 <Route path="/ai-chat" element={<AIChatPortal />} />
                 <Route path="/price-tracker" element={<PriceTrackerPage user={user} />} />
-                <Route path="/profile" element={<div className="pt-20">Profile Page</div>} />
+                <Route path="/profile" element={<Profile />} />
                 <Route path="/my-trips" element={<MyTrips />} />
                 <Route path="/itinerary/new" element={<ItineraryBuilder />} />
                 <Route path="/itinerary/:id" element={<ItineraryBuilder />} />

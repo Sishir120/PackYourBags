@@ -1,10 +1,11 @@
 import React from 'react';
-import Hero from '../components/Hero';
+import Hero from '../components/HeroV2';
+import HowItWorksStrip from '../components/HowItWorksStrip';
 import ArcadeTeaser from '../components/ArcadeTeaser';
 import RouletteSection from '../components/RouletteSection';
 import FeaturedDestinations from '../components/FeaturedDestinations';
 import AsSeenIn from '../components/AsSeenIn';
-import AIHighlight from '../components/AIHighlight';
+import AIHighlight from '../components/AIHighlightV2';
 import Testimonials from '../components/Testimonials';
 import Newsletter from '../components/Newsletter';
 import SEO from '../components/SEOHead';
@@ -14,14 +15,11 @@ import CurrencyTicker from '../components/CurrencyTicker';
 const HomePage = ({ user }) => {
     return (
         <div className="bg-transparent overflow-hidden">
-            <SEO
-                title="AI Travel Planner & Itinerary Organizer 2025"
-                description="Plan your perfect trip with PackYourBags. AI-powered itineraries, hidden gems, and the best travel deals for 2025."
-                keywords={["AI travel planner", "custom itineraries", "trip organizer", "2025 travel guide", "hidden gems", "sustainable travel"]}
-            />
+            <SEO />
             <StructuredData data={OrganizationSchema} />
             <StructuredData data={WebSiteSchema} />
             <Hero />
+            <HowItWorksStrip />
 
             <RouletteSection user={user} />
 

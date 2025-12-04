@@ -6,8 +6,8 @@ import { Helmet } from 'react-helmet-async'
  * Handles meta tags, Open Graph, Twitter Cards, and structured data
  */
 const SEOHead = ({
-    title,
-    description,
+    title = "PackYourBags - AI Travel Planner & Itinerary Builder 2025",
+    description = "Generate personalized travel itineraries with our AI trip planner. Discover destinations like Pokhara, Bali, and Paris, and plan your perfect adventure by budget and style.",
     keywords = [],
     image,
     url,
@@ -18,9 +18,10 @@ const SEOHead = ({
     structuredData,
     canonicalUrl
 }) => {
-    const siteUrl = 'https://packyourbags.com'
+    const siteUrl = 'https://packyourbags.app'
     const fullUrl = url ? `${siteUrl}${url}` : siteUrl
     const fullImageUrl = image?.startsWith('http') ? image : `${siteUrl}${image}`
+    const finalCanonicalUrl = canonicalUrl || fullUrl
 
     // Default structured data for website
     const defaultStructuredData = {
@@ -43,7 +44,7 @@ const SEOHead = ({
             {author && <meta name="author" content={author} />}
 
             {/* Canonical URL */}
-            {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+            <link rel="canonical" href={finalCanonicalUrl} />
 
             {/* Open Graph / Facebook */}
             <meta property="og:type" content={type} />

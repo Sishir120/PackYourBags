@@ -17,6 +17,8 @@ import { destinationApi } from '../utils/destinationApi'
 import Loading from '../components/Loading'
 import ErrorBoundary from '../components/ErrorBoundary'
 import DreamTicket from '../components/DreamTicket'
+import StructuredData, { createTouristDestinationSchema, createFAQPageSchema } from '../components/StructuredData'
+import StructuredData, { createTouristDestinationSchema, createFAQPageSchema } from '../components/StructuredData'
 
 const DestinationDetails = () => {
   const { id } = useParams()
@@ -99,6 +101,8 @@ const DestinationDetails = () => {
   return (
     <ErrorBoundary>
       <div className="min-h-screen bg-gray-50 overflow-hidden">
+        {destination && <StructuredData data={createTouristDestinationSchema(destination)} />}
+        {destination && destination.faqs && <StructuredData data={createFAQPageSchema(destination.faqs)} />}
         {/* Back Button */}
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6">
           <Link
@@ -271,6 +275,49 @@ const DestinationDetails = () => {
                           <span className="text-blue-600 font-bold text-sm">{index + 1}</span>
                         </div>
                         <p className="text-gray-700">{tip}</p>
+                      </div>
+                    ))}
+                  </div>
+                </section>
+              )}
+
+              {/* Sample Itinerary */}
+              {destination.itinerary && (
+                <section className="mb-12">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Perfect {destination.itinerary.duration} Itinerary</h2>
+                  <div className="bg-white rounded-xl shadow-sm overflow-hidden border border-gray-100">
+                    <div className="p-6 bg-blue-50 border-b border-blue-100">
+                      <p className="text-blue-800 font-medium">{destination.itinerary.description}</p>
+                    </div>
+                    <div className="divide-y divide-gray-100">
+                      {destination.itinerary.days.map((day, index) => (
+                        <div key={index} className="p-6 hover:bg-gray-50 transition-colors">
+                          <div className="flex gap-4">
+                            <div className="flex-shrink-0 w-16 text-center">
+                              <span className="block text-sm font-bold text-gray-500 uppercase tracking-wider">Day</span>
+                              <span className="block text-2xl font-bold text-blue-600">{day.day}</span>
+                            </div>
+                            <div>
+                              <h4 className="text-lg font-bold text-gray-900 mb-2">{day.title}</h4>
+                              <p className="text-gray-600">{day.activities}</p>
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </section>
+              )}
+
+              {/* FAQ Section */}
+              {destination.faqs && destination.faqs.length > 0 && (
+                <section className="mb-12">
+                  <h2 className="text-3xl font-bold text-gray-900 mb-6">Frequently Asked Questions</h2>
+                  <div className="space-y-4">
+                    {destination.faqs.map((faq, index) => (
+                      <div key={index} className="bg-white rounded-xl shadow-sm p-6 border border-gray-100">
+                        <h3 className="text-lg font-bold text-gray-900 mb-2">{faq.question}</h3>
+                        <p className="text-gray-600">{faq.answer}</p>
                       </div>
                     ))}
                   </div>

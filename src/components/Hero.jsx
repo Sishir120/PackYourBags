@@ -84,7 +84,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl sm:text-2xl text-neutral-800 mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            Unlock exclusive destinations, earn travel XP, and spin the roulette to discover your next adventure.
+            The gamified AI planner for Asia-focused trips. Perfect for first-timers, couples, and groups visiting Nepal, Bali, Japan, and beyond.
           </motion.p>
 
           {/* Search Bar */}
@@ -118,7 +118,7 @@ const Hero = () => {
                   aria-label="Search destinations"
                 >
                   <Search className="w-5 h-5" />
-                  <span>Find Quest</span>
+                  <span>Plan My Trip with AI</span>
                 </button>
               </div>
             </form>

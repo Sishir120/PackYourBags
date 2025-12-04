@@ -55,11 +55,11 @@ const UpgradeModal = () => {
 
                                 <ul className="space-y-4">
                                     {[
-                                        "Unlimited Roulette Spins",
-                                        "Access to All Travel Games",
-                                        "AI Itinerary Generator",
-                                        "Exclusive Game Skins",
-                                        "Offline Mode"
+                                        "Unlimited AI Itineraries",
+                                        "PDF & Calendar Export",
+                                        "Price Drop Alerts",
+                                        "Group Planning Tools",
+                                        "Offline Access"
                                     ].map((item, i) => (
                                         <li key={i} className="flex items-center gap-3">
                                             <div className="bg-teal-500/20 p-1 rounded-full">

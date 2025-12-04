@@ -16,7 +16,7 @@ const GAMES = [
         icon: Sparkles,
         color: 'text-purple-400',
         bg: 'bg-purple-500/10',
-        desc: 'AI Itineraries'
+        desc: 'AI Itinerary Mixer'
     },
     {
         title: 'Travel Bingo',
@@ -44,7 +44,7 @@ const GAMES = [
         icon: Users,
         color: 'text-pink-400',
         bg: 'bg-pink-500/10',
-        desc: 'Settle Bills'
+        desc: 'Group Cost Splitter'
     }
 ];
 
@@ -81,9 +81,9 @@ const ArcadeTeaser = () => {
                             viewport={{ once: true }}
                             className="text-5xl md:text-6xl font-black text-white mb-6 leading-tight"
                         >
-                            Play. Win. <br />
+                            New <br />
                             <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400">
-                                Travel Better.
+                                Arcade Zone
                             </span>
                         </motion.h2>
 
@@ -94,7 +94,7 @@ const ArcadeTeaser = () => {
                             transition={{ delay: 0.1 }}
                             className="text-xl text-slate-400 mb-10 leading-relaxed"
                         >
-                            Challenge friends, generate AI itineraries, and race marbles in our new interactive game zone. Earn rewards for your next trip.
+                            Use our AI tools to mix itineraries, split group costs, and discover new places through games.
                         </motion.p>
 
                         <motion.div

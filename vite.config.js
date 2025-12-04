@@ -2,6 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
 export default defineConfig({
+  base: '/',
   plugins: [react()],
   server: {
     port: 3000,
@@ -27,10 +28,7 @@ export default defineConfig({
     },
     rollupOptions: {
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'markdown-vendor': ['react-markdown'],
-        }
+        // manualChunks removed to let Vite optimize chunking
       }
     },
     chunkSizeWarningLimit: 1000,

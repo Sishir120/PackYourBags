@@ -108,4 +108,17 @@ export const createArticleSchema = (article) => ({
     "dateModified": article.modifiedDate || article.publishedDate
 })
 
+export const createFAQPageSchema = (faqs) => ({
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqs.map(faq => ({
+        "@type": "Question",
+        "name": faq.question,
+        "acceptedAnswer": {
+            "@type": "Answer",
+            "text": faq.answer
+        }
+    }))
+})
+
 export default StructuredData

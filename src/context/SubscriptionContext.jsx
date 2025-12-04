@@ -18,15 +18,32 @@ export const SubscriptionProvider = ({ children }) => {
     const [limits, setLimits] = useState({
         rouletteSpins: 3,
         gameRuns: 1,
-        aiTools: 1
+        aiTools: 1,
+        aiItineraries: 1 // New limit for AI Itineraries
     });
 
-    // Usage tracking
-    const [usage, setUsage] = useState({
-        rouletteSpins: 0,
-        gameRuns: 0,
-        aiTools: 0
+    // Usage tracking with localStorage persistence
+    const [usage, setUsage] = useState(() => {
+        const savedUsage = localStorage.getItem('subscription_usage');
+        const today = new Date().toDateString();
+        const savedDate = localStorage.getItem('usage_date');
+
+        if (savedUsage && savedDate === today) {
+            return JSON.parse(savedUsage);
+        }
+        return {
+            rouletteSpins: 0,
+            gameRuns: 0,
+            aiTools: 0,
+            aiItineraries: 0
+        };
     });
+
+    // Save usage to localStorage whenever it changes
+    useEffect(() => {
+        localStorage.setItem('subscription_usage', JSON.stringify(usage));
+        localStorage.setItem('usage_date', new Date().toDateString());
+    }, [usage]);
 
     const [showUpgradeModal, setShowUpgradeModal] = useState(false);
 
