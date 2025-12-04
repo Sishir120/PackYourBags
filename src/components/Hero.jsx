@@ -70,10 +70,10 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-6 leading-tight"
           >
-            <span className="text-neutral-900">Start Your Ultimate</span>
+            <span className="text-neutral-900">AI Travel Planner &</span>
             <br />
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary-600 to-amber-500">
-              Travel Quest
+              Itinerary Builder
             </span>
           </motion.h1>
 
@@ -84,7 +84,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-xl sm:text-2xl text-neutral-800 mb-12 max-w-3xl mx-auto leading-relaxed font-medium"
           >
-            The gamified AI planner for Asia-focused trips. Perfect for first-timers, couples, and groups visiting Nepal, Bali, Japan, and beyond.
+            The gamified <strong>AI trip planner</strong> for smarter travel. Generate custom itineraries for Nepal, Bali, and Japan in seconds. Perfect for first-timers, couples, and groups.
           </motion.p>
 
           {/* Search Bar */}

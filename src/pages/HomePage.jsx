@@ -8,16 +8,14 @@ import AsSeenIn from '../components/AsSeenIn';
 import AIHighlight from '../components/AIHighlightV2';
 import Testimonials from '../components/Testimonials';
 import Newsletter from '../components/Newsletter';
-import SEO from '../components/SEOHead';
-import StructuredData, { OrganizationSchema, WebSiteSchema } from '../components/StructuredData';
+import SEO from '../components/SEO';
+import { WebSiteSchema } from '../components/StructuredData';
 import CurrencyTicker from '../components/CurrencyTicker';
 
 const HomePage = ({ user }) => {
     return (
         <div className="bg-transparent overflow-hidden">
-            <SEO />
-            <StructuredData data={OrganizationSchema} />
-            <StructuredData data={WebSiteSchema} />
+            <SEO schema={WebSiteSchema} />
             <Hero />
             <HowItWorksStrip />
 

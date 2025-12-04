@@ -1,11 +1,13 @@
 import { useState } from 'react'
 
-const OptimizedImage = ({ 
-  src, 
-  alt, 
-  className = '', 
+const OptimizedImage = ({
+  src,
+  alt,
+  className = '',
   loading = 'lazy',
-  fallback = '/placeholder.jpg'
+  fallback = '/placeholder.jpg',
+  width,
+  height
 }) => {
   const [error, setError] = useState(false)
   const [loaded, setLoaded] = useState(false)
@@ -20,6 +22,8 @@ const OptimizedImage = ({
       <img
         src={imageSrc}
         alt={alt}
+        width={width}
+        height={height}
         loading={loading}
         onLoad={() => setLoaded(true)}
         onError={() => setError(true)}

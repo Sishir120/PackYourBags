@@ -49,7 +49,7 @@ export class GameManager {
         currentY += 200;
 
         // Generate Random Chunks with visual variety - excluding wavyPlatform
-        const chunkTypes = ['zigzag', 'funnel', 'straight', 'donut', 'spinner', 'split'];
+        const chunkTypes = ['zigzag', 'straight', 'donut', 'spinner', 'split'];
 
         for (let i = 0; i < numChunks; i++) {
             const type = chunkTypes[Math.floor(Math.random() * chunkTypes.length)];

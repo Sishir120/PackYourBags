@@ -528,7 +528,7 @@ export const mockDestinations = [
         "country": "China",
         "continent": "Asia",
         "image_url": getDestinationImage('great-wall-china'),
-        "blog": "## The Dragon's Backbone: Great Wall of China\n\nThe Great Wall of China is one of the most impressive architectural feats in history. Stretching over 13,000 miles, it winds through mountains, deserts, and plains. Built over centuries by various dynasties, it stands as a symbol of China's strength and resilience.",
+        "blog": "## The Dragon's Backbone: Great Wall of China\n\nThe Great Wall of China is one of the most impressive architectural feats in history. Stretching over 13,000 miles, it winds through mountains, deserts, and plains. Built over centuries by various dynasties, it stands as a symbol of China's strength and resilience. Walking along its ancient path offers a glimpse into the past and breathtaking views of the surrounding landscape. Whether you visit the well-preserved Mutianyu section or the wilder Jinshanling, the Great Wall is a testament to human ingenuity and determination.",
         "highlights": [
             "Mutianyu Section",
             "Badaling",
@@ -548,7 +548,7 @@ export const mockDestinations = [
             "Take the toboggan ride down for a fun descent",
             "Bring plenty of water and comfortable hiking shoes"
         ],
-        "description": "Experience the majesty of the Great Wall of China, a UNESCO World Heritage site and one of the New Seven Wonders of the World. Walk along the ancient stones, marvel at the panoramic views, and immerse yourself in centuries of history.",
+        "description": "Experience the majesty of the Great Wall of China, a UNESCO World Heritage site and one of the New Seven Wonders of the World. Walk along the ancient stones, marvel at the panoramic views, and immerse yourself in centuries of history. This iconic structure offers a unique blend of cultural significance and natural beauty, making it a must-visit destination for any traveler.",
         "estimated_budget": 1500,
         "price_range": {
             "min": 1200,
@@ -747,7 +747,7 @@ export const mockDestinations = [
         "country": "USA",
         "continent": "North America",
         "image_url": getDestinationImage('grand-canyon-usa'),
-        "blog": "## Nature's Masterpiece: Grand Canyon\n\nThe Grand Canyon in Arizona is a natural formation distinguished by layered bands of red rock, revealing millions of years of geological history in cross-section. Vast in scale, the canyon averages 10 miles across and a mile deep along its 277-mile length.",
+        "blog": "## Nature's Masterpiece: Grand Canyon\n\nThe Grand Canyon in Arizona is a natural formation distinguished by layered bands of red rock, revealing millions of years of geological history in cross-section. Vast in scale, the canyon averages 10 miles across and a mile deep along its 277-mile length. A visit here is a humbling experience, offering vistas that stretch to the horizon and a deep connection with the natural world. From hiking the Bright Angel Trail to rafting the Colorado River, the Grand Canyon offers endless adventures.",
         "highlights": [
             "South Rim",
             "Bright Angel Trail",
@@ -767,7 +767,7 @@ export const mockDestinations = [
             "Catch the sunrise or sunset at Mather Point",
             "Bring plenty of water if hiking into the canyon"
         ],
-        "description": "Unique combinations of geologic color and erosional forms decorate a canyon that is 277 river miles (446km) long, up to 18 miles (29km) wide, and a mile (1.6km) deep. The Grand Canyon overwhelms our senses through its immense size.",
+        "description": "Unique combinations of geologic color and erosional forms decorate a canyon that is 277 river miles (446km) long, up to 18 miles (29km) wide, and a mile (1.6km) deep. The Grand Canyon overwhelms our senses through its immense size. Whether you're gazing out from the rim or exploring its depths, the canyon's sheer magnitude and beauty are sure to leave a lasting impression.",
         "estimated_budget": 1200,
         "price_range": {
             "min": 800,
@@ -827,31 +827,27 @@ export const mockDestinations = [
         "country": "India",
         "continent": "Asia",
         "image_url": getDestinationImage('taj-mahal-india'),
-        "blog": "## The Monument of Eternal Love: Taj Mahal\n\nThe Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in the Indian city of Agra. It was commissioned in 1632 by the Mughal emperor Shah Jahan to house the tomb of his favorite wife, Mumtaz Mahal. The tomb is the centerpiece of a 17-hectare complex, which includes a mosque and a guest house, and is set in formal gardens bounded on three sides by a crenellated wall.",
+        "blog": "## The Crown of Palaces: Taj Mahal\n\nThe Taj Mahal in Agra, India, is an ivory-white marble mausoleum on the right bank of the river Yamuna. It was commissioned in 1632 by the Mughal emperor Shah Jahan to house the tomb of his favorite wife, Mumtaz Mahal. It also houses the tomb of Shah Jahan himself. The Taj Mahal is regarded by many as the best example of Mughal architecture and a symbol of India's rich history. A visit at sunrise reveals the changing colors of the marble, a truly magical experience.",
         "highlights": [
             "Main Mausoleum",
-            "Reflection Pool",
             "Mughal Gardens",
-            "Agra Fort",
-            "Mehtab Bagh",
-            "Yamuna River View",
-            "Intricate Marble Inlay"
+            "Mosque",
+            "Jawab",
+            "Great Gate"
         ],
-        "quick_fact": "The Taj Mahal took approximately 22 years to build and required the labor of 20,000 artisans. It's considered the finest example of Mughal architecture, combining elements from Persian, Ottoman Turkish, and Indian architectural styles.",
+        "quick_fact": "The Taj Mahal was designated as a UNESCO World Heritage Site in 1983 for being 'the jewel of Muslim art in India and one of the universally admired masterpieces of the world's heritage'.",
         "coordinates": {
             "lat": 27.1751,
             "lng": 78.0421
         },
-        "best_season": "October to March (cooler weather)",
-        "budget_tier": "budget",
+        "best_season": "October to March",
+        "budget_tier": "mid-range",
         "local_tips": [
-            "Visit at sunrise for the most magical lighting and fewer crowds",
-            "The Taj Mahal is closed on Fridays",
-            "Wear shoe covers or remove shoes before entering the mausoleum",
-            "Photography is not allowed inside the main tomb",
-            "Combine your visit with Agra Fort for a full day of Mughal history"
+            "Visit at sunrise to avoid crowds and see the beautiful light",
+            "Don't bring large bags or food inside",
+            "Hire a government-approved guide for historical insights"
         ],
-        "description": "The Taj Mahal stands as the ultimate symbol of love and one of the world's most recognizable monuments. This architectural masterpiece showcases the pinnacle of Mughal art, with its perfect symmetry, intricate marble inlay work, and stunning white marble that changes color throughout the day. A visit to the Taj Mahal is a journey into India's rich history and a testament to eternal love.",
+        "description": "The Taj Mahal is an immense mausoleum of white marble, built in Agra between 1631 and 1648 by order of the Mughal emperor Shah Jahan in memory of his favourite wife, the Taj Mahal is the jewel of Muslim art in India and one of the universally admired masterpieces of the world's heritage. Its symmetrical beauty and intricate craftsmanship leave visitors spellbound.",
         "estimated_budget": 800,
         "price_range": {
             "min": 600,

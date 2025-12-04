@@ -5,6 +5,12 @@ const SITE_URL = 'https://packyourbags.vercel.app'
 // Static pages
 const staticPages = [
     { url: '/', changefreq: 'daily', priority: 1.0 },
+    { url: '/ai-trip-planner', changefreq: 'weekly', priority: 0.9 }, // Pillar page
+    { url: '/nepal-travel-itineraries', changefreq: 'weekly', priority: 0.9 }, // Hub page
+    { url: '/bali-travel-itineraries', changefreq: 'weekly', priority: 0.9 }, // Hub page
+    { url: '/japan-travel-itineraries', changefreq: 'weekly', priority: 0.9 }, // Hub page
+    { url: '/itineraries/pokhara-4-days', changefreq: 'monthly', priority: 0.8 }, // Money page
+    { url: '/tools/group-trip-cost-splitter', changefreq: 'monthly', priority: 0.8 }, // Tool page
     { url: '/destinations', changefreq: 'daily', priority: 0.9 },
     { url: '/blog', changefreq: 'weekly', priority: 0.8 },
     { url: '/arcade', changefreq: 'weekly', priority: 0.7 },
@@ -71,7 +77,8 @@ ${allPages.map(page => `  <url>
 }
 
 // For Node.js script usage
-if (typeof process !== 'undefined' && process.argv[1] === new URL(import.meta.url).pathname) {
+const isMainModule = process.argv[1].replace(/\\/g, '/').endsWith('src/utils/sitemapGenerator.js');
+if (typeof process !== 'undefined' && isMainModule) {
     import('fs').then(fs => {
         const sitemap = generateSitemap()
         fs.writeFileSync('./public/sitemap.xml', sitemap)
