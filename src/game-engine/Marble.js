@@ -6,7 +6,7 @@ export class Marble {
         this.country = config.country;
         this.countryId = config.countryId;
         this.color = config.color;
-        this.radius = config.radius || 27; // Decreased from 31 to 27 as requested
+        this.radius = config.radius || 20; // Medium size for better gameplay
 
         // Create Matter.js Body with improved physics
         this.body = Matter.Bodies.circle(config.position.x, config.position.y, this.radius, {
