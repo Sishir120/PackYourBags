@@ -1,71 +1,123 @@
-const CACHE_NAME = 'packyourbags-v1';
-const urlsToCache = [
-  '/',
-  '/index.html',
+// Generate dynamic cache name with timestamp to force cache updates on new deployments
+const CACHE_VERSION = 'v2'; // Increment this when you want to force a cache refresh
+const CACHE_NAME = `packyourbags-${CACHE_VERSION}-${Date.now()}`;
+const STATIC_CACHE_NAME = `packyourbags-static-${CACHE_VERSION}`;
+
+// Static resources that rarely change
+const STATIC_RESOURCES = [
   '/icon-192.png',
   '/icon-512.png',
   '/manifest.json'
 ];
 
+// Force the service worker to activate immediately
 self.addEventListener('install', event => {
+  console.log('[SW] Installing new service worker...');
+
   event.waitUntil(
-    caches.open(CACHE_NAME)
+    caches.open(STATIC_CACHE_NAME)
       .then(cache => {
-        // Filter out URLs that don't exist to prevent installation failures
-        const validUrls = urlsToCache.filter(url => {
-          // Skip URLs that are likely to fail
-          return !url.includes('.jsx') && !url.includes('src/');
-        });
-        
-        return cache.addAll(validUrls).catch(error => {
-          console.warn('Failed to cache some resources:', error);
-          // Continue with installation even if some resources fail to cache
+        console.log('[SW] Caching static resources');
+        return cache.addAll(STATIC_RESOURCES).catch(error => {
+          console.warn('[SW] Failed to cache some static resources:', error);
           return Promise.resolve();
         });
       })
+      .then(() => self.skipWaiting()) // Force activation
   );
 });
 
-self.addEventListener('fetch', event => {
-  // Skip cross-origin requests to avoid issues with external APIs
-  if (!event.request.url.startsWith(self.location.origin)) {
-    return;
-  }
-  
-  // Skip requests for source maps and other development files
-  if (event.request.url.includes('.jsx') || 
-      event.request.url.includes('src/') ||
-      event.request.url.includes('.map')) {
-    return;
-  }
-  
-  event.respondWith(
-    caches.match(event.request)
-      .then(response => {
-        // Return cached response if found
-        if (response) {
-          return response;
-        }
-        
-        // Try to fetch from network
-        return fetch(event.request).catch(() => {
-          // If fetch fails, return a basic response or offline page
-          return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
-        });
-      })
-  );
-});
-
+// Clean up old caches on activation
 self.addEventListener('activate', event => {
+  console.log('[SW] Activating new service worker...');
+
   event.waitUntil(
     caches.keys().then(cacheNames => {
       return Promise.all(
         cacheNames.map(cacheName => {
-          if (cacheName !== CACHE_NAME) {
+          // Delete all old caches except current static cache
+          if (cacheName !== STATIC_CACHE_NAME && cacheName !== CACHE_NAME) {
+            console.log('[SW] Deleting old cache:', cacheName);
             return caches.delete(cacheName);
           }
         })
       );
     })
+      .then(() => self.clients.claim()) // Take control immediately
   );
+});
+
+// Network-first strategy for HTML and JS/CSS assets
+self.addEventListener('fetch', event => {
+  const { request } = event;
+  const url = new URL(request.url);
+
+  // Skip cross-origin requests
+  if (url.origin !== self.location.origin) {
+    return;
+  }
+
+  // Skip development files
+  if (url.pathname.includes('.jsx') ||
+    url.pathname.includes('src/') ||
+    url.pathname.includes('.map')) {
+    return;
+  }
+
+  // Network-first strategy for HTML, JS, and CSS
+  if (request.destination === 'document' ||
+    url.pathname.endsWith('.html') ||
+    url.pathname.includes('/assets/')) {
+
+    event.respondWith(
+      fetch(request)
+        .then(response => {
+          // If fetch succeeds, update cache and return response
+          if (response && response.status === 200) {
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME).then(cache => {
+              cache.put(request, responseToCache);
+            });
+          }
+          return response;
+        })
+        .catch(() => {
+          // If network fails, try cache as fallback
+          return caches.match(request).then(cachedResponse => {
+            if (cachedResponse) {
+              console.log('[SW] Serving from cache (offline):', request.url);
+              return cachedResponse;
+            }
+            // Return offline page for documents
+            if (request.destination === 'document') {
+              return new Response(
+                '<!DOCTYPE html><html><head><title>Offline</title></head><body><h1>You are offline</h1><p>Please check your internet connection.</p></body></html>',
+                { headers: { 'Content-Type': 'text/html' } }
+              );
+            }
+            return new Response('Offline', { status: 503, statusText: 'Service Unavailable' });
+          });
+        })
+    );
+  }
+  // Cache-first for static resources (icons, manifest)
+  else if (STATIC_RESOURCES.includes(url.pathname)) {
+    event.respondWith(
+      caches.match(request).then(cachedResponse => {
+        return cachedResponse || fetch(request).then(response => {
+          if (response && response.status === 200) {
+            const responseToCache = response.clone();
+            caches.open(STATIC_CACHE_NAME).then(cache => {
+              cache.put(request, responseToCache);
+            });
+          }
+          return response;
+        });
+      })
+    );
+  }
+  // Default: network-only for everything else (API calls, images, etc.)
+  else {
+    event.respondWith(fetch(request));
+  }
 });
