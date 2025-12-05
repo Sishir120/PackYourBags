@@ -1,7 +1,11 @@
 {
     "rewrites": [
         {
-            "source": "/((?!assets|static).*)",
+            "source": "/api/:path*",
+            "destination": "/api/:path*"
+        },
+        {
+            "source": "/:path((?!assets|images|icon-|manifest|robots|sitemap|vite|sw\\.js).*)",
             "destination": "/index.html"
         }
     ],
