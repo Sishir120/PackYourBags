@@ -10,19 +10,29 @@ const __dirname = path.dirname(__filename);
 // Load .env file
 const loadEnv = () => {
     try {
-        const envPath = path.join(__dirname, '.env');
-        if (fs.existsSync(envPath)) {
-            const envConfig = fs.readFileSync(envPath, 'utf8');
-            envConfig.split('\n').forEach(line => {
-                const [key, value] = line.split('=');
-                if (key && value) {
-                    process.env[key.trim()] = value.trim();
-                }
-            });
-            console.log('Loaded .env file');
+        // Load multiple env files
+        const files = ['.env', '.env.local', 'temp_env_vars.txt'];
+
+        files.forEach(file => {
+            const envPath = path.join(__dirname, file);
+            if (fs.existsSync(envPath)) {
+                console.log(`Loading ${file}...`);
+                const envConfig = fs.readFileSync(envPath, 'utf8');
+                envConfig.split('\n').forEach(line => {
+                    const [key, value] = line.split('=');
+                    if (key && value) {
+                        process.env[key.trim()] = value.trim();
+                    }
+                });
+            }
+        });
+
+        if (!process.env.GEMINI_API_KEY) {
+            console.warn('⚠️ No GEMINI_API_KEY found in environment files.');
         } else {
-            console.warn('No .env file found. Please create one with GEMINI_API_KEY.');
+            console.log('✅ GEMINI_API_KEY loaded.');
         }
+
     } catch (err) {
         console.error('Error loading .env:', err);
     }

@@ -114,7 +114,9 @@ const AIChatModal = ({ isOpen, onClose, destination = null }) => {
       if (error.message.includes('Failed to fetch') || error.message.includes('NetworkError')) {
         errorMessage += "Please check your internet connection or try again later."
       } else if (error.message.includes('API Error: 500')) {
-        errorMessage += "The AI service is temporarily unavailable. Please try again in a moment."
+        errorMessage += "The AI service is temporarily unavailable. (Hint: Check Vercel Environment Variables for GEMINI_API_KEY)"
+      } else if (error.message.includes('API Error: 404')) {
+        errorMessage += "The AI service endpoint was not found. Please try refreshing."
       } else if (error.message.includes('API Error: 401') || error.message.includes('API Error: 403')) {
         errorMessage += "Authentication error. Please contact support."
       } else {

@@ -14,7 +14,7 @@ export const APP_CONFIG = {
   version: '1.0.0',
   features: {
     rouletteSpinDuration: { min: 3000, max: 5000 }, // 3-5 seconds
-    maxDestinationsDisplay: 20,
+    maxDestinationsDisplay: 50,
   }
 }
 

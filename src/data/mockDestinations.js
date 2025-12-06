@@ -543,6 +543,64 @@ export const mockDestinations = [
         },
         "best_season": "Spring (April-May) and Autumn (September-October)",
         "budget_tier": "mid-range",
+        "accommodations": [
+            {
+                "name": "Brickyard Retreat",
+                "type": "Luxury",
+                "price": "$250/night",
+                "rating": 4.8,
+                "image": "https://images.unsplash.com/photo-1548957175-84f0f9c59238?w=400&q=80"
+            },
+            {
+                "name": "Mutianyu Great Wall Hotel",
+                "type": "Mid-range",
+                "price": "$120/night",
+                "rating": 4.5,
+                "image": "https://images.unsplash.com/photo-1598556885317-19aa82633d6b?w=400&q=80"
+            },
+            {
+                "name": "Leo Hostel",
+                "type": "Budget",
+                "price": "$30/night",
+                "rating": 4.2,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
+        ],
+        "itinerary": {
+            "duration": "3 Days",
+            "description": "A journey through history on the ancient walls and vibrant Beijing.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Arrival & Beijing Hutongs",
+                    "activities": "Arrive in Beijing. Explore traditional Hutongs by rickshaw. Roast Duck dinner."
+                },
+                {
+                    "day": 2,
+                    "title": "Mutianyu Great Wall",
+                    "activities": "Full day at Mutianyu section. Take the cable car up and toboggan down. Sunset picnic."
+                },
+                {
+                    "day": 3,
+                    "title": "Forbidden City & Temple of Heaven",
+                    "activities": "Visit the Forbidden City. Walk through Temple of Heaven park. Departure."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "Which section of the Great Wall is best?",
+                "answer": "Mutianyu is best for scenery and toboggan fun, while Badaling is most accessible but crowded."
+            },
+            {
+                "question": "Is it difficult to climb?",
+                "answer": "Some sections are steep with many steps. Wear good walking shoes and pace yourself."
+            },
+            {
+                "question": "Do I need a visa for China?",
+                "answer": "Most travelers need a visa. Check current requirements or the 144-hour visa-free transit policy."
+            }
+        ],
         "local_tips": [
             "Visit Mutianyu for a less crowded experience than Badaling",
             "Take the toboggan ride down for a fun descent",
@@ -686,6 +744,69 @@ export const mockDestinations = [
         },
         "best_season": "September to October and May to June",
         "budget_tier": "luxury",
+        "accommodations": [
+            {
+                "name": "Canaves Oia Epitome",
+                "type": "Luxury",
+                "price": "$800/night",
+                "rating": 4.9,
+                "image": "https://images.unsplash.com/photo-1570214476695-ca2c4c1a602c?w=400&q=80"
+            },
+            {
+                "name": "Santorini Princess Spa Hotel",
+                "type": "Mid-range",
+                "price": "$350/night",
+                "rating": 4.8,
+                "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80"
+            },
+            {
+                "name": "Fira Backpackers Place",
+                "type": "Budget",
+                "price": "$40/night",
+                "rating": 4.4,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
+        ],
+        "itinerary": {
+            "duration": "4 Days",
+            "description": "Sunsets, volcanic beaches, and wine tasting in the Aegean paradise.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Arrival & Fira Exploration",
+                    "activities": "Arrive in Santorini. Explore Fira town. Dinner with caldera view."
+                },
+                {
+                    "day": 2,
+                    "title": "Oia & The Famous Sunset",
+                    "activities": "Hike from Fira to Oia. Explore Oia's blue domes. Watch the world-famous sunset."
+                },
+                {
+                    "day": 3,
+                    "title": "Volcanic Cruise & Hot Springs",
+                    "activities": "Boat tour to the volcano. Swim in hot springs. Visit Thirassia island."
+                },
+                {
+                    "day": 4,
+                    "title": "Winery & Red Beach",
+                    "activities": "Visit Santo Wines for tasting. Relax at Red Beach. Departure."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "Can I drink tap water in Santorini?",
+                "answer": "No, it's recommended to drink bottled water as tap water is desalinated and salty."
+            },
+            {
+                "question": "Do I need to rent a car?",
+                "answer": "It helps for exploring hidden spots, but buses are reliable between main towns like Fira and Oia."
+            },
+            {
+                "question": "Is Santorini expensive?",
+                "answer": "Yes, generally more expensive than other Greek islands, especially for caldera-view dining and stays."
+            }
+        ],
         "local_tips": [
             "Book accommodation in Oia well in advance for the best sunset views",
             "Rent an ATV to explore the island's hidden beaches",
@@ -724,6 +845,69 @@ export const mockDestinations = [
         },
         "best_season": "April to October (Dry Season)",
         "budget_tier": "mid-range",
+        "accommodations": [
+            {
+                "name": "Sanctuary Lodge",
+                "type": "Luxury",
+                "price": "$1100/night",
+                "rating": 4.9,
+                "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80"
+            },
+            {
+                "name": "Tierra Viva Machu Picchu",
+                "type": "Mid-range",
+                "price": "$180/night",
+                "rating": 4.7,
+                "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80"
+            },
+            {
+                "name": "Supertramp Hostel",
+                "type": "Budget",
+                "price": "$25/night",
+                "rating": 4.5,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
+        ],
+        "itinerary": {
+            "duration": "4 Days",
+            "description": "The ultimate Inca adventure from Cusco to the Lost City.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Cusco Acclimatization",
+                    "activities": "Explore Plaza de Armas. Visit San Pedro Market. Acclimatize to altitude."
+                },
+                {
+                    "day": 2,
+                    "title": "Sacred Valley",
+                    "activities": "Visit Pisac ruins and market. Ollantaytambo fortress. Train to Aguas Calientes."
+                },
+                {
+                    "day": 3,
+                    "title": "Machu Picchu Citadel",
+                    "activities": "Early bus to Machu Picchu. Guided tour of ruins. Hike to Sun Gate."
+                },
+                {
+                    "day": 4,
+                    "title": "Huayna Picchu & Return",
+                    "activities": "Optional climb of Huayna Picchu. Train back to Cusco."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "How do I prevent altitude sickness?",
+                "answer": "Acclimatize in Cusco for 2 days, drink coca tea, stay hydrated, and avoid heavy meals."
+            },
+            {
+                "question": "Can I buy tickets at the entrance?",
+                "answer": "No, tickets must be bought weeks or months in advance online."
+            },
+            {
+                "question": "Is the Inca Trail the only way to get there?",
+                "answer": "No, you can take the train to Aguas Calientes and then a bus up to the entrance."
+            }
+        ],
         "local_tips": [
             "Acclimatize to the altitude in Cusco for a few days before visiting",
             "Book your train and entrance tickets months in advance",
@@ -762,6 +946,64 @@ export const mockDestinations = [
         },
         "best_season": "March to May and September to November",
         "budget_tier": "mid-range",
+        "accommodations": [
+            {
+                "name": "El Tovar Hotel",
+                "type": "Luxury",
+                "price": "$350/night",
+                "rating": 4.6,
+                "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80"
+            },
+            {
+                "name": "Yavapai Lodge",
+                "type": "Mid-range",
+                "price": "$180/night",
+                "rating": 4.3,
+                "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80"
+            },
+            {
+                "name": "Mather Campground",
+                "type": "Budget",
+                "price": "$30/night",
+                "rating": 4.7,
+                "image": "https://images.unsplash.com/photo-1523987355523-c7b5b0dd90a7?w=400&q=80"
+            }
+        ],
+        "itinerary": {
+            "duration": "3 Days",
+            "description": "Explore the vast beauty of the Grand Canyon South Rim.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Rim Trail & Sunset",
+                    "activities": "Walk the Rim Trail. Visit Yavapai Geology Museum. Watch sunset at Hopi Point."
+                },
+                {
+                    "day": 2,
+                    "title": "Into the Canyon",
+                    "activities": "Hike part of Bright Angel Trail. Picnic at Indian Garden. Return ascent."
+                },
+                {
+                    "day": 3,
+                    "title": "Desert View Drive",
+                    "activities": "Drive to Desert View Watchtower. Visit Tusayan Ruin. Departure."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "Can I visit all year round?",
+                "answer": "The South Rim is open all year. The North Rim closes for winter (mid-Oct to mid-May)."
+            },
+            {
+                "question": "How hard is hiking into the canyon?",
+                "answer": "Very strenuous. For every hour down, plan for two hours up. Bring plenty of water."
+            },
+            {
+                "question": "Is there cell service?",
+                "answer": "Service is spotty along the rim and non-existent inside the canyon."
+            }
+        ],
         "local_tips": [
             "Visit the North Rim for a quieter experience (open mid-May to mid-Oct)",
             "Catch the sunrise or sunset at Mather Point",
@@ -801,7 +1043,70 @@ export const mockDestinations = [
             "lng": -115.5708
         },
         "best_season": "June to August for hiking, December to March for skiing",
-        "budget_tier": "mid-range",
+        "budget_tier": "luxury",
+        "accommodations": [
+            {
+                "name": "Fairmont Banff Springs",
+                "type": "Luxury",
+                "price": "$600/night",
+                "rating": 4.8,
+                "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80"
+            },
+            {
+                "name": "Banff Park Lodge",
+                "type": "Mid-range",
+                "price": "$250/night",
+                "rating": 4.5,
+                "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80"
+            },
+            {
+                "name": "Samesun Banff",
+                "type": "Budget",
+                "price": "$50/night",
+                "rating": 4.3,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
+        ],
+        "itinerary": {
+            "duration": "4 Days",
+            "description": "Alpine lakes, mountains, and wildlife in the Canadian Rockies.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Town & Hot Springs",
+                    "activities": "Explore Banff Avenue. Soak in Banff Upper Hot Springs. Gondola ride for panoramic views."
+                },
+                {
+                    "day": 2,
+                    "title": "Lake Louise & Moraine",
+                    "activities": "Sunrise at Moraine Lake. Canoe on Lake Louise. Hike to Tea House."
+                },
+                {
+                    "day": 3,
+                    "title": "Icefields Parkway",
+                    "activities": "Drive one of the world's most scenic roads. See Peyto Lake. Visit Columbia Icefield."
+                },
+                {
+                    "day": 4,
+                    "title": "Wildlife & Depart",
+                    "activities": "Early morning wildlife drive on Minnewanka Loop. Visit Johnston Canyon. Departure."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "Do I need a park pass?",
+                "answer": "Yes, a National Park Pass is required for entry into Banff National Park."
+            },
+            {
+                "question": "When can I see turquoise lakes?",
+                "answer": "June to September. In winter, the lakes are frozen and covered in snow."
+            },
+            {
+                "question": "Are bear sightings common?",
+                "answer": "Yes. Carry bear spray, travel in groups, and keep a safe distance."
+            }
+        ],
         "local_tips": [
             "Book accommodations well in advance, especially for summer and ski season",
             "Take the scenic Icefields Parkway drive to Jasper",
@@ -842,6 +1147,59 @@ export const mockDestinations = [
         },
         "best_season": "October to March",
         "budget_tier": "mid-range",
+        "accommodations": [
+            {
+                "name": "The Oberoi Amarvilas",
+                "type": "Luxury",
+                "price": "$600/night",
+                "rating": 4.9,
+                "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80"
+            },
+            {
+                "name": "Taj Hotel & Convention Centre",
+                "type": "Mid-range",
+                "price": "$120/night",
+                "rating": 4.6,
+                "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80"
+            },
+            {
+                "name": "Joey's Hostel Agra",
+                "type": "Budget",
+                "price": "$20/night",
+                "rating": 4.5,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
+        ],
+        "itinerary": {
+            "duration": "2 Days",
+            "description": "Witness the beauty of the Taj and Agra's Mughal heritage.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Agra Fort & Sunset",
+                    "activities": "Arrive in Agra. Visit Agra Fort. Watch sunset over the Taj Mahal from Mehtab Bagh."
+                },
+                {
+                    "day": 2,
+                    "title": "Taj Mahal Sunrise",
+                    "activities": "Sunrise visit to Taj Mahal. Breakfast. Visit Tomb of Itimad-ud-Daulah (Baby Taj)."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "Is the Taj Mahal open every day?",
+                "answer": "No, it is closed on Fridays for prayers."
+            },
+            {
+                "question": "What is the best time for photos?",
+                "answer": "Sunrise offers the most magical light and fewer crowds."
+            },
+            {
+                "question": "Are tripods allowed?",
+                "answer": "No, photography tripods are strictly prohibited inside the complex."
+            }
+        ],
         "local_tips": [
             "Visit at sunrise to avoid crowds and see the beautiful light",
             "Don't bring large bags or food inside",
@@ -882,6 +1240,64 @@ export const mockDestinations = [
         },
         "best_season": "March to May and September to November",
         "budget_tier": "mid-range",
+        "accommodations": [
+            {
+                "name": "Mövenpick Resort Petra",
+                "type": "Luxury",
+                "price": "$250/night",
+                "rating": 4.7,
+                "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80"
+            },
+            {
+                "name": "Petra Guest House Hotel",
+                "type": "Mid-range",
+                "price": "$150/night",
+                "rating": 4.5,
+                "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80"
+            },
+            {
+                "name": "Nomads Hotel Petra",
+                "type": "Budget",
+                "price": "$30/night",
+                "rating": 4.4,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
+        ],
+        "itinerary": {
+            "duration": "3 Days",
+            "description": "Explore the ancient Rose City and desert landscapes.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "The Treasury & Siq",
+                    "activities": "Walk the Siq. Marvel at The Treasury. Explore the Royal Tombs."
+                },
+                {
+                    "day": 2,
+                    "title": "The Monastery Hike",
+                    "activities": "Hike up to Ad Deir (The Monastery). Enjoy panoramic views. Little Petra visit."
+                },
+                {
+                    "day": 3,
+                    "title": "Wadi Rum Day Trip",
+                    "activities": "Jeep tour in Wadi Rum desert. Bedouin tea experience. Sunset in the desert."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "How much walking is involved?",
+                "answer": "A lot. Expect to walk 10-15km per day on uneven terrain."
+            },
+            {
+                "question": "Is Petra by Night worth it?",
+                "answer": "Yes, seeing the Treasury lit by 1,500 candles is a unique experience (runs Mon, Wed, Thu)."
+            },
+            {
+                "question": "Do I need a Jordan Pass?",
+                "answer": "Highly recommended. It includes visa fees and entry to Petra and other sites."
+            }
+        ],
         "local_tips": [
             "Wear comfortable hiking shoes; the site involves a lot of walking",
             "Start early to avoid the heat and crowds",
@@ -900,5 +1316,197 @@ export const mockDestinations = [
         "review_count": 16800,
         "popularity_score": 98,
         "created_at": "2023-03-17T00:00:00Z"
+    }
+    {
+        "destination_id": "dest_new_009",
+        "name": "Great Barrier Reef",
+        "slug": "great-barrier-reef-australia",
+        "country": "Australia",
+        "continent": "Oceania",
+        "image_url": getDestinationImage('great-barrier-reef-australia'),
+        "blog": "## The Underwater Wonder: Great Barrier Reef\n\nThe Great Barrier Reef is the world's largest coral reef system, composed of over 2,900 individual reefs and 900 islands stretching for over 2,300 kilometres over an area of approximately 344,400 square kilometres. It is one of the seven wonders of the natural world and the only living thing on earth visible from space.",
+        "highlights": [
+            "Snorkeling / Diving",
+            "Whitsunday Islands",
+            "Heart Reef",
+            "Whitehaven Beach",
+            "Marine Life"
+        ],
+        "quick_fact": "The Great Barrier Reef supports a diversity of life, including many vulnerable or endangered species, some of which may be endemic to the reef system.",
+        "coordinates": {
+            "lat": -18.2871,
+            "lng": 147.6992
+        },
+        "best_season": "June to October",
+        "budget_tier": "luxury",
+        "accommodations": [
+            {
+                "name": "qualia",
+                "type": "Luxury",
+                "price": "$1200/night",
+                "rating": 4.9,
+                "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80"
+            },
+            {
+                "name": "Reef View Hotel",
+                "type": "Mid-range",
+                "price": "$350/night",
+                "rating": 4.5,
+                "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80"
+            },
+            {
+                "name": "Airlie Beach Magnums",
+                "type": "Budget",
+                "price": "$40/night",
+                "rating": 4.3,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
+        ],
+        "itinerary": {
+            "duration": "5 Days",
+            "description": "Island hopping and underwater adventures.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Arrival in Cairns",
+                    "activities": "Explore Cairns Esplanade. Lagoon swim. Night markets."
+                },
+                {
+                    "day": 2,
+                    "title": "Outer Reef Pontoon",
+                    "activities": "Full day cruise to Marine World. Snorkeling and glass-bottom boat."
+                },
+                {
+                    "day": 3,
+                    "title": "Green Island",
+                    "activities": "Ferry to Green Island. Rainforest walk. Turtle spotting."
+                },
+                {
+                    "day": 4,
+                    "title": "Kuranda Rainforest",
+                    "activities": "Scenic Railway up, Skyrail down. Visit Koala Gardens."
+                },
+                {
+                    "day": 5,
+                    "title": "Departure",
+                    "activities": "Morning swim. Departure."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "Is it safe to swim?",
+                "answer": "Generally yes, but stick to designated areas and wear stinger suits during jelly season (Nov-May)."
+            },
+            {
+                "question": "Do I need to be a diver?",
+                "answer": "No, snorkeling is amazing, and glass-bottom boats offer great views too."
+            },
+            {
+                "question": "Best way to see Heart Reef?",
+                "answer": "By scenic flight (helicopter or seaplane) as you cannot snorkel directly over it."
+            }
+        ],
+        "local_tips": [
+            "Wear reef-safe sunscreen to protect the coral",
+            "Book a scenic flight for the best perspective",
+            "Visit in winter (June-Aug) for best visibility and no stingers"
+        ],
+        "description": "A kaleidoscope of color and life, the Great Barrier Reef is a scuba diver's dream and a nature lover's paradise. Whether you explore by boat, snorkel, or scenic flight, the sheer scale and beauty of this living organism are humbling.",
+        "estimated_budget": 2500,
+        "price_range": {
+            "min": 1500,
+            "max": 4000
+        },
+        "rating": 4.8,
+        "review_count": 10200,
+        "popularity_score": 96,
+        "created_at": "2023-03-20T00:00:00Z"
+    },
+    {
+        "destination_id": "dest_new_010",
+        "name": "Eiffel Tower",
+        "slug": "eiffel-tower-france",
+        "country": "France",
+        "continent": "Europe",
+        "image_url": getDestinationImage('eiffel-tower-france'),
+        "blog": "## The Iron Lady: Eiffel Tower\n\nThe Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower. Locally nicknamed 'La Dame de Fer' (French for 'The Iron Lady'), it was constructed from 1887 to 1889 as the entrance to the 1889 World's Fair.",
+        "highlights": [
+            "The Summit",
+            "Champ de Mars",
+            "Trocadéro Gardens",
+            "Le Jules Verne Restaurant",
+            "Night Light Show"
+        ],
+        "quick_fact": "The tower is 330 metres (1,083 ft) tall, about the same height as an 81-storey building, and the tallest structure in Paris.",
+        "coordinates": {
+            "lat": 48.8584,
+            "lng": 2.2945
+        },
+        "best_season": "Year-round",
+        "budget_tier": "mid-range",
+        "accommodations": [
+            {
+                "name": "Shangri-La Paris",
+                "type": "Luxury",
+                "price": "$1400/night",
+                "rating": 4.9,
+                "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=400&q=80"
+            },
+            {
+                "name": "Hotel Pullman Paris Tour Eiffel",
+                "type": "Mid-range",
+                "price": "$300/night",
+                "rating": 4.6,
+                "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?w=400&q=80"
+            },
+            {
+                "name": "Aloha Hostel",
+                "type": "Budget",
+                "price": "$40/night",
+                "rating": 4.2,
+                "image": "https://images.unsplash.com/photo-1555854877-bab0e564b8d5?w=400&q=80"
+            }
+        ],
+        "itinerary": {
+            "duration": "1 Day",
+            "description": "A focused day exploring the Iron Lady and surroundings.",
+            "days": [
+                {
+                    "day": 1,
+                    "title": "Eiffel Tower Experience",
+                    "activities": "Morning photos at Trocadéro. Climb/Elevator to Summit. Picnic on Champ de Mars. Seine Cruise."
+                }
+            ]
+        },
+        "faqs": [
+            {
+                "question": "Can I buy tickets on the day?",
+                "answer": "Yes, but be prepared for long queues. Online booking months ahead is recommended."
+            },
+            {
+                "question": "Is the summit open?",
+                "answer": "Usually yes, but it can close due to severe weather. Check the official website."
+            },
+            {
+                "question": "When does the light show happen?",
+                "answer": "Every hour on the hour after sunset for 5 minutes."
+            }
+        ],
+        "local_tips": [
+            "Visit the second floor for the best city views (summit is often hazy)",
+            "Go at night to see the sparkle show",
+            "Walk down the stairs to avoid the elevator queue down"
+        ],
+        "description": "Global icon of France and one of the most recognizable structures in the world. The Eiffel Tower offers unparalleled views over Paris, fine dining experiences, and a romantic atmosphere that defines the City of Light.",
+        "estimated_budget": 500,
+        "price_range": {
+            "min": 200,
+            "max": 1000
+        },
+        "rating": 4.7,
+        "review_count": 45000,
+        "popularity_score": 100,
+        "created_at": "2023-03-21T00:00:00Z"
     }
 ];

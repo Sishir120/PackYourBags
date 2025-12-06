@@ -447,5 +447,380 @@ Prague is a city of magic, history, and beauty that feels like stepping into a s
             name: 'Prague',
             images: [getDestinationImage('prague-czech-republic')]
         }
+    },
+    {
+        id: 11,
+        slug: 'great-wall-china',
+        title: 'Walking the Dragon: A Guide to the Great Wall',
+        excerpt: 'Steps, steep climbs, and history etched in stone. A hiking guide to the Great Wall of China\'s best sections.',
+        content: `
+# The Dragon's Backbone: Great Wall of China
+
+The Great Wall of China is one of the most impressive architectural feats in history. Stretching over 13,000 miles, it winds through mountains, deserts, and plains.
+
+## Choosing Your Section
+
+*   **Mutianyu**: The best balance of restored beauty and fewer crowds. The toboggan ride down is a highlight!
+*   **Badaling**: The most famous and accessible, but extremely crowded.
+*   **Jinshanling**: For hikers and photographers wanting a more rugged experience.
+
+## The Hike
+
+Walking the wall is a workout! Be prepared for steep steps and uneven surfaces. The views of the wall snaking over the ridges are worth every drop of sweat.
+
+## Best Time to Visit
+
+Spring (April-May) for blossoms and Autumn (September-October) for colorful foliage are the most comfortable times to hike.
+    `,
+        featured_image: getDestinationImage('great-wall-china'),
+        category: 'Adventure',
+        tags: ['China', 'History', 'Hiking', 'Wonders'],
+        author: {
+            name: 'Wei Chen',
+            avatar: 'https://i.pravatar.cc/150?u=wei'
+        },
+        published_at: '2024-03-15T09:00:00Z',
+        views: 1100,
+        featured: true,
+        destination: {
+            name: 'Great Wall of China',
+            images: [getDestinationImage('great-wall-china')]
+        }
+    },
+    {
+        id: 12,
+        slug: 'paris-france',
+        title: 'Paris for First-Timers: Beyond the Eiffel Tower',
+        excerpt: 'Discover the magic of the City of Light. From hidden cafes to world-class art, here is how to fall in love with Paris.',
+        content: `
+# The City of Light: Paris
+
+Paris is a dream destination for many, offering romance, history, and world-class culture. But there is more to it than just the Eiffel Tower.
+
+## Secret Spots
+
+*   **Musée de l'Orangerie**: Often overlooked for the Louvre, this museum houses Monet's giant Water Lilies.
+*   **Rue Crémieux**: A charming cobbled street lined with colorful houses.
+*   **Canal Saint-Martin**: Where locals go for a picnic away from the Seine crowds.
+
+## Cafe Culture
+
+Sitting at a cafe terrace is a Parisian sport. Order a *café crème*, people-watch, and take your time. No one rushes here.
+
+## Foodie Delights
+
+Don't leave without trying a fresh *croissant* from a local *boulangerie* and a *macaron* from Ladurée or Pierre Hermé.
+    `,
+        featured_image: getDestinationImage('paris-france'),
+        category: 'City Break',
+        tags: ['France', 'Paris', 'Food', 'Art'],
+        author: {
+            name: 'Amélie Dubois',
+            avatar: 'https://i.pravatar.cc/150?u=amelie'
+        },
+        published_at: '2024-03-18T14:30:00Z',
+        views: 3500,
+        featured: true,
+        destination: {
+            name: 'Paris',
+            images: [getDestinationImage('paris-france')]
+        }
+    },
+    {
+        id: 13,
+        slug: 'santorini-greece',
+        title: 'Santorini: Sunsets and Blue Domes',
+        excerpt: 'The ultimate guide to the jewel of the Aegean. Where to stay, what to eat, and where to catch that famous sunset.',
+        content: `
+# The Jewel of the Aegean: Santorini
+
+Santorini is the supermodel of the Greek islands. Its whitewashed, cubiform houses clinging to cliffs are instantly recognizable.
+
+## Oia vs Fira
+
+*   **Oia**: Famous for *that* sunset and luxury hotels. It's quieter but more expensive.
+*   **Fira**: The capital, bustling with shops, bars, and nightlife.
+
+## The Volcano
+
+Take a boat tour to the active volcano in the center of the caldera. You can hike to the crater and swim in the hot springs (wear a dark swimsuit, the sulfur stains!).
+
+## Wine Tasting
+
+Santorini's volcanic soil produces unique wines. Visit a local winery like Santo Wines for a tasting with a view.
+    `,
+        featured_image: getDestinationImage('santorini-greece'),
+        category: 'Island',
+        tags: ['Greece', 'Santorini', 'Beach', 'Luxury'],
+        author: {
+            name: 'Nikos Pappas',
+            avatar: 'https://i.pravatar.cc/150?u=nikos'
+        },
+        published_at: '2024-03-20T11:15:00Z',
+        views: 2800,
+        featured: true,
+        destination: {
+            name: 'Santorini',
+            images: [getDestinationImage('santorini-greece')]
+        }
+    },
+    {
+        id: 14,
+        slug: 'machu-picchu-peru',
+        title: 'Machu Picchu: Hiking the Inca Trail',
+        excerpt: 'A journey to the Lost City of the Incas. What to pack, how to train, and the moment you see the ruins through the Sun Gate.',
+        content: `
+# The Lost City of the Incas: Machu Picchu
+
+Machu Picchu is an Incan citadel set high in the Andes Mountains in Peru. It’s one of the most mysterious and beautiful places on Earth.
+
+## Getting There
+
+You can take the train to Aguas Calientes for a comfortable trip, or hike the 4-day **Inca Trail** for a truly immersive experience. arriving through the Sun Gate at sunrise is unforgettable.
+
+## Altitude Tips
+
+Cusco sits at 3,400m (11,150ft). Take it easy for the first day, drink plenty of water and coca tea to avoid altitude sickness.
+
+## Llamas!
+
+Yes, there are resident llamas at the ruins. They are friendly and make for great photo companions, but don't get too close!
+    `,
+        featured_image: getDestinationImage('machu-picchu-peru'),
+        category: 'Adventure',
+        tags: ['Peru', 'Hiking', 'History', 'Bucket List'],
+        author: {
+            name: 'Sofia Flores',
+            avatar: 'https://i.pravatar.cc/150?u=sofia'
+        },
+        published_at: '2024-03-22T10:00:00Z',
+        views: 3100,
+        featured: true,
+        destination: {
+            name: 'Machu Picchu',
+            images: [getDestinationImage('machu-picchu-peru')]
+        }
+    },
+    {
+        id: 15,
+        slug: 'grand-canyon-usa',
+        title: 'Grand Canyon: A Natural Wonder',
+        excerpt: 'Standing on the edge of the world. Tips for visiting the South Rim, hiking trails, and avoiding the crowds.',
+        content: `
+# Nature's Masterpiece: Grand Canyon
+
+The Grand Canyon in Arizona is a natural formation distinguished by layered bands of red rock. It is vast, silent, and incredibly beautiful.
+
+## South Rim vs North Rim
+
+*   **South Rim**: Open year-round, most iconic views, more facilities.
+*   **North Rim**: Closed in winter, quieter, higher elevation.
+
+## Hiking Bright Angel Trail
+
+It's tempting to hike down, but remember: going down is optional, coming up is mandatory! Start early, carry lots of water, and know your limits.
+
+## Sunset Points
+
+Mather Point is popular, but Hopi Point or Yavapai Point offer equally stunning views with slightly fewer crowds.
+    `,
+        featured_image: getDestinationImage('grand-canyon-usa'),
+        category: 'Nature',
+        tags: ['USA', 'Nature', 'Hiking', 'National Park'],
+        author: {
+            name: 'Jack Miller',
+            avatar: 'https://i.pravatar.cc/150?u=jack'
+        },
+        published_at: '2024-03-25T16:20:00Z',
+        views: 2400,
+        featured: true,
+        destination: {
+            name: 'Grand Canyon',
+            images: [getDestinationImage('grand-canyon-usa')]
+        }
+    },
+    {
+        id: 16,
+        slug: 'banff-canada',
+        title: 'Banff: Rocky Mountain High',
+        excerpt: 'Turquoise lakes, snowy peaks, and grizzly bears. Explore the wilderness of Banff National Park.',
+        content: `
+# The Crown Jewel of the Rockies: Banff
+
+Banff National Park is Canada's oldest national park. It's a land of glaciers, icefields, and dense coniferous forests.
+
+## Lake Louise & Moraine Lake
+
+These are the most photographed lakes in the world for a reason. The turquoise color comes from rock flour carried into the lake by meltwater. Arrive before 6 AM or take a shuttle!
+
+## Wildlife Spotting
+
+Keep your eyes peeled (and your distance!) for elk, bighorn sheep, and bears. Dawn and dusk are the best times for viewing.
+
+## Hot Springs
+
+After a day of hiking or skiing, soak in the Banff Upper Hot Springs. The water is naturally heated and mineral-rich.
+    `,
+        featured_image: getDestinationImage('banff-canada'),
+        category: 'Nature',
+        tags: ['Canada', 'Mountains', 'Wildlife', 'Lake'],
+        author: {
+            name: 'Liam Smith',
+            avatar: 'https://i.pravatar.cc/150?u=liam'
+        },
+        published_at: '2024-03-28T09:45:00Z',
+        views: 2900,
+        featured: true,
+        destination: {
+            name: 'Banff',
+            images: [getDestinationImage('banff-canada')]
+        }
+    },
+    {
+        id: 17,
+        slug: 'taj-mahal-india',
+        title: 'Taj Mahal: A Monument to Love',
+        excerpt: 'The story behind the marble masterpiece. Visitor tips for the Taj Mahal and Agra Fort.',
+        content: `
+# The Crown of Palaces: Taj Mahal
+
+The Taj Mahal is an ivory-white marble mausoleum on the right bank of the river Yamuna in Agra. It's a symbol of eternal love.
+
+## The Best Views
+
+*   **Inside**: The symmetry and intricate inlays are breathtaking.
+*   **Mehtab Bagh**: A garden across the river offering a stunning sunset view of the Taj without the crowds.
+
+## Agra Fort
+
+Don't skip the nearby Agra Fort. It's a massive red sandstone fortress where Shah Jahan was imprisoned by his son, with a view of his creation.
+
+## Local Crafts
+
+Agra is famous for marble inlay work (Pietra Dura). You can see artisans working with the same techniques used to build the Taj.
+    `,
+        featured_image: getDestinationImage('taj-mahal-india'),
+        category: 'Culture',
+        tags: ['India', 'History', 'Culture', 'Wonders'],
+        author: {
+            name: 'Rohan Gupta',
+            avatar: 'https://i.pravatar.cc/150?u=rohan'
+        },
+        published_at: '2024-04-01T12:00:00Z',
+        views: 4100,
+        featured: true,
+        destination: {
+            name: 'Taj Mahal',
+            images: [getDestinationImage('taj-mahal-india')]
+        }
+    },
+    {
+        id: 18,
+        slug: 'petra-jordan',
+        title: 'Petra: Secrets of the Rose City',
+        excerpt: 'Walking through the Siq to discover the Treasury. A guide to exploring Jordan\'s ancient archaeological wonder.',
+        content: `
+# The Rose City: Petra
+
+Petra is an ancient city carved into pink sandstone cliffs. It was the capital of the Nabatean Kingdom and a major trading hub.
+
+## The Siq
+
+The entrance to Petra is a mile-long narrow gorge called the Siq. Walking through towering cliffs that block out the sky builds anticipation until...
+
+## The Treasury (Al-Khazneh)
+
+...you turn a corner and there it is. The most famous facade in Petra. Go early (6 AM) to have it to yourself.
+
+## The Monastery (Ad Deir)
+
+It's a hike (800 steps!), but the Monastery is larger and less crowded than the Treasury. The views from the top are spectacular.
+    `,
+        featured_image: getDestinationImage('petra-jordan'),
+        category: 'History',
+        tags: ['Jordan', 'History', 'Desert', 'Wonders'],
+        author: {
+            name: 'Layla Al-Fayed',
+            avatar: 'https://i.pravatar.cc/150?u=layla'
+        },
+        published_at: '2024-04-05T08:30:00Z',
+        views: 2600,
+        featured: true,
+        destination: {
+            name: 'Petra',
+            images: [getDestinationImage('petra-jordan')]
+        }
+    },
+    {
+        id: 19,
+        slug: 'great-barrier-reef-australia',
+        title: 'Diving Deep: The Great Barrier Reef',
+        excerpt: 'Exploring the world\'s largest living structure. A guide to snorkeling, diving, and protecting this natural wonder.',
+        content: `
+# The Underwater Wonderland: Great Barrier Reef
+
+The Great Barrier Reef is a place of staggering beauty and biodiversity.
+
+## Ways to Explore
+
+*   **Snorkeling**: Accessible to everyone. Floating above the coral gardens is magical.
+*   **Scuba Diving**: For a closer look. Intro dives are available for beginners.
+*   **Scenic Flights**: The only way to appreciate the scale of the reef (and see Heart Reef!).
+
+## Protecting the Reef
+
+"Look but don't touch" is the golden rule. Use reef-safe sunscreen and be mindful of your fin kicks to avoid damaging delicate coral.
+    `,
+        featured_image: getDestinationImage('great-barrier-reef-australia'),
+        category: 'Nature',
+        tags: ['Australia', 'Ocean', 'Diving', 'Wonders'],
+        author: {
+            name: 'Emma Coral',
+            avatar: 'https://i.pravatar.cc/150?u=emma'
+        },
+        published_at: '2024-04-10T09:00:00Z',
+        views: 1900,
+        featured: true,
+        destination: {
+            name: 'Great Barrier Reef',
+            images: [getDestinationImage('great-barrier-reef-australia')]
+        }
+    },
+    {
+        id: 20,
+        slug: 'eiffel-tower-france',
+        title: 'Secrets of the Eiffel Tower',
+        excerpt: 'More than just a view. Discovering the history, hidden apartments, and best photo spots of the Iron Lady.',
+        content: `
+# The Iron Lady: Eiffel Tower
+
+It was meant to be temporary, but today it is the symbol of France.
+
+## Gustave's Secret Apartment
+
+Did you know Gustave Eiffel built himself a small apartment at the top of the tower? It remains there today, complete with wax figures of Gustave and Thomas Edison.
+
+## Best Photo Spots
+
+Skip the base. Head to **Trocadéro** for the classic shot, or **Rue de l'Université** for a cobblestone street view.
+
+## Dining with a View
+
+Le Jules Verne on the second floor offers Michelin-starred dining. Book months in advance for the ultimate romantic dinner.
+    `,
+        featured_image: getDestinationImage('eiffel-tower-france'),
+        category: 'City Break',
+        tags: ['Paris', 'France', 'Landmarks', 'History'],
+        author: {
+            name: 'Jean-Pierre',
+            avatar: 'https://i.pravatar.cc/150?u=jp'
+        },
+        published_at: '2024-04-12T18:00:00Z',
+        views: 5200,
+        featured: true,
+        destination: {
+            name: 'Eiffel Tower',
+            images: [getDestinationImage('eiffel-tower-france')]
+        }
     }
-]
+];
