@@ -19,16 +19,24 @@ export default defineConfig({
     }
   },
   build: {
+    sourcemap: true, // Enable source maps for debugging
     minify: 'terser',
     terserOptions: {
       compress: {
-        drop_console: true,
+        drop_console: false, // Keep console logs for debugging
         drop_debugger: true
       }
     },
     rollupOptions: {
       output: {
-        // manualChunks removed to let Vite optimize chunking
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
+          'three-vendor': ['three', '@react-three/fiber', '@react-three/drei', '@react-three/cannon'],
+          'markdown-vendor': ['react-markdown', 'dompurify'],
+        },
+        chunkFileNames: 'assets/[name]-[hash].js',
+        entryFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     },
     chunkSizeWarningLimit: 1000,

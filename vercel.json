@@ -1,11 +1,19 @@
 {
     "rewrites": [
         {
+            "source": "/assets/:path*",
+            "destination": "/assets/:path*"
+        },
+        {
+            "source": "/images/:path*",
+            "destination": "/images/:path*"
+        },
+        {
             "source": "/api/:path*",
             "destination": "/api/:path*"
         },
         {
-            "source": "/:path((?!assets|images|icon-|manifest|robots|sitemap|vite|sw\\.js).*)",
+            "source": "/(.*)",
             "destination": "/index.html"
         }
     ],
@@ -20,16 +28,25 @@
             ]
         },
         {
-            "source": "/assets/(.*).js",
+            "source": "/assets/(.*)\\.(js|mjs)",
             "headers": [
                 {
                     "key": "Content-Type",
-                    "value": "application/javascript"
+                    "value": "application/javascript; charset=utf-8"
+                }
+            ]
+        },
+        {
+            "source": "/assets/(.*)\\.(css)",
+            "headers": [
+                {
+                    "key": "Content-Type",
+                    "value": "text/css; charset=utf-8"
                 }
             ]
         }
     ],
-    "cleanUrls": true,
+    "buildCommand": "npm run build",
     "framework": "vite",
     "outputDirectory": "dist"
 }
