@@ -9,7 +9,9 @@ import ProfessionalTheme from './components/ProfessionalTheme'
 import { supabase } from './utils/supabase'
 import AuthModal from './components/AuthModal'
 import LoginModal from './components/LoginModal'
-import AIChatModal from './components/AIChatModal'
+// AIChatModal removed - replaced by TravelConcierge
+import TravelConcierge from './components/TravelConcierge'
+
 import AITravelPlanModal from './components/AITravelPlanModal'
 import MapModal from './components/MapModal'
 import OnboardingFlow from './components/OnboardingFlow'
@@ -251,7 +253,7 @@ function App() {
             <UpgradeModal />
             <AuthModal isOpen={isAuthModalOpen} onClose={() => setIsAuthModalOpen(false)} />
             <LoginModal isOpen={isLoginModalOpen} onClose={() => setIsLoginModalOpen(false)} />
-            <AIChatModal isOpen={isAIChatOpen} onClose={() => setIsAIChatOpen(false)} />
+            <TravelConcierge />
             <AITravelPlanModal
               isOpen={isAITravelPlanOpen}
               onClose={() => setIsAITravelPlanOpen(false)}
