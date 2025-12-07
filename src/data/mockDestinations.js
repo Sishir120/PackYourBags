@@ -1316,7 +1316,7 @@ export const mockDestinations = [
         "review_count": 16800,
         "popularity_score": 98,
         "created_at": "2023-03-17T00:00:00Z"
-    }
+    },
     {
         "destination_id": "dest_new_009",
         "name": "Great Barrier Reef",
