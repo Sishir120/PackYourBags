@@ -5,7 +5,7 @@ export default defineConfig({
   base: '/',
   plugins: [react()],
   server: {
-    port: 3000,
+    port: 5176,
     host: '0.0.0.0', // Listen on all network interfaces
     strictPort: false, // Allow fallback to other ports
     open: true, // Auto-open browser
@@ -17,6 +17,10 @@ export default defineConfig({
         secure: false
       }
     }
+  },
+  preview: {
+    port: 4176,
+    strictPort: true,
   },
   build: {
     sourcemap: true, // Enable source maps for debugging

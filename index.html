@@ -58,6 +58,16 @@
 </head>
 
 <body>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(function (registrations) {
+        for (let registration of registrations) {
+          console.log('🚨 EMERGENCY UNREGISTER:', registration);
+          registration.unregister();
+        }
+      });
+    }
+  </script>
   <noscript>
     <div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;">
       <h1>JavaScript Required</h1>

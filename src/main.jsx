@@ -30,24 +30,14 @@ if (typeof window !== 'undefined' && window.addEventListener) {
 }
 
 // Register service worker for PWA
-if (typeof navigator !== 'undefined' && 'serviceWorker' in navigator) {
-  if (window.addEventListener) {
-    window.addEventListener('load', () => {
-      navigator.serviceWorker.register('/sw.js')
-        .then(registration => {
-          console.log('Service Worker registered');
-
-          // Listen for messages from service worker
-          navigator.serviceWorker.addEventListener('message', event => {
-            if (event.data && event.data.type === 'FORCE_RELOAD') {
-              console.log('Force reloading...');
-              setTimeout(() => window.location.reload(true), 1000);
-            }
-          });
-        })
-        .catch(error => console.error('SW registration failed:', error));
-    })
-  }
+// Force UNREGISTER service worker to fix stale cache/port 3000 issues
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.getRegistrations().then(function (registrations) {
+    for (let registration of registrations) {
+      console.log('Unregistering SW:', registration);
+      registration.unregister();
+    }
+  });
 }
 
 ReactDOM.createRoot(document.getElementById('root')).render(
