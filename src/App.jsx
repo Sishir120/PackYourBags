@@ -31,7 +31,7 @@ const ItineraryPage = lazy(() => import('./pages/ItineraryPage'))
 const DestinationDeepDive = lazy(() => import('./pages/DestinationDeepDive'))
 const BlogList = lazy(() => import('./pages/BlogList'))
 const BlogPost = lazy(() => import('./pages/BlogPost'))
-const AIChatPortal = lazy(() => import('./components/AIChatPortal'))
+
 const PriceTrackerPage = lazy(() => import('./pages/PriceTrackerPage'))
 const MyTrips = lazy(() => import('./pages/MyTrips'))
 const ItineraryBuilder = lazy(() => import('./pages/ItineraryBuilder'))
@@ -205,7 +205,7 @@ function App() {
                   <Route path="/arcade/hangman" element={<HangmanPage />} />
                   <Route path="/arcade/roulette" element={<RoulettePage />} />
                   <Route path="/arcade/plinko" element={<Plinko />} />
-                  <Route path="/ai-chat" element={<AIChatPortal />} />
+
                   <Route path="/price-tracker" element={<PriceTrackerPage user={user} />} />
                   <Route path="/profile" element={<Profile />} />
                   <Route path="/my-trips" element={<MyTrips />} />
