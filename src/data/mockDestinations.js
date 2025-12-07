@@ -1323,7 +1323,7 @@ export const mockDestinations = [
         "slug": "great-barrier-reef-australia",
         "country": "Australia",
         "continent": "Oceania",
-        "image_url": getDestinationImage('great-barrier-reef-australia'),
+        "image_url": "/images/destinations/Great Barrier Reef, Austrailia.jpg",
         "blog": "## The Underwater Wonder: Great Barrier Reef\n\nThe Great Barrier Reef is the world's largest coral reef system, composed of over 2,900 individual reefs and 900 islands stretching for over 2,300 kilometres over an area of approximately 344,400 square kilometres. It is one of the seven wonders of the natural world and the only living thing on earth visible from space.",
         "highlights": [
             "Snorkeling / Diving",
@@ -1429,7 +1429,7 @@ export const mockDestinations = [
         "slug": "eiffel-tower-france",
         "country": "France",
         "continent": "Europe",
-        "image_url": getDestinationImage('eiffel-tower-france'),
+        "image_url": "/images/destinations/eiffel-tower-france.jpg",
         "blog": "## The Iron Lady: Eiffel Tower\n\nThe Eiffel Tower is a wrought-iron lattice tower on the Champ de Mars in Paris, France. It is named after the engineer Gustave Eiffel, whose company designed and built the tower. Locally nicknamed 'La Dame de Fer' (French for 'The Iron Lady'), it was constructed from 1887 to 1889 as the entrance to the 1889 World's Fair.",
         "highlights": [
             "The Summit",
