@@ -65,9 +65,10 @@ export default async function handler(req, res) {
         let aiResponse = null;
         let lastError = null;
 
+
         for (const model of modelsToTry) {
             try {
-                console.log(`🔄 Attempting Model: ${model}...`);
+                console.log(`🔄 Attempting Google Model: ${model}...`);
                 const url = `https://generativelanguage.googleapis.com/v1beta/models/${model}:generateContent?key=${apiKey}`;
 
                 const response = await fetch(url, {
@@ -97,6 +98,44 @@ export default async function handler(req, res) {
             } catch (e) {
                 console.warn(`⚠️ Exception ${model}:`, e.message);
                 lastError = e.message;
+            }
+        }
+
+        // --- OPENROUTER FALLBACK ---
+        if (!aiResponse) {
+            const openRouterKey = process.env.OPENROUTER_API_KEY;
+
+            if (openRouterKey) {
+                console.log('🔄 Attempting OpenRouter Fallback...');
+                try {
+                    const openRouterResponse = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+                        method: "POST",
+                        headers: {
+                            "Authorization": `Bearer ${openRouterKey}`,
+                            "Content-Type": "application/json",
+                            "HTTP-Referer": "https://packyourbags.vercel.app",
+                            "X-Title": "PackYourBags"
+                        },
+                        body: JSON.stringify({
+                            "model": "google/gemini-2.0-flash-001", // Or use 'google/gemini-flash-1.5'
+                            "messages": messages, // OpenRouter uses standard OpenAI format
+                        })
+                    });
+
+                    if (openRouterResponse.ok) {
+                        const data = await openRouterResponse.json();
+                        if (data.choices?.[0]?.message?.content) {
+                            aiResponse = data.choices[0].message.content;
+                            console.log('✅ Success with OpenRouter');
+                        }
+                    } else {
+                        console.warn(`⚠️ OpenRouter Failed: ${openRouterResponse.status}`);
+                    }
+                } catch (e) {
+                    console.warn('⚠️ OpenRouter Exception:', e.message);
+                }
+            } else {
+                console.warn('⚠️ No OPENROUTER_API_KEY found, skipping fallback.');
             }
         }
 
