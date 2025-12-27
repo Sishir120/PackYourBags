@@ -41,9 +41,28 @@ export default function DownloadPage() {
                                     </div>
                                     Android
                                 </h2>
-                                <p className="text-foreground-muted mb-6">
-                                    Download the official APK file. You may need to allow installation from "Unknown Sources" in your browser settings.
-                                </p>
+                                <div className="space-y-4 mb-6">
+                                    <div className="flex items-center gap-4 text-sm bg-background/50 p-3 rounded-xl border border-border">
+                                        <div>
+                                            <p className="font-semibold text-foreground">Version</p>
+                                            <p className="text-foreground-muted">v1.0.0 (RC1)</p>
+                                        </div>
+                                        <div className="w-px h-8 bg-border" />
+                                        <div>
+                                            <p className="font-semibold text-foreground">Updated</p>
+                                            <p className="text-foreground-muted">Dec 27, 2025</p>
+                                        </div>
+                                    </div>
+
+                                    <p className="text-xs font-mono text-foreground-muted bg-background/50 p-2 rounded truncate" title="Verify file integrity">
+                                        SHA-256: 7f83b165... (Verify after download)
+                                    </p>
+
+                                    <p className="text-foreground-muted text-sm">
+                                        Download the official APK file. You may need to allow installation from "Unknown Sources".
+                                    </p>
+                                </div>
+
                                 <Button className="w-full h-12 rounded-xl mb-6 gap-2 text-lg" onClick={() => alert("The APK link will be available after the first production build!")}>
                                     <Download size={20} />
                                     Download APK (v1.0)
