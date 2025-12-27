@@ -1,19 +1,9 @@
-import { headers } from 'next/headers';
-import { NextResponse } from 'next/server';
-import { stripe } from '@/lib/stripe';
-import Stripe from 'stripe';
-import prisma from '@/lib/prisma';
+import * as Sentry from "@sentry/nextjs";
 
-// This is required for Next.js App Router to accept raw body
-export const dynamic = "force-dynamic";
+// ... (imports)
 
 export async function POST(req: Request) {
-    const body = await req.text();
-    const headersList = await headers();
-    const signature = headersList.get('Stripe-Signature') as string;
-
-    let event: Stripe.Event;
-
+    // ...
     try {
         event = stripe.webhooks.constructEvent(
             body,
@@ -21,55 +11,34 @@ export async function POST(req: Request) {
             process.env.STRIPE_WEBHOOK_SECRET!
         );
     } catch (error) {
+        console.error('[STRIPE] Signature verification failed:', error);
+        Sentry.captureException(error, { tags: { source: 'stripe_webhook', type: 'signature_verification' } });
         return new NextResponse('Webhook Error', { status: 400 });
     }
 
     const session = event.data.object as Stripe.Checkout.Session;
 
     if (event.type === 'checkout.session.completed') {
-        const subscription = await stripe.subscriptions.retrieve(
-            session.subscription as string
-        );
-
+        // ...
         if (!session?.metadata?.userId && !session?.customer_email) {
-            console.error('[STRIPE] Missing user identifier');
+            const error = new Error('Missing user identifier in Stripe session');
+            console.error('[STRIPE]', error.message);
+            Sentry.captureException(error, { extra: { session } });
             return new NextResponse('Webhook Error: No User ID or Email', { status: 400 });
         }
 
         try {
-            // Find user by email or metadata userId
-            const user = await prisma.user.findFirst({
-                where: session.metadata?.userId
-                    ? { id: session.metadata.userId }
-                    : { email: session.customer_email! }
-            });
-
+            // ... (db logic)
             if (!user) {
-                console.error('[STRIPE] User not found:', session.customer_email);
+                const error = new Error(`User not found for email: ${session.customer_email}`);
+                console.error('[STRIPE]', error.message);
+                Sentry.captureException(error);
                 return new NextResponse('User not found', { status: 404 });
             }
-
-            // Create or update subscription
-            await prisma.subscription.upsert({
-                where: { userId: user.id },
-                create: {
-                    userId: user.id,
-                    stripeCustomerId: subscription.customer as string,
-                    stripePriceId: subscription.items.data[0].price.id,
-                    status: subscription.status,
-                    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
-                },
-                update: {
-                    stripeCustomerId: subscription.customer as string,
-                    stripePriceId: subscription.items.data[0].price.id,
-                    status: subscription.status,
-                    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
-                },
-            });
-
-            console.log(`[STRIPE] Subscription created/updated for ${user.email}`);
+            // ...
         } catch (error) {
             console.error('[STRIPE] Database error:', error);
+            Sentry.captureException(error, { tags: { source: 'stripe_webhook', action: 'create_subscription' } });
             return new NextResponse('Database error', { status: 500 });
         }
     }
@@ -79,17 +48,10 @@ export async function POST(req: Request) {
         const subscription = event.data.object as Stripe.Subscription;
 
         try {
-            await prisma.subscription.updateMany({
-                where: { stripeCustomerId: subscription.customer as string },
-                data: {
-                    status: subscription.status,
-                    currentPeriodEnd: new Date(subscription.current_period_end * 1000),
-                },
-            });
-
-            console.log(`[STRIPE] Subscription ${subscription.status} for ${subscription.customer}`);
+            // ...
         } catch (error) {
             console.error('[STRIPE] Update error:', error);
+            Sentry.captureException(error, { tags: { source: 'stripe_webhook', action: 'update_subscription' } });
             return new NextResponse('Database error', { status: 500 });
         }
     }
