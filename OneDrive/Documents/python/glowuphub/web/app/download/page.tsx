@@ -53,7 +53,7 @@ export default function DownloadPage() {
                                     <ol className="list-decimal list-inside space-y-1 opacity-80">
                                         <li>Tap "Download APK" above</li>
                                         <li>Tap "Open" when finished</li>
-                                        <li>If prompted, tap "Settings" -> "Allow from this source"</li>
+                                        <li>If prompted, tap "Settings" &rarr; "Allow from this source"</li>
                                         <li>Tap "Install"</li>
                                     </ol>
                                 </div>

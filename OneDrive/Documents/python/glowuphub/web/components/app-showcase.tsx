@@ -90,8 +90,6 @@ export function AppShowcase() {
                 </motion.div>
             </div>
 
-        </div>
-            </div >
-        </section >
-    );
+
+            );
 }
