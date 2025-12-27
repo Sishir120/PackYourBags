@@ -56,46 +56,43 @@ export function AppShowcase() {
                                 Install on iOS (PWA)
                             </Button>
                         </div>
-                </div>
-                <p className="text-xs text-foreground-muted italic max-w-md">
-                    * Direct secure download from our servers. Verified safe for all devices.
-                </p>
+                        <p className="text-xs text-foreground-muted italic max-w-md">
+                            * Direct secure download from our servers. Verified safe for all devices.
+                        </p>
 
-                <div className="flex items-center gap-4 text-sm text-foreground-muted">
-                    <div className="flex -space-x-2">
-                        {[1, 2, 3, 4].map(i => (
-                            <div key={i} className="w-8 h-8 rounded-full bg-primary-soft border-2 border-background" />
-                        ))}
+                        <div className="flex items-center gap-4 text-sm text-foreground-muted">
+                            <div className="flex -space-x-2">
+                                {[1, 2, 3, 4].map(i => (
+                                    <div key={i} className="w-8 h-8 rounded-full bg-primary-soft border-2 border-background" />
+                                ))}
+                            </div>
+                            <p>Join 10,000+ active members on their glow journey</p>
+                        </div>
+                    </motion.div>
+
+                    {/* Right: Phone Render */}
+                    <div className="relative h-[600px] w-full flex items-center justify-center">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
+                            whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, ease: "easeOut" }}
+                            className="relative w-full h-full max-w-[500px]"
+                        >
+                            {/* Soft glow behind phone */}
+                            <div className="absolute inset-0 bg-primary/15 blur-[100px] rounded-full opacity-60" />
+
+                            <Image
+                                src="/assets/app-mockup.png"
+                                alt="GlowUp Hub App Interface"
+                                fill
+                                className="object-contain drop-shadow-2xl z-10"
+                            />
+                        </motion.div>
                     </div>
-                    <p>Join 10,000+ active members on their glow journey</p>
+
                 </div>
-            </motion.div>
-
-            {/* Right: Phone Render */}
-            <div className="relative h-[600px] w-full flex items-center justify-center">
-                <motion.div
-                    initial={{ opacity: 0, scale: 0.9, rotate: -3 }}
-                    whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.8, ease: "easeOut" }}
-                    className="relative w-full h-full max-w-[500px]"
-                >
-                    {/* Soft glow behind phone */}
-                    <div className="absolute inset-0 bg-primary/15 blur-[100px] rounded-full opacity-60" />
-
-                    <Image
-                        src="/assets/app-mockup.png"
-                        alt="GlowUp Hub App Interface"
-                        fill
-                        className="object-contain drop-shadow-2xl z-10"
-                    />
-                </motion.div>
             </div>
-
-
-
-        </div>
-        </div >
-    </section >
+        </section>
     );
 }
