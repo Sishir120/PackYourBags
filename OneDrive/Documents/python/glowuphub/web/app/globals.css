@@ -1,0 +1,292 @@
+@import "tailwindcss";
+
+:root {
+  /* Clinical Sanctuary Theme - "Emerald & Onyx" */
+
+  /* Primary - Metabolic Emerald */
+  --primary: #10b981;
+  --primary-soft: rgba(16, 185, 129, 0.1);
+  --primary-foreground: #ffffff;
+
+  /* Background - Deep Sanctuary Onyx */
+  --background: #050505;
+  --background-muted: #08090a;
+  --foreground: #f2f4f7;
+  --foreground-muted: #717d8a;
+
+  /* Secondary - Medical Slate */
+  --secondary: #0f1115;
+  --secondary-foreground: #f2f4f7;
+
+  /* Accents - Healing Tones */
+  --sage: #34d399;
+  --lavender: #a78bfa;
+  --coral: #f43f5e;
+  --sand: #fde68a;
+
+  /* UI Elements */
+  --accent: #0f1115;
+  --accent-foreground: #10b981;
+
+  --muted: #0f1115;
+  --muted-foreground: #6b7280;
+
+  --card: #08090a;
+  --card-foreground: #f2f4f7;
+
+  --border: rgba(255, 255, 255, 0.08);
+  /* Increased for visibility */
+  --input: rgba(255, 255, 255, 0.04);
+  --ring: #10b981;
+
+  /* Sanctuary Spacing & Radius */
+  --radius-xs: 0.5rem;
+  --radius-sm: 0.75rem;
+  --radius-md: 1rem;
+  --radius-lg: 1.5rem;
+  --radius-xl: 2rem;
+  --radius-full: 9999px;
+}
+
+@media (prefers-color-scheme: light) {
+
+  /* Optional Light Mode (User asked for Dark, so defaults are Dark) */
+  :root {
+    /* Keeping same dark theme enforced for consistency unless requested */
+  }
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-background-muted: var(--background-muted);
+  --color-foreground: var(--foreground);
+  --color-foreground-muted: var(--foreground-muted);
+
+  --color-primary: var(--primary);
+  --color-primary-soft: var(--primary-soft);
+  --color-primary-foreground: var(--primary-foreground);
+
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  /* Accent Colors */
+  --color-sage: var(--sage);
+  --color-lavender: var(--lavender);
+  --color-coral: var(--coral);
+  --color-blush: var(--blush);
+
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: Consolas, monospace;
+
+  /* Fluid Typography - Scales from 16px to 20px */
+  --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
+}
+
+body {
+  font-size: var(--font-size-base);
+  line-height: 1.7;
+  /* Increased for readability */
+  letter-spacing: -0.01em;
+}
+
+/* Calming Animation Utilities */
+@keyframes breathe {
+
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+
+  50% {
+    transform: scale(1.02);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes glow-pulse {
+
+  0%,
+  100% {
+    box-shadow: 0 0 20px rgba(0, 251, 255, 0.2);
+  }
+
+  50% {
+    box-shadow: 0 0 40px rgba(0, 251, 255, 0.4);
+  }
+}
+
+@keyframes soft-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-breathe {
+  animation: breathe 4s ease-in-out infinite;
+}
+
+.animate-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
+}
+
+.animate-soft-fade-in {
+  animation: soft-fade-in 0.6s ease-out forwards;
+}
+
+/* Premium Aurora Background Animation */
+@keyframes aurora {
+  0% {
+    background-position: 50% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 50% 50%;
+  }
+}
+
+
+.aurora-bg {
+  background:
+    radial-gradient(at 0% 0%, hsla(190, 100%, 15%, 0.8) 0px, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(200, 100%, 25%, 0.3) 0px, transparent 50%),
+    radial-gradient(at 100% 100%, hsla(270, 80%, 25%, 0.2) 0px, transparent 50%),
+    radial-gradient(at 0% 100%, hsla(0, 0%, 0%, 1) 0px, transparent 50%),
+    linear-gradient(to bottom, #020617, #0a0f14);
+  background-size: 150% 150%;
+  animation: aurora 20s ease infinite alternate;
+}
+
+/* Interaction Focus */
+:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 4px;
+}
+
+/* Universal Action Fab */
+.action-fab {
+  box-shadow:
+    0 0 30px rgba(0, 251, 255, 0.2),
+    0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+.action-fab:hover {
+  box-shadow:
+    0 0 50px rgba(0, 251, 255, 0.4),
+    0 20px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Glassmorphism 2.0 - Dark Frost */
+.glass-premium {
+  background: rgba(24, 24, 27, 0.6);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+.glass-card-hover:hover {
+  background: rgba(39, 39, 42, 0.8);
+  border-color: rgba(251, 113, 133, 0.3);
+  box-shadow: 0 0 20px 0 rgba(251, 113, 133, 0.1);
+  transform: translateY(-2px);
+  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+/* Confetti Keyframes (Simple CSS version) */
+@keyframes pop {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.4);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.animate-pop {
+  animation: pop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+/* Scrollbar - Subtle and Warm */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background-muted);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}
+
+/* Glass Effect - Softer */
+.glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(232, 180, 184, 0.1);
+}
+
+/* Text Selection - On-brand */
+::selection {
+  background: var(--primary-soft);
+  color: var(--foreground);
+}
