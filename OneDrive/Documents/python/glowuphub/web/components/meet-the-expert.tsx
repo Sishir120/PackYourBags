@@ -12,8 +12,8 @@ const credentials = [
 ];
 
 const achievements = [
-    "Helped 500+ women reverse metabolic damage",
-    "Specialized in PCOS, thyroid, and hormonal health",
+    "Helped 500+ women find food freedom",
+    "Personalized habits based on your metrics",
     "4 years clinical nutrition practice",
     "Featured wellness educator on TikTok"
 ];
@@ -102,8 +102,8 @@ export function MeetTheExpert() {
                         </p>
 
                         <p className="text-foreground-muted text-lg leading-relaxed mb-8">
-                            Her approach combines evidence-based nutrition science with compassionate support,
-                            specializing in hormonal health, metabolic healing, and sustainable lifestyle changes.
+                            Her approach observes your current nutrition intakes, evaluates them, and suggests better habits
+                            specifically tailored to your gender, height, age, and weight.
                         </p>
 
                         {/* Achievements List */}
