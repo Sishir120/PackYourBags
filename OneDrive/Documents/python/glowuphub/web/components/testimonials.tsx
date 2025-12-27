@@ -62,8 +62,12 @@ export function Testimonials() {
                     </p>
                 </motion.div>
 
-                {/* Transformation Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4 mb-12">
+                {/* Transformation Grid - Mobile Carousel / Desktop Grid */}
+                <div className="
+                    flex overflow-x-auto snap-x snap-mandatory gap-4 pb-6 -mx-6 px-6 
+                    md:grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 md:overflow-visible md:pb-0 md:mx-0 md:px-0
+                    scrollbar-hide
+                ">
                     {TESTIMONIALS_DATA.map((item, index) => (
                         <motion.a
                             key={index}
@@ -74,7 +78,11 @@ export function Testimonials() {
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                             transition={{ duration: 0.5, delay: index * 0.1 }}
-                            className="group relative aspect-[3/4] bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all shadow-sm hover:shadow-lg hover:scale-[1.02]"
+                            className="
+                                flex-none w-[85vw] sm:w-[350px] snap-center 
+                                md:w-auto
+                                group relative aspect-[3/4] bg-card rounded-2xl overflow-hidden border border-border hover:border-primary/50 transition-all shadow-sm hover:shadow-lg hover:scale-[1.02]
+                            "
                         >
                             {/* Image */}
                             <div className="relative w-full h-full">
@@ -82,6 +90,7 @@ export function Testimonials() {
                                     src={item.image}
                                     alt={item.caption}
                                     fill
+                                    sizes="(max-width: 768px) 85vw, 20vw"
                                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                                 />
 
@@ -98,11 +107,11 @@ export function Testimonials() {
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
 
                                 {/* Content */}
-                                <div className="absolute bottom-0 inset-x-0 p-4">
-                                    <p className="text-white text-sm font-semibold mb-1 line-clamp-2">
+                                <div className="absolute bottom-0 inset-x-0 p-6 md:p-4">
+                                    <p className="text-white text-lg md:text-sm font-semibold mb-1 line-clamp-2">
                                         {item.caption}
                                     </p>
-                                    <p className="text-white/80 text-xs font-medium mb-2">
+                                    <p className="text-white/80 text-sm md:text-xs font-medium mb-2">
                                         — {item.name}
                                     </p>
                                     <div className="flex items-center gap-1 text-primary group-hover:gap-2 transition-all">

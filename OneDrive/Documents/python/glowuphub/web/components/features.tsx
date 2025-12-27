@@ -6,28 +6,28 @@ import { cn } from "@/lib/utils";
 
 const features = [
     {
-        title: "Step 1: Low-Impact Release",
-        description: "Targeted face yoga and breathwork you can do seated or lying down. No heavy cardio, just relief.",
-        icon: <Activity className="w-6 h-6 text-primary" />,
+        title: "Step 1: Metabolic Nutrition",
+        description: "Eat to fuel your body, not to fight it. Custom meal plans that balance your hormones and reset your metabolism.",
+        icon: <Leaf className="w-6 h-6 text-primary" />,
         className: "md:col-span-1",
     },
     {
-        title: "Step 2: Track Your Consistency",
-        description: "Watch your daily consistency compound into visible results and unlocked rewards.",
-        icon: <Sparkles className="w-6 h-6 text-sage" />,
+        title: "Step 2: Activity for Life",
+        description: "Movement that acts as medicine. Build lean muscle and burn fat with routines you can actually stick to.",
+        icon: <Activity className="w-6 h-6 text-sage" />,
         className: "md:col-span-1",
     },
     {
-        title: "Step 3: Unpack the Shame",
-        description: "Close with a 2-line journal entry. Re-write the story of how you speak to yourself, one day at a time.",
-        icon: <Leaf className="w-6 h-6 text-lavender" />,
+        title: "Step 3: Mindset Shift",
+        description: "Rewire your brain's relationship with food. Stop the self-sabotage and build unshakeable self-trust.",
+        icon: <Sparkles className="w-6 h-6 text-lavender" />,
         className: "md:col-span-1",
     },
 ];
 
 export function Features() {
     return (
-        <section id="features" className="py-32 bg-background relative overflow-hidden">
+        <section id="features" className="py-24 md:py-32 bg-background relative overflow-hidden">
 
             {/* Warm ambient background */}
             <div className="absolute top-1/4 left-0 w-[40%] h-[40%] bg-primary/5 rounded-full blur-[150px] pointer-events-none" />
@@ -36,18 +36,18 @@ export function Features() {
             <div className="container mx-auto px-6 relative z-10">
 
                 {/* Section Header */}
-                <div className="text-center max-w-3xl mx-auto mb-20">
+                <div className="text-center max-w-3xl mx-auto mb-16 md:mb-20">
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.6 }}
                     >
-                        <h2 className="text-4xl md:text-6xl font-bold text-foreground mb-6 tracking-tight">
-                            3 Steps to Your <span className="text-primary italic">Daily Glow</span>
+                        <h2 className="text-3xl md:text-5xl font-bold text-foreground mb-6 tracking-tight leading-tight">
+                            3 Steps to <span className="text-primary italic">Lasting Weight Loss</span>
                         </h2>
-                        <p className="text-xl text-foreground-muted">
-                            A science-backed system for face yoga, breathwork, and consistency. No obsession. No shame.
+                        <p className="text-lg md:text-xl text-foreground-muted max-w-2xl mx-auto">
+                            A science-backed system for metabolic health, sustainable habits, and body confidence. No starvation. No gimmicks.
                         </p>
                     </motion.div>
                 </div>

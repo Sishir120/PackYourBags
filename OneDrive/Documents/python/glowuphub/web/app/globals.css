@@ -95,6 +95,10 @@
   --font-size-base: clamp(1rem, 0.95rem + 0.25vw, 1.15rem);
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-size: var(--font-size-base);
   line-height: 1.7;
@@ -289,4 +293,8 @@ body {
 ::selection {
   background: var(--primary-soft);
   color: var(--foreground);
+}
+
+.pb-safe-area {
+  padding-bottom: env(safe-area-inset-bottom);
 }

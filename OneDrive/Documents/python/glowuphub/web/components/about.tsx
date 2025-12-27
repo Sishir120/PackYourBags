@@ -22,20 +22,20 @@ export function About() {
                         className="space-y-8"
                     >
                         <span className="text-primary font-medium tracking-widest uppercase text-sm">Our Philosophy</span>
-                        <h2 className="text-4xl md:text-6xl font-bold text-foreground leading-tight">
-                            Beauty is <br />
+                        <h2 className="text-3xl md:text-5xl font-bold text-foreground leading-tight">
+                            Health is <br />
                             <span className="text-foreground-muted">Self-Trust</span><br />
                             Made Visible.
                         </h2>
                         <div className="space-y-6 text-lg text-foreground-muted">
                             <p>
-                                We believe confidence isn't about chasing perfection. It's about <strong className="text-foreground">keeping small promises to yourself</strong>, day after day.
+                                We believe weight loss isn't about punishment or deprivation. It's about <strong className="text-foreground">keeping small promises to yourself</strong>, day after day.
                             </p>
                             <p>
-                                <strong className="text-foreground">GlowUp Hub</strong> combines three essential pillars — **face yoga**, science-backed **breathwork**, and reflective **journaling** — into a daily practice that calms your **nervous system** while revealing your natural radiance.
+                                <strong className="text-foreground">GlowUp Hub</strong> combines three essential pillars — **metabolic nutrition**, science-backed **movement**, and unshakeable **mindset** — into a daily practice that heals your **relationship with food**.
                             </p>
                             <p>
-                                No obsession. No shame. Just consistent, compassionate **daily self-care** that builds self-trust and compounds into a lasting, visible transformation.
+                                No obsession. No shame. Just consistent, compassionate **daily action** that builds self-trust and compounds into a lasting, visible transformation.
                             </p>
                         </div>
 
@@ -52,7 +52,7 @@ export function About() {
                         whileInView={{ opacity: 1, scale: 1 }}
                         viewport={{ once: true }}
                         transition={{ duration: 0.8 }}
-                        className="relative h-[600px] rounded-3xl overflow-hidden bg-card border border-border shadow-xl"
+                        className="relative h-[500px] md:h-[600px] rounded-3xl overflow-hidden bg-card border border-border shadow-xl"
                     >
                         <div className="absolute inset-0 bg-gradient-to-br from-primary-soft to-background" />
 
@@ -68,9 +68,9 @@ export function About() {
                                     <Heart className="w-10 h-10 text-primary" />
                                 </div>
                                 <p className="text-2xl font-semibold text-foreground">Self-Trust</p>
-                                <p className="text-foreground-muted text-sm mt-2">The foundation of radiance</p>
+                                <p className="text-foreground-muted text-sm mt-2">The foundation of health</p>
                                 <div className="mt-6 px-6 py-2 bg-primary/10 rounded-full border border-primary/20 inline-block">
-                                    <p className="text-xs font-bold text-primary tracking-wide">WEIGHT-NEUTRAL PROMISE</p>
+                                    <p className="text-xs font-bold text-primary tracking-wide">NO SHAME PROMISE</p>
                                 </div>
                             </div>
                         </div>
@@ -79,15 +79,15 @@ export function About() {
                         <motion.div
                             animate={{ y: [0, -6, 0] }}
                             transition={{ repeat: Infinity, duration: 5, ease: "easeInOut" }}
-                            className="absolute top-16 right-8 p-4 bg-card/90 backdrop-blur-sm rounded-2xl border border-border shadow-lg"
+                            className="absolute top-16 right-4 md:right-8 p-4 bg-card/90 backdrop-blur-sm rounded-2xl border border-border shadow-lg"
                         >
                             <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center">
                                     <Leaf className="w-4 h-4 text-sage" />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-foreground-muted">Gentle</p>
-                                    <p className="font-semibold text-foreground text-sm">Practices</p>
+                                    <p className="text-xs text-foreground-muted">Sustainable</p>
+                                    <p className="font-semibold text-foreground text-sm">Habits</p>
                                 </div>
                             </div>
                         </motion.div>
@@ -95,15 +95,15 @@ export function About() {
                         <motion.div
                             animate={{ y: [0, 8, 0] }}
                             transition={{ repeat: Infinity, duration: 7, ease: "easeInOut", delay: 1 }}
-                            className="absolute bottom-20 left-8 p-4 bg-card/90 backdrop-blur-sm rounded-2xl border border-border shadow-lg"
+                            className="absolute bottom-20 left-4 md:left-8 p-4 bg-card/90 backdrop-blur-sm rounded-2xl border border-border shadow-lg"
                         >
                             <div className="flex items-center gap-3">
                                 <div className="w-8 h-8 rounded-full bg-lavender/20 flex items-center justify-center">
                                     <Moon className="w-4 h-4 text-lavender" />
                                 </div>
                                 <div>
-                                    <p className="text-xs text-foreground-muted">Calm</p>
-                                    <p className="font-semibold text-foreground text-sm">Nervous System</p>
+                                    <p className="text-xs text-foreground-muted">Balanced</p>
+                                    <p className="font-semibold text-foreground text-sm">Metabolism</p>
                                 </div>
                             </div>
                         </motion.div>

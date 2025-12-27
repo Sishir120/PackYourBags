@@ -154,6 +154,7 @@ export function LifestyleTracker() {
                 isOpen={isProtocolOpen}
                 onClose={() => setIsProtocolOpen(false)}
                 title={selectedType.name}
+                activityId={selectedType.id}
                 steps={PROTOCOLS[selectedType.id] || []}
                 onComplete={handleProtocolComplete}
             />

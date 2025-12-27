@@ -391,11 +391,12 @@ export default function ChatPage() {
                             <Send size={20} className={cn("transition-transform", input.trim() ? "translate-x-0.5 -translate-y-0.5" : "")} />
                         </Button>
                     </div>
-                    <Sparkles size={10} className="inline mr-1" />
-                    Messages are private and secure • Reviewed by Sabita Subedi • <span className="text-primary">Avg. reply: 4 hours</span>
-                </p>
+                    <p className="text-[10px] text-foreground-muted text-center mt-4">
+                        <Sparkles size={10} className="inline mr-1" />
+                        Messages are private and secure • Reviewed by Sabita Subedi • <span className="text-primary">Avg. reply: 4 hours</span>
+                    </p>
+                </div>
             </div>
-        </div>
         </div >
     );
 }

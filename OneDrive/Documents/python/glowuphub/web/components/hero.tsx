@@ -12,11 +12,11 @@ export function Hero() {
             {/* Warm Ambient Background */}
             <div className="absolute inset-0 pointer-events-none">
                 {/* Soft blue/teal glow */}
-                <div className="absolute top-[-10%] right-[-5%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/10 md:bg-primary/20 rounded-full blur-[60px] md:blur-[120px] opacity-40 md:opacity-60" />
+                <div className="absolute top-[-10%] right-[-5%] w-[300px] md:w-[600px] h-[300px] md:h-[600px] bg-primary/10 md:bg-primary/20 rounded-full blur-[60px] md:blur-[120px] opacity-30 md:opacity-60" />
                 {/* Sage accent */}
-                <div className="absolute bottom-[-10%] left-[-10%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-sage/10 md:bg-sage/20 rounded-full blur-[60px] md:blur-[120px] opacity-30 md:opacity-40" />
+                <div className="absolute bottom-[-10%] left-[-10%] w-[250px] md:w-[500px] h-[250px] md:h-[500px] bg-sage/10 md:bg-sage/20 rounded-full blur-[60px] md:blur-[120px] opacity-20 md:opacity-40" />
                 {/* Lavender touch */}
-                <div className="absolute top-[30%] left-[20%] w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-lavender/15 rounded-full blur-[60px] md:blur-[100px] opacity-30" />
+                <div className="absolute top-[30%] left-[20%] w-[200px] md:w-[400px] h-[200px] md:h-[400px] bg-lavender/15 rounded-full blur-[60px] md:blur-[100px] opacity-20" />
             </div>
 
             <div className="container mx-auto px-4 md:px-6 grid lg:grid-cols-2 gap-8 lg:gap-16 items-center relative z-10">
@@ -29,7 +29,7 @@ export function Hero() {
                     className="flex flex-col items-center lg:items-start gap-6 md:gap-8 max-w-2xl text-center lg:text-left"
                 >
                     {/* Immersive Mobile Background Visual (Brand Halo) */}
-                    <div className="lg:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square opacity-20 z-0 pointer-events-none">
+                    <div className="lg:hidden absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full aspect-square opacity-15 z-0 pointer-events-none">
                         <div className="absolute inset-0 rounded-full bg-primary/20 blur-[80px] animate-pulse" />
                         <div className="absolute inset-10 rounded-full border border-primary/10 animate-[spin_20s_linear_infinite]" />
                         <div className="absolute inset-20 rounded-full border border-primary/5 animate-[spin_30s_linear_infinite_reverse]" />
@@ -41,7 +41,7 @@ export function Hero() {
                         Expert-Led Weight Loss • 10,000+ Success Stories
                     </div>
 
-                    <h1 className="text-5xl sm:text-6xl md:text-7xl font-black tracking-tighter leading-[1.1] text-foreground mb-6 z-10">
+                    <h1 className="text-3xl sm:text-6xl md:text-7xl font-black tracking-tighter leading-[1.1] text-foreground mb-6 z-10">
                         <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-purple-500">
                             Sustainable
                         </span>{" "}
@@ -53,23 +53,23 @@ export function Hero() {
                     </h1>
 
                     <p className="text-lg md:text-xl text-foreground-muted leading-relaxed max-w-lg px-2 md:px-0 mb-8 z-10">
-                        Build <span className="text-primary font-semibold">lasting healthy habits</span> with expert nutritionists. Lose weight naturally through science-backed routines. <br className="hidden md:block" />
-                        <span className="font-semibold text-foreground">No diets. No restrictions. Just results.</span>
+                        Build <span className="text-primary font-semibold">lasting metabolic health</span> with expert nutritionist Sabita Subedi. <br className="hidden md:block" />
+                        <span className="font-semibold text-foreground">No starvation. No shame. Just science.</span>
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center gap-3 md:gap-4 w-full sm:w-auto z-10">
                         <Button
                             size="lg"
-                            className="rounded-full h-14 px-8 text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)] w-full sm:w-auto"
+                            className="w-full sm:w-auto rounded-full h-14 px-8 text-lg font-bold bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02] active:scale-[0.98] transition-all shadow-[0_0_20px_rgba(34,211,238,0.4)]"
                         >
                             Start Losing Weight (Free)
                         </Button>
                         <Button
                             size="lg"
                             variant="ghost"
-                            className="rounded-full h-14 px-8 gap-2 text-foreground hover:bg-white/5 w-full sm:w-auto font-medium border border-transparent hover:border-white/10"
+                            className="w-full sm:w-auto rounded-full h-14 px-8 gap-2 text-foreground hover:bg-white/5 font-medium border border-transparent hover:border-white/10"
                         >
-                            <Play className="w-5 h-5 fill-current" /> View Walkthrough
+                            <Play className="w-5 h-5 fill-current" /> View Success Stories
                         </Button>
                     </div>
 

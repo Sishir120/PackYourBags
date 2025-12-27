@@ -428,10 +428,10 @@ export default function SettingsPage() {
                                                 onChange={(e) => setLanguage(e.target.value)}
                                                 className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 focus:border-primary/50 outline-none transition-all text-foreground"
                                             >
-                                                <option>English</option>
-                                                <option>Spanish</option>
-                                                <option>French</option>
-                                                <option>German</option>
+                                                <option className="bg-zinc-900 text-white">English</option>
+                                                <option className="bg-zinc-900 text-white">Spanish</option>
+                                                <option className="bg-zinc-900 text-white">French</option>
+                                                <option className="bg-zinc-900 text-white">German</option>
                                             </select>
                                         </div>
 

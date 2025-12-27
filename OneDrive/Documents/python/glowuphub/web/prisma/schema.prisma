@@ -205,6 +205,9 @@ model DailyLog {
   steps     Int?
   
   adherenceScore Float?  // Expert-facing metric
+
+  // Habits tracking
+  completedHabits String @default("[]")
 }
 
 model Message {

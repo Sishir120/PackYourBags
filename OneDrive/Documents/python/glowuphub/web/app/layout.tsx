@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
+import { MobileBottomNav } from "@/components/mobile-bottom-nav";
 
 
 const inter = Inter({
@@ -45,10 +46,11 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${inter.variable} antialiased bg-background text-foreground`}
+        className={`${inter.variable} antialiased bg-background text-foreground pb-20 md:pb-0`}
       >
         <Providers>
           {children}
+          <MobileBottomNav />
         </Providers>
       </body>
     </html>

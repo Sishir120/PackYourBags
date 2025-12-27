@@ -389,7 +389,7 @@ function PriorityItem({ label, desc, color }: any) {
     };
 
     return (
-        <div className="flex items-start gap-3 p-3 rounded-xl border group cursor-pointer hover:bg-white/5 transition-all" className={colors[color]}>
+        <div className={cn("flex items-start gap-3 p-3 rounded-xl border group cursor-pointer hover:bg-white/5 transition-all", colors[color])}>
             <div className={cn("w-2 h-2 rounded-full mt-1.5 shrink-0", colors[color])} />
             <div className="flex-1">
                 <h5 className="text-[10px] font-bold leading-none mb-1 group-hover:text-primary transition-colors">{label}</h5>
