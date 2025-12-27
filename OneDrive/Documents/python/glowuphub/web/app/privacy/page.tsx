@@ -36,6 +36,24 @@ export default function PrivacyPage() {
                     </section>
 
                     <section>
+                        <h2 className="text-2xl font-semibold text-foreground mb-4">Direct App Installation & Security</h2>
+                        <div className="p-6 bg-primary/5 rounded-2xl border border-primary/10">
+                            <p className="text-foreground-muted leading-relaxed mb-4">
+                                <strong>For Android Users:</strong> You may see a generic security warning when installing our APK directly. This is normal for apps installed outside the Play Store.
+                            </p>
+                            <p className="text-foreground-muted leading-relaxed">
+                                We guarantee that our application:
+                            </p>
+                            <ul className="list-disc list-inside mt-2 space-y-1 text-foreground-muted ml-4">
+                                <li>Is signed with our secure developer certificate</li>
+                                <li>Does not request unnecessary permissions (contacts, location, etc.)</li>
+                                <li>Transmits all data via encrypted HTTPS connections</li>
+                                <li>Contains no third-party ad trackers</li>
+                            </ul>
+                        </div>
+                    </section>
+
+                    <section>
                         <h2 className="text-2xl font-semibold text-foreground mb-4">How We Use Your Data</h2>
                         <p className="text-foreground-muted leading-relaxed">
                             We use your information to personalize your experience, track your progress, and improve our services. We never sell your personal data to third parties.
