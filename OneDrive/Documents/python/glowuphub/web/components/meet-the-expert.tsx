@@ -12,10 +12,10 @@ const credentials = [
 ];
 
 const achievements = [
-    "Helped 500+ women find food freedom",
+    "Precision Nutrition Level 1 Certified",
     "Personalized habits based on your metrics",
     "4 years clinical nutrition practice",
-    "Featured wellness educator on TikTok"
+    "Featured wellness educator on Social Media"
 ];
 
 export function MeetTheExpert() {
@@ -157,12 +157,12 @@ export function MeetTheExpert() {
                                 size="lg"
                                 variant="outline"
                                 className="rounded-full h-14 px-8 gap-2 group"
-                                onClick={() => window.open('https://www.tiktok.com/@sabu7916', '_blank')}
+                                onClick={() => window.open('https://www.facebook.com/profile.php?id=61572327367366', '_blank')}
                             >
                                 <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
-                                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.2 1.74 2.89 2.89 0 012.31-4.64 2.93 2.93 0 01.88.13V9.4a6.84 6.84 0 00-1-.05A6.33 6.33 0 005 20.1a6.34 6.34 0 0010.86-4.43v-7a8.16 8.16 0 004.77 1.52v-3.4a4.85 4.85 0 01-1-.1z" />
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
                                 </svg>
-                                Follow on TikTok
+                                Follow on Facebook
                                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                             </Button>
                         </div>
